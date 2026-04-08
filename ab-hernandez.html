@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>A.B. Hernandez — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #080f1e;
+    --navy-mid: #0e1b30;
+    --navy-card: #111e34;
+    --navy-border: #1a2d4a;
+    --silver: #b8c8e0;
+    --silver-light: #dce8f5;
+    --white: #f0f5ff;
+    --gold: #e8b84b;
+    --gold-dim: rgba(232,184,75,0.15);
+    --accent: #38beff;
+    --accent-dim: rgba(56,190,255,0.12);
+    --green: #3de8a0;
+    --green-dim: rgba(61,232,160,0.12);
+    --red: #ff5e6b;
+    --muted: #5a7299;
+    --pr-col: #ff5e6b;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html { scroll-behavior:smooth; }
+  body {
+    background: var(--navy);
+    color: var(--silver-light);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    max-width: 540px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: rgba(8,15,30,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--navy-border);
+    padding: env(safe-area-inset-top, 0px) 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+  }
+  .nav-back {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .nav-back::before { content: '←'; }
+  .nav-logo { width: 28px; height: auto; margin-left: auto; opacity: 0.7; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #050c18 0%, #0c1929 60%, #0a1830 100%);
+    padding: 28px 20px 24px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--navy-border);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; right: -50px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,184,75,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-school {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .hero-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 54px;
+    letter-spacing: 1.5px;
+    color: var(--white);
+    line-height: 0.9;
+  }
+  .hero-name em { color: var(--gold); font-style: normal; }
+  .hero-pills {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;
+  }
+  .pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--navy-border);
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-size: 10px; font-weight: 600; letter-spacing: 1px;
+    color: var(--silver); text-transform: uppercase;
+  }
+  .pill.gold { border-color: rgba(232,184,75,0.4); color: var(--gold); background: var(--gold-dim); }
+  .pill.nat { border-color: rgba(61,232,160,0.4); color: var(--green); background: var(--green-dim); }
+
+  /* ── PEAK BAR ── */
+  .peak-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--navy-border);
+  }
+  .peak-item { padding: 14px 10px; text-align: center; border-right: 1px solid var(--navy-border); }
+  .peak-item:last-child { border-right: none; }
+  .peak-val { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold); line-height: 1; }
+  .peak-lbl { font-size: 9px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 20px 16px; border-bottom: 1px solid var(--navy-border); }
+  .section:last-child { border-bottom: none; }
+  .sec-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 3px; color: var(--accent);
+    text-transform: uppercase; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sec-title::after { content:''; flex:1; height:1px; background: var(--navy-border); }
+
+  /* ── BESTS GRID ── */
+  .bests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .best-card {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 8px; padding: 12px;
+    position: relative; overflow: hidden;
+  }
+  .best-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; }
+  .best-card.gold::before { background: var(--gold); }
+  .best-card.blue::before { background: var(--accent); }
+  .best-card.green::before { background: var(--green); }
+  .best-event { font-size: 9px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+  .best-mark { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--white); line-height: 1; }
+  .best-note { font-size: 9px; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+  .pr-tag { display:inline-block; background:var(--pr-col); color:#fff; font-size:7px; font-weight:700; letter-spacing:1px; padding:1px 4px; border-radius:2px; vertical-align:middle; margin-left:3px; }
+
+  /* ── MILESTONES ── */
+  .ms-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .ms-box { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 8px; padding: 10px 6px; text-align: center; }
+  .ms-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1; }
+  .ms-num.gold { color: var(--gold); }
+  .ms-num.green { color: var(--green); }
+  .ms-num.blue { color: var(--accent); }
+  .ms-lbl { font-size: 8px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+
+  /* ── RANKINGS ── */
+  .rank-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .rank-card { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 8px; padding: 12px; }
+  .rank-event { font-size: 10px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .rank-row { display: flex; justify-content: space-between; align-items: center; font-size: 11px; padding: 2px 0; }
+  .rank-scope { color: var(--silver); }
+  .rank-val { font-family: 'DM Mono', monospace; font-size: 11px; }
+  .rank-val.top1 { color: var(--gold); font-weight: 500; }
+  .rank-val.top10 { color: var(--green); }
+  .rank-val.ok { color: var(--silver); }
+
+  /* ── LOG TABLES ── */
+  .log-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .log-table th { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; padding: 5px 6px; text-align: left; border-bottom: 1px solid var(--navy-border); }
+  .log-table td { padding: 7px 6px; border-bottom: 1px solid rgba(255,255,255,0.03); vertical-align: middle; }
+  .log-table tr:last-child td { border-bottom: none; }
+  .log-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .mark-mono { font-family: 'DM Mono', monospace; font-weight: 500; color: var(--white); font-size: 13px; }
+  .mark-mono.pr { color: var(--pr-col); }
+  .mark-mono.win { color: var(--green); }
+  .place-dot { display:inline-flex; align-items:center; justify-content:center; min-width:22px; height:22px; border-radius:11px; font-size:10px; font-weight:700; }
+  .p1 { background: var(--green); color: #042814; }
+  .p2 { background: var(--silver); color: var(--navy); }
+  .p3 { background: var(--gold); color: #2a1800; }
+  .pn { background: rgba(255,255,255,0.06); color: var(--muted); padding: 0 6px; font-size: 9px; }
+  .yr-chip { font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 2px 5px; border-radius: 3px; white-space: nowrap; }
+  .y9  { background: rgba(61,232,160,0.15); color: var(--green); }
+  .y10 { background: rgba(56,190,255,0.15); color: var(--accent); }
+  .y11 { background: rgba(232,184,75,0.18); color: var(--gold); }
+  .y12 { background: rgba(255,94,107,0.15); color: var(--red); }
+  .meet-txt { color: var(--muted); font-size: 10px; line-height: 1.2; }
+
+  /* ── SEASON PEAKS ── */
+  .peaks-stack { display: flex; flex-direction: column; gap: 8px; }
+  .peak-season { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 8px; overflow: hidden; }
+  .ps-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid var(--navy-border); }
+  .ps-yr { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 1px; }
+  .ps-yr.c9 { color: var(--green); } .ps-yr.c10 { color: var(--accent); } .ps-yr.c11 { color: var(--gold); } .ps-yr.c12 { color: var(--red); }
+  .ps-wins { font-size: 10px; color: var(--muted); }
+  .ps-wins span { color: var(--win); font-weight: 700; color: var(--green); }
+  .ps-body { padding: 10px 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+  .ps-row { display: flex; justify-content: space-between; font-size: 11px; }
+  .ps-ev { color: var(--muted); }
+  .ps-mk { font-family: 'DM Mono', monospace; color: var(--white); font-size: 11px; }
+
+  /* ── CHART ── */
+  svg.chart { width: 100%; overflow: visible; }
+
+  /* ── NOTES ── */
+  .notes-stack { display: flex; flex-direction: column; gap: 8px; }
+  .note-item { background: var(--navy-card); border: 1px solid var(--navy-border); border-left: 3px solid var(--navy-border); border-radius: 8px; padding: 12px 14px; font-size: 12px; color: var(--silver); line-height: 1.55; }
+  .note-item.gold { border-left-color: var(--gold); }
+  .note-item.blue { border-left-color: var(--accent); }
+  .note-item.green { border-left-color: var(--green); }
+  .note-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+  .note-item.gold .note-label { color: var(--gold); }
+  .note-item.blue .note-label { color: var(--accent); }
+  .note-item.green .note-label { color: var(--green); }
+
+  footer { padding: 20px 16px env(safe-area-inset-bottom, 20px); text-align: center; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; border-top: 1px solid var(--navy-border); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">All Athletes</a>
+  <img src="logo.png" alt="Jaguars" class="nav-logo">
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-school">Jurupa Valley Jaguars · Girls · Horizontal &amp; Vertical Jumps</div>
+  <div class="hero-name">A.B.<br><em>Hernandez</em></div>
+  <div class="hero-pills">
+    <span class="pill gold">Triple Jump</span>
+    <span class="pill gold">Long Jump</span>
+    <span class="pill gold">High Jump</span>
+    <span class="pill">Relays</span>
+    <span class="pill nat">CA Top 10 · Nat Top 100</span>
+    <span class="pill">2023 – 2026</span>
+  </div>
+</div>
+
+<!-- PEAK BAR -->
+<div class="peak-bar">
+  <div class="peak-item">
+    <div class="peak-val">42'2"</div>
+    <div class="peak-lbl">TJ Career PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">20'8"</div>
+    <div class="peak-lbl">LJ Career PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">5'8"</div>
+    <div class="peak-lbl">HJ Career PR</div>
+  </div>
+</div>
+
+<!-- CAREER BESTS -->
+<div class="section">
+  <div class="sec-title">Career Personal Bests</div>
+  <div class="bests-grid">
+    <div class="best-card gold">
+      <div class="best-event">Triple Jump</div>
+      <div class="best-mark">42'2.75"<span class="pr-tag">PR</span></div>
+      <div class="best-note">11th · CIF State T&F Champ.<br>May 31, 2025 · 1st place</div>
+    </div>
+    <div class="best-card gold">
+      <div class="best-event">Long Jump</div>
+      <div class="best-mark">20'8.75"<span class="pr-tag">PR</span></div>
+      <div class="best-note">11th · CIF State T&F Champ.<br>May 31, 2025 · 2nd place</div>
+    </div>
+    <div class="best-card blue">
+      <div class="best-event">High Jump</div>
+      <div class="best-mark">5'8"<span class="pr-tag">PR</span></div>
+      <div class="best-note">12th · Roosevelt Inv.<br>Mar 7, 2026 · 1st place</div>
+    </div>
+    <div class="best-card green">
+      <div class="best-event">200 Meters</div>
+      <div class="best-mark">27.30<span class="pr-tag">PR</span></div>
+      <div class="best-note">9th · Inland Empire Champ.<br>Apr 15, 2023 · (1.3w)</div>
+    </div>
+    <div class="best-card blue">
+      <div class="best-event">Season Best TJ (12th)</div>
+      <div class="best-mark">41'3"</div>
+      <div class="best-note">12th · Rubidoux vs JV<br>Mar 12, 2026 · 1st place</div>
+    </div>
+    <div class="best-card green">
+      <div class="best-event">Season Best LJ (12th)</div>
+      <div class="best-mark">19'3"</div>
+      <div class="best-note">12th · JV vs La Sierra<br>Mar 19, 2026 · 1st (SB)</div>
+    </div>
+  </div>
+</div>
+
+<!-- MILESTONES -->
+<div class="section">
+  <div class="sec-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box">
+      <div class="ms-num gold">50+</div>
+      <div class="ms-lbl">🥇 1st Place</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-num green">15+</div>
+      <div class="ms-lbl">TJ ≥ 40'</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-num blue">10+</div>
+      <div class="ms-lbl">LJ ≥ 19'</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-num gold">3</div>
+      <div class="ms-lbl">CIF State Apps</div>
+    </div>
+  </div>
+</div>
+
+<!-- 2026 RANKINGS -->
+<div class="section">
+  <div class="sec-title">2026 Season Rankings</div>
+  <div class="rank-grid">
+    <div class="rank-card">
+      <div class="rank-event">Triple Jump — 41'3"</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top1">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val top1">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">SoCal</span><span class="rank-val top1">1st</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val top1">2nd</span></div>
+      <div class="rank-row"><span class="rank-scope">National</span><span class="rank-val top10">75th</span></div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-event">High Jump — 5'8"</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top1">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val top1">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">SoCal</span><span class="rank-val top1">1st</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val top1">2nd</span></div>
+      <div class="rank-row"><span class="rank-scope">National</span><span class="rank-val top10">98th</span></div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-event">Long Jump — 19'3"</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top1">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val top1">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">SoCal</span><span class="rank-val top10">4th</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val top10">10th</span></div>
+      <div class="rank-row"><span class="rank-scope">National</span><span class="rank-val ok">270th</span></div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-event">All Three Events</div>
+      <div class="rank-row" style="margin-top:6px"><span class="rank-scope" style="color:var(--gold);font-size:12px">River Valley #1</span></div>
+      <div class="rank-row"><span class="rank-scope" style="color:var(--gold);font-size:12px">in LJ, TJ &amp; HJ</span></div>
+      <div class="rank-row" style="margin-top:8px"><span class="rank-scope" style="color:var(--green);font-size:11px">CA Top 10 in all three</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- TRIPLE JUMP LOG -->
+<div class="section">
+  <div class="sec-title">Triple Jump — Full Career Log</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <!-- 9th -->
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">32'11.75"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Roosevelt T&F Inv.</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">31'10.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs A.B. Miller</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">34'5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Cougar Classic</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">31'7.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">SB vs JV</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">32'2"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Corona Relays</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">35'0"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs Indian Springs</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono win">36'0" <span style="font-size:9px;color:var(--accent)">SB</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">34'7.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Inland Empire Champ.</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">34'5"</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">35'7"</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">MVL Championships</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">35'3.5"</td><td><span class="place-dot pn">5</span></td><td class="meet-txt">CIF-SS D3 Track</td></tr>
+      <!-- 10th -->
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">36'5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">37'5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Roosevelt T&F Inv.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">37'11"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV at AB Miller</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">38'3.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Rancho Cucamonga K.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">37'10"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono win">39'11" <span style="font-size:9px;color:var(--accent)">SB</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV @ Pacific</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">38'10" (1.6)</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">Inland Empire Champ.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">39'7.25"</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">CIF-SS D3 Prelims</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">39'5.5" (0.3)</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">CIF-SS State (Finals)</td></tr>
+      <!-- 11th -->
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">40'0.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">41'2"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Roosevelt Inv.</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">41'3"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Rancho Cucamonga K.</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">41'4" (1.3)</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">65th Mt. SAC Relays</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">41'4" (0.1)</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">CIF-SS Finals</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">40'9.75" (0.7)</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">CIF State (Day 1)</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono pr">42'2.75" ★</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">CIF State Finals (PR)</td></tr>
+      <!-- 12th -->
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">40'7.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">38'4"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Roosevelt Inv.</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono win">41'3" <span style="font-size:9px;color:var(--accent)">SB</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">40'1"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs La Sierra</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">41'0.25"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- LONG JUMP LOG -->
+<div class="section">
+  <div class="sec-title">Long Jump — Full Career Log (Selected)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">16'2"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Roosevelt T&F Inv.</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">16'11"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs Indian Springs</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono win">17'0" <span style="font-size:9px;color:var(--accent)">SB</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Inland Empire Champ.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">18'4"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Roosevelt T&F Inv.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">18'7.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV @ Pacific</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono win">18'10.75" <span style="font-size:9px;color:var(--accent)">SB</span></td><td><span class="place-dot p3">3</span></td><td class="meet-txt">CIF-SS Masters Meet</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">18'4.75"</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">CIF-SS Finals</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">20'1.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs La Sierra</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">19'11.75"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">CIF State (Day 1)</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono pr">20'8.75" ★</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">CIF State Finals (PR)</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">18'9.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">18'2.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono win">19'3" <span style="font-size:9px;color:var(--accent)">SB</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs La Sierra</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">18'10"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- HIGH JUMP LOG -->
+<div class="section">
+  <div class="sec-title">High Jump — Career Log</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">4'4" <span style="font-size:9px;color:var(--accent)">SB</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">5'0"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Indian Springs vs JV</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono win">5'2" <span style="font-size:9px;color:var(--accent)">SB</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">5'0"</td><td><span class="place-dot pn">13</span></td><td class="meet-txt">CIF-SS D3 Prelims</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">5'2"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs Ramona</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">5'4"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Norte Vista vs JV</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">5'5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">CIF State (Day 1)</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono win">5'7" <span style="font-size:9px;color:var(--accent)">SB</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">CIF State Finals</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">5'6"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">5'8" ★</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Roosevelt Inv. (PR)</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">5'6"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs La Sierra</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">5'8"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SEASON PEAKS -->
+<div class="section">
+  <div class="sec-title">Season-By-Season Peaks</div>
+  <div class="peaks-stack">
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr c9">9th Grade · 2023</div>
+        <div class="ps-wins">TJ Wins: <span>8</span></div>
+      </div>
+      <div class="ps-body">
+        <div class="ps-row"><span class="ps-ev">Triple Jump</span><span class="ps-mk">36'0" SB</span></div>
+        <div class="ps-row"><span class="ps-ev">Long Jump</span><span class="ps-mk">17'0" SB</span></div>
+        <div class="ps-row"><span class="ps-ev">High Jump</span><span class="ps-mk">4'4"</span></div>
+        <div class="ps-row"><span class="ps-ev">200m</span><span class="ps-mk">27.30 PR</span></div>
+        <div class="ps-row"><span class="ps-ev">4×100</span><span class="ps-mk">52.22</span></div>
+      </div>
+    </div>
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr c10">10th Grade · 2024</div>
+        <div class="ps-wins">LJ/TJ Wins: <span>15+</span> · CIF State</div>
+      </div>
+      <div class="ps-body">
+        <div class="ps-row"><span class="ps-ev">Triple Jump</span><span class="ps-mk">39'11" SB</span></div>
+        <div class="ps-row"><span class="ps-ev">Long Jump</span><span class="ps-mk">18'10.75" SB</span></div>
+        <div class="ps-row"><span class="ps-ev">High Jump</span><span class="ps-mk">5'2" SB</span></div>
+        <div class="ps-row"><span class="ps-ev">1600m</span><span class="ps-mk">6:32.2h PB</span></div>
+      </div>
+    </div>
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr c11">11th Grade · 2025</div>
+        <div class="ps-wins">CIF State Champion — TJ 🏆</div>
+      </div>
+      <div class="ps-body">
+        <div class="ps-row"><span class="ps-ev">Triple Jump</span><span class="ps-mk">42'2.75" PR 🏆</span></div>
+        <div class="ps-row"><span class="ps-ev">Long Jump</span><span class="ps-mk">20'8.75" PR</span></div>
+        <div class="ps-row"><span class="ps-ev">High Jump</span><span class="ps-mk">5'7" SB</span></div>
+      </div>
+    </div>
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr c12">12th Grade · 2026</div>
+        <div class="ps-wins">CA #2 TJ · HJ PR 5'8"</div>
+      </div>
+      <div class="ps-body">
+        <div class="ps-row"><span class="ps-ev">Triple Jump</span><span class="ps-mk">41'3" SB</span></div>
+        <div class="ps-row"><span class="ps-ev">Long Jump</span><span class="ps-mk">19'3" SB</span></div>
+        <div class="ps-row"><span class="ps-ev">High Jump</span><span class="ps-mk">5'8" PR</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TJ PROGRESSION CHART -->
+<div class="section">
+  <div class="sec-title">Triple Jump — Season Progression</div>
+  <svg class="chart" viewBox="0 0 340 180" preserveAspectRatio="xMidYMid meet">
+    <!-- grid: 34'=140, 44'=20 → 10'=120px, 1'=12px -->
+    <line x1="40" y1="20"  x2="320" y2="20"  stroke="#1a2d4a" stroke-width="1"/>
+    <line x1="40" y1="56"  x2="320" y2="56"  stroke="#1a2d4a" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="40" y1="92"  x2="320" y2="92"  stroke="#1a2d4a" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="40" y1="128" x2="320" y2="128" stroke="#1a2d4a" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="40" y1="140" x2="320" y2="140" stroke="#1a2d4a" stroke-width="1"/>
+    <text x="2" y="23"  font-family="'DM Mono',monospace" font-size="8" fill="#5a7299">44'</text>
+    <text x="2" y="59"  font-family="'DM Mono',monospace" font-size="8" fill="#5a7299">41'</text>
+    <text x="2" y="95"  font-family="'DM Mono',monospace" font-size="8" fill="#5a7299">38'</text>
+    <text x="2" y="131" font-family="'DM Mono',monospace" font-size="8" fill="#5a7299">35'</text>
+    <!-- 40' threshold -->
+    <line x1="40" y1="68" x2="320" y2="68" stroke="rgba(232,184,75,0.3)" stroke-width="1.5"/>
+    <text x="290" y="65" font-family="'DM Mono',monospace" font-size="7" fill="rgba(232,184,75,0.6)">40'</text>
+    <!-- season bests: 36'0"=9th, 39'11"=10th, 42'2.75"=11th, 41'3"=12th -->
+    <!-- 36'0" = 140 - (36-34)*12 = 140-24 = 116 -->
+    <!-- 39'11" ≈ 39.92' = 140-(5.92*12) = 140-71 = 69 -->
+    <!-- 42'2.75" ≈ 42.23' = 140-(8.23*12) = 140-98.7 = 41.3 -->
+    <!-- 41'3" ≈ 41.25' = 140-(7.25*12) = 140-87 = 53 -->
+    <defs>
+      <linearGradient id="abgrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#e8b84b"/>
+        <stop offset="100%" stop-color="transparent"/>
+      </linearGradient>
+    </defs>
+    <polyline points="70,116 160,69 250,41 310,53" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="70,116 160,69 250,41 310,53 310,140 70,140" fill="url(#abgrad)" opacity="0.2"/>
+    <circle cx="70"  cy="116" r="5" fill="var(--green)"/>
+    <circle cx="160" cy="69"  r="5" fill="var(--accent)"/>
+    <circle cx="250" cy="41"  r="7" fill="var(--gold)"/>
+    <circle cx="310" cy="53"  r="5" fill="var(--red)"/>
+    <text x="70"  y="108" font-family="'DM Mono',monospace" font-size="9" fill="var(--green)"  text-anchor="middle">36'0"</text>
+    <text x="160" y="61"  font-family="'DM Mono',monospace" font-size="9" fill="var(--accent)" text-anchor="middle">39'11"</text>
+    <text x="250" y="33"  font-family="'DM Mono',monospace" font-size="9" fill="var(--gold)"   text-anchor="middle">42'2" ★</text>
+    <text x="310" y="45"  font-family="'DM Mono',monospace" font-size="9" fill="var(--red)"    text-anchor="middle">41'3"</text>
+    <text x="70"  y="158" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="var(--green)"  text-anchor="middle" font-weight="600">9th</text>
+    <text x="160" y="158" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="var(--accent)" text-anchor="middle" font-weight="600">10th</text>
+    <text x="250" y="158" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="var(--gold)"   text-anchor="middle" font-weight="600">11th</text>
+    <text x="310" y="158" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="var(--red)"    text-anchor="middle" font-weight="600">12th</text>
+  </svg>
+</div>
+
+<!-- COACHING NOTES -->
+<div class="section">
+  <div class="sec-title">Coaching Notes &amp; Trajectory</div>
+  <div class="notes-stack">
+    <div class="note-item gold">
+      <div class="note-label">Triple Jump</div>
+      Season peaks: 36'0" → 39'11" → 42'2.75" (CIF State Champion) → 41'3" early senior season. Won TJ at virtually every meet she has entered in her career. Career low of under 32' as a 9th grader to California's #2 performer as a senior. <strong>Trajectory points toward 43'+ by end of senior year.</strong>
+    </div>
+    <div class="note-item blue">
+      <div class="note-label">Long Jump</div>
+      Season peaks: 17'0" → 18'10.75" → 20'8.75" → 19'3" (early 12th). The 20'8" at CIF State in 11th grade is elite-level. Currently CA #10 early in her senior season — expect 20'+ marks to return. Sub-20' in early 2026 meets reflects early-season build, not ceiling.
+    </div>
+    <div class="note-item green">
+      <div class="note-label">High Jump</div>
+      Dramatic improvement: 4'4" (9th) → 5'2" (10th) → 5'7" (11th) → 5'8" PR (12th). Currently River Valley #1, SoCal #1, CA #2. A third event at an elite level makes her arguably the most complete field athlete in the program's history.
+    </div>
+  </div>
+</div>
+
+<footer>A.B. Hernandez · Jurupa Valley HS Jaguars · 2023–2026 · Compiled by Coach Kevin Garcia</footer>
+</body>
+</html>

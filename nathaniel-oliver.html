@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Nathaniel Oliver — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #080f1e;
+    --navy-mid: #0e1b30;
+    --navy-card: #111e34;
+    --navy-border: #1a2d4a;
+    --silver: #b8c8e0;
+    --silver-light: #dce8f5;
+    --white: #f0f5ff;
+    --gold: #e8b84b;
+    --gold-dim: rgba(232,184,75,0.15);
+    --accent: #38beff;
+    --accent-dim: rgba(56,190,255,0.12);
+    --green: #3de8a0;
+    --green-dim: rgba(61,232,160,0.12);
+    --red: #ff5e6b;
+    --red-dim: rgba(255,94,107,0.12);
+    --muted: #5a7299;
+    --win: #3de8a0;
+    --podium: #e8b84b;
+    --pr-col: #ff5e6b;
+    --injury: #ff8c42;
+    --injury-dim: rgba(255,140,66,0.12);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--silver-light);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    max-width: 540px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #050c18 0%, #0c1929 60%, #0a1830 100%);
+    padding: env(safe-area-inset-top, 16px) 20px 24px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--navy-border);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,184,75,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-school {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .hero-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    letter-spacing: 1.5px;
+    color: var(--white);
+    line-height: 0.9;
+  }
+  .hero-name em {
+    color: var(--gold);
+    font-style: normal;
+  }
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--navy-border);
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--silver);
+    text-transform: uppercase;
+  }
+  .pill.gold { border-color: rgba(232,184,75,0.4); color: var(--gold); background: var(--gold-dim); }
+  .pill.blue { border-color: rgba(56,190,255,0.3); color: var(--accent); background: var(--accent-dim); }
+
+  /* ── PEAK STATS BAR ── */
+  .peak-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-bottom: 1px solid var(--navy-border);
+  }
+  .peak-item {
+    padding: 14px 12px;
+    text-align: center;
+    border-right: 1px solid var(--navy-border);
+  }
+  .peak-item:last-child { border-right: none; }
+  .peak-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .peak-lbl {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ── SECTIONS ── */
+  .section { padding: 20px 16px; border-bottom: 1px solid var(--navy-border); }
+  .section:last-child { border-bottom: none; }
+
+  .sec-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sec-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--navy-border);
+  }
+
+  /* ── BESTS GRID ── */
+  .bests-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .best-card {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 8px;
+    padding: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .best-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+  }
+  .best-card.hurdle::before { background: var(--gold); }
+  .best-card.sprint::before { background: var(--accent); }
+  .best-card.jump::before { background: var(--green); }
+  .best-card.relay::before { background: var(--silver); }
+  .best-event {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .best-mark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--white);
+    line-height: 1;
+  }
+  .best-mark .pr { color: var(--pr-col); }
+  .best-note {
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 3px;
+    line-height: 1.3;
+  }
+  .pr-tag {
+    display: inline-block;
+    background: var(--pr-col);
+    color: #fff;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 1px 4px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-left: 3px;
+  }
+
+  /* ── MILESTONES ── */
+  .ms-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+  .ms-box {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 8px;
+    padding: 10px 6px;
+    text-align: center;
+  }
+  .ms-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    line-height: 1;
+  }
+  .ms-num.gold { color: var(--gold); }
+  .ms-num.green { color: var(--green); }
+  .ms-num.blue { color: var(--accent); }
+  .ms-num.red { color: var(--red); }
+  .ms-lbl { font-size: 8px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+
+  /* ── RANKINGS ── */
+  .rank-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .rank-card {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .rank-event { font-size: 10px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .rank-row { display: flex; justify-content: space-between; align-items: center; font-size: 11px; padding: 2px 0; }
+  .rank-scope { color: var(--silver); }
+  .rank-val { font-family: 'DM Mono', monospace; font-size: 11px; }
+  .rank-val.top { color: var(--gold); font-weight: 500; }
+  .rank-val.good { color: var(--green); }
+  .rank-val.ok { color: var(--silver); }
+
+  /* ── LOG TABLES ── */
+  .log-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .log-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    padding: 5px 6px;
+    text-align: left;
+    border-bottom: 1px solid var(--navy-border);
+  }
+  .log-table td { padding: 7px 6px; border-bottom: 1px solid rgba(255,255,255,0.03); vertical-align: middle; }
+  .log-table tr:last-child td { border-bottom: none; }
+  .log-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .mark-mono { font-family: 'DM Mono', monospace; font-weight: 500; color: var(--white); font-size: 13px; }
+  .mark-mono.pr { color: var(--pr-col); }
+  .mark-mono.win { color: var(--green); }
+  .place-dot {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 22px; height: 22px;
+    border-radius: 11px;
+    font-size: 10px; font-weight: 700;
+  }
+  .p1 { background: var(--green); color: #042814; }
+  .p2 { background: var(--silver); color: var(--navy); }
+  .p3 { background: var(--gold); color: #2a1800; }
+  .pn { background: rgba(255,255,255,0.06); color: var(--muted); padding: 0 6px; font-size: 9px; }
+  .yr-chip {
+    font-size: 9px; font-weight: 700; letter-spacing: 1px;
+    padding: 2px 5px; border-radius: 3px;
+    white-space: nowrap;
+  }
+  .y9 { background: rgba(61,232,160,0.15); color: var(--green); }
+  .y10 { background: rgba(56,190,255,0.15); color: var(--accent); }
+  .y11 { background: rgba(255,94,107,0.15); color: var(--red); }
+  .y12 { background: rgba(232,184,75,0.15); color: var(--gold); }
+  .meet-txt { color: var(--muted); font-size: 10px; line-height: 1.2; }
+
+  /* ── SEASON PEAKS ── */
+  .peaks-stack { display: flex; flex-direction: column; gap: 8px; }
+  .peak-season {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .ps-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--navy-border);
+  }
+  .ps-yr {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .ps-yr.y9c { color: var(--green); }
+  .ps-yr.y10c { color: var(--accent); }
+  .ps-yr.y11c { color: var(--red); }
+  .ps-yr.y12c { color: var(--gold); }
+  .ps-wins { font-size: 10px; color: var(--muted); }
+  .ps-wins span { color: var(--win); font-weight: 700; }
+  .ps-body { padding: 10px 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+  .ps-row { display: flex; justify-content: space-between; font-size: 11px; }
+  .ps-ev { color: var(--muted); }
+  .ps-mk { font-family: 'DM Mono', monospace; color: var(--white); font-size: 11px; }
+  .injury-note {
+    background: var(--injury-dim);
+    border-top: 1px solid rgba(255,140,66,0.2);
+    padding: 6px 14px;
+    font-size: 10px;
+    color: var(--injury);
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  /* ── CHART ── */
+  .chart-wrap { margin-top: 4px; }
+  svg.chart { width: 100%; overflow: visible; }
+
+  /* ── ADVERSITY ── */
+  .adversity-section {
+    background: linear-gradient(135deg, #120c06 0%, #1a1006 50%, #120c06 100%);
+    border: 1px solid rgba(255,140,66,0.25);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .adv-header {
+    background: rgba(255,140,66,0.1);
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,140,66,0.2);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .adv-icon { font-size: 22px; }
+  .adv-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--injury);
+  }
+  .adv-sub { font-size: 10px; color: rgba(255,140,66,0.6); letter-spacing: 1px; }
+  .adv-timeline { padding: 4px 0; }
+  .adv-item {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 14px;
+    position: relative;
+    padding: 14px 16px 14px 0;
+    margin-left: 16px;
+  }
+  .adv-item + .adv-item { border-top: 1px solid rgba(255,140,66,0.08); }
+  .adv-line {
+    width: 3px;
+    border-radius: 2px;
+    position: relative;
+  }
+  .adv-item.injury .adv-line { background: var(--injury); }
+  .adv-item.triumph .adv-line { background: var(--gold); }
+  .adv-item.comeback .adv-line { background: var(--green); }
+  .adv-yr-tag {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+  }
+  .adv-item.injury .adv-yr-tag { color: var(--injury); }
+  .adv-item.triumph .adv-yr-tag { color: var(--gold); }
+  .adv-item.comeback .adv-yr-tag { color: var(--green); }
+  .adv-text { font-size: 12px; color: var(--silver); line-height: 1.5; }
+  .adv-result {
+    margin-top: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--silver-light);
+  }
+  .adv-item.triumph .adv-result { background: var(--gold-dim); color: var(--gold); }
+  .adv-item.comeback .adv-result { background: var(--green-dim); color: var(--green); }
+
+  /* ── COACHING NOTES ── */
+  .notes-stack { display: flex; flex-direction: column; gap: 8px; }
+  .note-item {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--navy-border);
+    font-size: 12px;
+    color: var(--silver);
+    line-height: 1.55;
+  }
+  .note-item.gold { border-left-color: var(--gold); }
+  .note-item.blue { border-left-color: var(--accent); }
+  .note-item.green { border-left-color: var(--green); }
+  .note-item.orange { border-left-color: var(--injury); }
+  .note-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .note-item.gold .note-label { color: var(--gold); }
+  .note-item.blue .note-label { color: var(--accent); }
+  .note-item.green .note-label { color: var(--green); }
+  .note-item.orange .note-label { color: var(--injury); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 20px 16px env(safe-area-inset-bottom, 20px);
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    border-top: 1px solid var(--navy-border);
+  }
+
+  /* ── MOBILE REFINEMENTS ── */
+  @media (max-width: 400px) {
+    .hero-name { font-size: 44px; }
+    .bests-grid { grid-template-columns: 1fr 1fr; }
+    .ms-grid { grid-template-columns: repeat(4, 1fr); }
+    .rank-grid { grid-template-columns: 1fr; }
+    .ps-body { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 541px) {
+    body { border-left: 1px solid var(--navy-border); border-right: 1px solid var(--navy-border); }
+  }
+  .site-nav { background: rgba(8,15,30,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--navy-border); padding: env(safe-area-inset-top, 0px) 16px 0; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 12px; height: 48px; }
+  .nav-back { color: var(--accent); text-decoration: none; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; gap: 4px; }
+  .nav-back::before { content: "←"; }
+  .nav-logo { width: 28px; height: auto; margin-left: auto; opacity: 0.7; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">All Athletes</a>
+  <img src="logo.png" alt="Jaguars" class="nav-logo">
+</nav>
+
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-school">Jurupa Valley High School · Jaguars T&F · Career Report</div>
+  <div class="hero-name">Nathaniel<br><em>Oliver</em></div>
+  <div class="hero-pills">
+    <span class="pill gold">110m Hurdles</span>
+    <span class="pill gold">300m Hurdles</span>
+    <span class="pill blue">High Jump</span>
+    <span class="pill">Sprints</span>
+    <span class="pill">2023 – 2026</span>
+  </div>
+</div>
+
+<!-- ══ PEAK STATS BAR ══ -->
+<div class="peak-bar">
+  <div class="peak-item">
+    <div class="peak-val">16.47</div>
+    <div class="peak-lbl">110mH PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">39.77</div>
+    <div class="peak-lbl">300mH PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">6'0"</div>
+    <div class="peak-lbl">HJ PR</div>
+  </div>
+</div>
+
+<!-- ══ CAREER PERSONAL BESTS ══ -->
+<div class="section">
+  <div class="sec-title">Career Personal Bests</div>
+  <div class="bests-grid">
+    <div class="best-card hurdle">
+      <div class="best-event">110m Hurdles 39"</div>
+      <div class="best-mark">16.47<span class="pr-tag">PR</span></div>
+      <div class="best-note">12th · JV vs La Sierra<br>Mar 19, 2026 · 1st place</div>
+    </div>
+    <div class="best-card hurdle">
+      <div class="best-event">300m Hurdles 36"</div>
+      <div class="best-mark">39.77<span class="pr-tag">PR</span></div>
+      <div class="best-note">12th · JV vs La Sierra<br>Mar 19, 2026 · 1st place</div>
+    </div>
+    <div class="best-card jump">
+      <div class="best-event">High Jump</div>
+      <div class="best-mark">6'0"<span class="pr-tag">PR</span></div>
+      <div class="best-note">12th · JV vs La Sierra<br>Mar 19, 2026 · 1st place</div>
+    </div>
+    <div class="best-card sprint">
+      <div class="best-event">100 Meters</div>
+      <div class="best-mark">11.77<span class="pr-tag">PR</span></div>
+      <div class="best-note">12th · Corona Relays<br>Feb 28, 2026 · (0.8w)</div>
+    </div>
+    <div class="best-card sprint">
+      <div class="best-event">200 Meters</div>
+      <div class="best-mark">24.34<span class="pr-tag">PR</span></div>
+      <div class="best-note">12th · Roosevelt Inv.<br>Mar 7, 2026 · (-2.0w)</div>
+    </div>
+    <div class="best-card sprint">
+      <div class="best-event">400 Meters</div>
+      <div class="best-mark">54.48<span class="pr-tag">PR</span></div>
+      <div class="best-note">12th · Roosevelt Inv.<br>Mar 7, 2026</div>
+    </div>
+    <div class="best-card relay">
+      <div class="best-event">110mH Season Best 9th</div>
+      <div class="best-mark">18.33</div>
+      <div class="best-note">MVL Championships<br>Apr 27, 2023</div>
+    </div>
+    <div class="best-card relay">
+      <div class="best-event">300mH Season Best 9th</div>
+      <div class="best-mark">45.04</div>
+      <div class="best-note">MVL Championships · SB<br>Apr 27, 2023</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MILESTONES ══ -->
+<div class="section">
+  <div class="sec-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box">
+      <div class="ms-num gold">18</div>
+      <div class="ms-lbl">🥇 1st Place</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-num green">25+</div>
+      <div class="ms-lbl">Top-3 Finishes</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-num blue">4</div>
+      <div class="ms-lbl">110mH Sub-17</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-num red">3</div>
+      <div class="ms-lbl">Injuries Overcome</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ OVERCOMING ADVERSITY ══ -->
+<div class="section">
+  <div class="sec-title">Overcoming Adversity</div>
+  <div class="adversity-section">
+    <div class="adv-header">
+      <div class="adv-icon">🦅</div>
+      <div>
+        <div class="adv-title">Built Through Battles</div>
+        <div class="adv-sub">3 major injuries · 4 seasons · never quit</div>
+      </div>
+    </div>
+    <div class="adv-timeline">
+
+      <div class="adv-item injury">
+        <div class="adv-line"></div>
+        <div>
+          <div class="adv-yr-tag">10TH GRADE — BROKEN WRIST</div>
+          <div class="adv-text">Fractured his wrist in the pre-season of his sophomore year. Missed the majority of the season with DNS marks across 200m, 400m, and 800m. Competed sparingly and fought through the pain.</div>
+          <div class="adv-result">⚠️ Most of sophomore season lost to injury</div>
+        </div>
+      </div>
+
+      <div class="adv-item triumph">
+        <div class="adv-line"></div>
+        <div>
+          <div class="adv-yr-tag">10TH GRADE — REFUSED TO QUIT</div>
+          <div class="adv-text">Despite the injury, came back to post PRs in 110mH (17.09) and 300mH (42.63). Earned CIF-SS D3 berths in both hurdles events. Won the Mountain Valley League Championship in 300m Hurdles.</div>
+          <div class="adv-result">🏆 MVL 300mH Champion · CIF Qualifier · PRs in both hurdles</div>
+        </div>
+      </div>
+
+      <div class="adv-item injury">
+        <div class="adv-line"></div>
+        <div>
+          <div class="adv-yr-tag">11TH GRADE — HAMSTRING + BROKEN ELBOW</div>
+          <div class="adv-text">Opened junior year with a nagging hamstring injury, missing the first 3 weeks of the season. Returned at the Raincross Invitational — and in his very first high heat of 110m Hurdles, fell over a hurdle and broke his elbow. His entire junior season was over in a single race.</div>
+          <div class="adv-result">⚠️ Season ended at Raincross — 1 week back from hamstring</div>
+        </div>
+      </div>
+
+      <div class="adv-item comeback">
+        <div class="adv-line"></div>
+        <div>
+          <div class="adv-yr-tag">12TH GRADE — THE RETURN</div>
+          <div class="adv-text">Returns to Raincross as a senior — healthy, focused, and dominant. Wins the 110m Hurdles Raincross Traditional Riverside City Championship in commanding fashion, finishing nearly a full second ahead of the runner-up. Goes on to set PRs in every single event he enters his senior year.</div>
+          <div class="adv-result">🏆 Raincross City Champion · PRs across 110mH, 300mH, HJ, 100m, 200m, 400m</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ 110m HURDLES LOG ══ -->
+<div class="section">
+  <div class="sec-title">110m Hurdles — Full Career Log</div>
+  <table class="log-table">
+    <thead>
+      <tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet / Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">20.24c</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">JV vs A.B. Miller</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">20.04c</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">SB vs JV</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">19.61 <span style="font-size:9px">(-0.8)</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Corona Relays</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">18.74c</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">JV vs Indian Springs</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">19.15 <span style="font-size:9px">(0.5)</span></td><td><span class="place-dot pn">8</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">18.94c</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">JV vs Pacific</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">18.72 <span style="font-size:9px">(1.8)</span></td><td><span class="place-dot pn">12</span></td><td class="meet-txt">Inland Empire Champ.</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">18:44.24c</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">18.33 <span style="font-size:9px;color:var(--accent2)">SB</span></td><td><span class="place-dot p3">3</span></td><td class="meet-txt">MVL Championships</td></tr>
+      <!-- 10th -->
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono win">17.80 <span style="font-size:9px">(0.0)</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV @ Pacific</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">19.03 <span style="font-size:9px">(1.3)</span></td><td><span class="place-dot pn">18</span></td><td class="meet-txt">Inland Empire Champ.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono win">17.74c</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs Rubidoux</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">17.29 <span style="font-size:9px">(0.9)</span></td><td><span class="place-dot p2">2</span></td><td class="meet-txt">MVL Championships</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">17.09 <span style="font-size:9px;color:var(--accent2)">(0.4) SB</span></td><td><span class="place-dot pn">22</span></td><td class="meet-txt">CIF-SS D3 Prelims</td></tr>
+      <!-- 11th — injury season -->
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono" style="color:var(--muted)">DNS</td><td>—</td><td class="meet-txt" style="color:var(--injury)">Yorba Linda (hamstring)</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono">19.79 <span style="font-size:9px">(-4.0)</span></td><td><span class="place-dot pn">12</span></td><td class="meet-txt" style="color:var(--injury)">Raincross ⚠️ broke elbow</td></tr>
+      <!-- 12th -->
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono win">16.55 <span style="font-size:9px">(0.7)</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Corona Relays</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono win">16.98 <span style="font-size:9px">(-2.5)</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">16.47 ★</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs La Sierra (PR)</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono win">16.48 <span style="font-size:9px">(-1.1)</span></td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Raincross Inv. 🏆</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ 300m HURDLES LOG ══ -->
+<div class="section">
+  <div class="sec-title">300m Hurdles — Full Career Log</div>
+  <table class="log-table">
+    <thead>
+      <tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">47.84c</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">JV vs Pacific</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">47.14c</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">45.04 <span style="font-size:9px;color:var(--accent2)">SB</span></td><td><span class="place-dot p3">3</span></td><td class="meet-txt">MVL Championships</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">47.74</td><td><span class="place-dot pn">26</span></td><td class="meet-txt">CIF-SS D3 Track</td></tr>
+      <!-- 10th -->
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono win">43.94c</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Indian Springs vs JV</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">44.15</td><td><span class="place-dot pn">7</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono win">44.06</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV @ Pacific</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">46.88</td><td><span class="place-dot pn">24</span></td><td class="meet-txt">Inland Empire Champ.</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono win">43.44c</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs Rubidoux</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono win">42.92</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">MVL Championships 🏆</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="mark-mono">42.63 <span style="font-size:9px;color:var(--accent2)">SB</span></td><td><span class="place-dot pn">18</span></td><td class="meet-txt">CIF-SS D3 Prelims</td></tr>
+      <!-- 11th -->
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono" style="color:var(--muted)">DNS</td><td>—</td><td class="meet-txt" style="color:var(--injury)">Yorba Linda (hamstring)</td></tr>
+      <tr style="background:rgba(255,94,107,0.04)"><td><span class="yr-chip y11">11</span></td><td class="mark-mono" style="color:var(--muted)">DNS</td><td>—</td><td class="meet-txt" style="color:var(--injury)">Raincross ⚠️ broken elbow</td></tr>
+      <!-- 12th -->
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono win">40.67</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono win">40.93</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">39.77 ★</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs La Sierra (PR)</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">40.70</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ HIGH JUMP LOG ══ -->
+<div class="section">
+  <div class="sec-title">High Jump — Career Log</div>
+  <table class="log-table">
+    <thead>
+      <tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono" style="color:var(--muted)">NH</td><td>—</td><td class="meet-txt">Patriot vs JV</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">5'2"</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">JV vs A.B. Miller</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">5'4" <span style="font-size:9px;color:var(--accent2)">SB</span></td><td><span class="place-dot p2">2</span></td><td class="meet-txt">SB vs JV</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">5'2"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Corona Relays</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">5'0"</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">JV vs Indian Springs</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">5'2"</td><td><span class="place-dot pn">10</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">5'0"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs Pacific</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">5'3"</td><td><span class="place-dot pn">10</span></td><td class="meet-txt">Inland Empire Champ.</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">5'0"</td><td>—</td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">5'2"</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">MVL Championships</td></tr>
+      <!-- 12th -->
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">5'6"</td><td><span class="place-dot pn">5</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono" style="color:var(--muted)">NH</td><td>—</td><td class="meet-txt">Corona Relays</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">6'0" ★</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs La Sierra (PR / School Record)</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="mark-mono">6'0"</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">Raincross Inv.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ SPRINTS LOG ══ -->
+<div class="section">
+  <div class="sec-title">Sprints — Career Log</div>
+  <table class="log-table">
+    <thead>
+      <tr><th>Yr</th><th>Event</th><th>Mark</th><th>Pl</th><th>Meet</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="meet-txt">100m</td><td class="mark-mono">14.06</td><td><span class="place-dot pn">5</span></td><td class="meet-txt">Patriot vs JV</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="meet-txt">100m</td><td class="mark-mono">12.96 <span style="font-size:9px">(-0.9)</span></td><td><span class="place-dot pn">8</span></td><td class="meet-txt">Corona Relays (SB)</td></tr>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="meet-txt">100m</td><td class="mark-mono">13.54c</td><td><span class="place-dot pn">5</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="meet-txt">100m</td><td class="mark-mono">12.57 <span style="font-size:9px">(-0.3)</span></td><td><span class="place-dot pn">33</span></td><td class="meet-txt">Raincross Inv. (SB)</td></tr>
+      <tr style="background:rgba(56,190,255,0.03)"><td><span class="yr-chip y10">10</span></td><td class="meet-txt">100m</td><td class="mark-mono">13.04c</td><td><span class="place-dot pn">6</span></td><td class="meet-txt">JV vs Rubidoux</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="meet-txt">100m</td><td class="mark-mono pr">11.77 <span style="font-size:9px">(0.8)</span> ★</td><td><span class="place-dot pn">8</span></td><td class="meet-txt">Corona Relays (PR)</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="meet-txt">200m</td><td class="mark-mono pr">24.34 <span style="font-size:9px">(-2.0)</span> ★</td><td><span class="place-dot pn">23</span></td><td class="meet-txt">Roosevelt Inv. (PR)</td></tr>
+      <tr style="background:rgba(232,184,75,0.04)"><td><span class="yr-chip y12">12</span></td><td class="meet-txt">400m</td><td class="mark-mono pr">54.48 ★</td><td><span class="place-dot pn">27</span></td><td class="meet-txt">Roosevelt Inv. (PR)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ SEASON PEAKS ══ -->
+<div class="section">
+  <div class="sec-title">Season-By-Season Peaks</div>
+  <div class="peaks-stack">
+
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr y9c">9th Grade · 2023</div>
+        <div class="ps-wins">Wins: <span>3</span> · Top-3: <span>8</span></div>
+      </div>
+      <div class="ps-body">
+        <div class="ps-row"><span class="ps-ev">100m</span><span class="ps-mk">12.96</span></div>
+        <div class="ps-row"><span class="ps-ev">110mH</span><span class="ps-mk">18.33 SB</span></div>
+        <div class="ps-row"><span class="ps-ev">300mH</span><span class="ps-mk">45.04 SB</span></div>
+        <div class="ps-row"><span class="ps-ev">High Jump</span><span class="ps-mk">5'4" SB</span></div>
+        <div class="ps-row"><span class="ps-ev">4×100</span><span class="ps-mk">49.74c</span></div>
+        <div class="ps-row"><span class="ps-ev">4×400</span><span class="ps-mk">3:59.33</span></div>
+      </div>
+    </div>
+
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr y10c">10th Grade · 2024</div>
+        <div class="ps-wins">Wins: <span>6</span> · Top-3: <span>9</span></div>
+      </div>
+      <div class="ps-body">
+        <div class="ps-row"><span class="ps-ev">100m</span><span class="ps-mk">12.57 SB</span></div>
+        <div class="ps-row"><span class="ps-ev">110mH</span><span class="ps-mk">17.09 SB</span></div>
+        <div class="ps-row"><span class="ps-ev">300mH</span><span class="ps-mk">42.63 SB 🏆</span></div>
+        <div class="ps-row"><span class="ps-ev">4×100</span><span class="ps-mk">47.84c</span></div>
+      </div>
+      <div class="injury-note">⚠️ Broken wrist — pre-season · missed most of year</div>
+    </div>
+
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr y11c">11th Grade · 2025</div>
+        <div class="ps-wins" style="color:var(--injury)">Season ended at Raincross</div>
+      </div>
+      <div class="ps-body">
+        <div class="ps-row"><span class="ps-ev">110mH</span><span class="ps-mk">19.79 (-4.0w)</span></div>
+      </div>
+      <div class="injury-note">⚠️ Hamstring (3 wks) → broken elbow at Raincross 110mH heat</div>
+    </div>
+
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr y12c">12th Grade · 2026</div>
+        <div class="ps-wins">Wins: <span>9+</span> · PRs in every event</div>
+      </div>
+      <div class="ps-body">
+        <div class="ps-row"><span class="ps-ev">100m</span><span class="ps-mk">11.77 PR</span></div>
+        <div class="ps-row"><span class="ps-ev">200m</span><span class="ps-mk">24.34 PR</span></div>
+        <div class="ps-row"><span class="ps-ev">400m</span><span class="ps-mk">54.48 PR</span></div>
+        <div class="ps-row"><span class="ps-ev">110mH</span><span class="ps-mk">16.47 PR</span></div>
+        <div class="ps-row"><span class="ps-ev">300mH</span><span class="ps-mk">39.77 PR</span></div>
+        <div class="ps-row"><span class="ps-ev">High Jump</span><span class="ps-mk">6'0" PR</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ HURDLE PROGRESSION CHART ══ -->
+<div class="section">
+  <div class="sec-title">110mH Season Peaks — Progression</div>
+  <div class="chart-wrap">
+    <svg class="chart" viewBox="0 0 340 180" preserveAspectRatio="xMidYMid meet">
+      <!-- grid -->
+      <line x1="40" y1="20" x2="320" y2="20" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="60" x2="320" y2="60" stroke="#1a2d4a" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="40" y1="100" x2="320" y2="100" stroke="#1a2d4a" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="40" y1="140" x2="320" y2="140" stroke="#1a2d4a" stroke-width="1"/>
+      <!-- labels: 16=20, 18=100, 20=180... scale: 4sec span in 120px = 30px/sec -->
+      <text x="2" y="23" font-family="'DM Mono',monospace" font-size="8" fill="#5a7299">16s</text>
+      <text x="2" y="63" font-family="'DM Mono',monospace" font-size="8" fill="#5a7299">17s</text>
+      <text x="2" y="103" font-family="'DM Mono',monospace" font-size="8" fill="#5a7299">18s</text>
+      <text x="2" y="143" font-family="'DM Mono',monospace" font-size="8" fill="#5a7299">19s</text>
+      <!-- scale: 16.0=20, 20.0=140. 4s=120px. 1s=30px -->
+      <!-- 18.33 = 16 + 2.33 = 20 + 69.9 = 89.9 ≈ 90 -->
+      <!-- 17.09 = 16 + 1.09 = 20 + 32.7 = 52.7 ≈ 53 — 10th -->
+      <!-- 19.79 = 16 + 3.79 = 20 + 113.7 = 133.7 ≈ 134 — 11th injury -->
+      <!-- 16.47 = 16 + 0.47 = 20 + 14.1 = 34.1 ≈ 34 — 12th PR -->
+      <!-- x positions: 9th=70, 10th=150, 11th=220, 12th=300 -->
+
+      <!-- injury zone -->
+      <rect x="200" y="20" width="50" height="120" fill="rgba(255,94,107,0.04)" rx="2"/>
+      <text x="225" y="155" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,94,107,0.5)" text-anchor="middle">INJURY</text>
+
+      <!-- sub-17 line -->
+      <line x1="40" y1="50" x2="320" y2="50" stroke="rgba(232,184,75,0.25)" stroke-width="1.5" stroke-dasharray="6,3"/>
+      <text x="322" y="53" font-family="'DM Mono',monospace" font-size="7" fill="rgba(232,184,75,0.5)">17s</text>
+
+      <!-- data points: connected -->
+      <!-- connect 9th to 10th to 12th (skip 11th injury) -->
+      <polyline points="70,90 150,53" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+      <polyline points="150,53 225,134" fill="none" stroke="rgba(255,94,107,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polyline points="300,34 225,134" fill="none" stroke="var(--green)" stroke-width="2" stroke-dasharray="0"/>
+
+      <!-- dots -->
+      <circle cx="70" cy="90" r="5" fill="var(--green)"/>
+      <circle cx="150" cy="53" r="5" fill="var(--accent)"/>
+      <circle cx="225" cy="134" r="5" fill="rgba(255,94,107,0.7)"/>
+      <circle cx="300" cy="34" r="7" fill="var(--gold)"/>
+      <circle cx="300" cy="34" r="4" fill="var(--navy)"/>
+      <circle cx="300" cy="34" r="7" fill="none" stroke="var(--gold)" stroke-width="2"/>
+
+      <!-- value labels -->
+      <text x="70" y="82" font-family="'DM Mono',monospace" font-size="9" fill="var(--green)" text-anchor="middle">18.33</text>
+      <text x="150" y="45" font-family="'DM Mono',monospace" font-size="9" fill="var(--accent)" text-anchor="middle">17.09</text>
+      <text x="225" y="150" font-family="'DM Mono',monospace" font-size="8" fill="rgba(255,94,107,0.7)" text-anchor="middle">⚠ 19.79</text>
+      <text x="300" y="26" font-family="'DM Mono',monospace" font-size="9" fill="var(--gold)" text-anchor="middle">16.47 ★</text>
+
+      <!-- grade labels -->
+      <text x="70" y="168" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="var(--green)" text-anchor="middle" font-weight="600">9th</text>
+      <text x="150" y="168" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="var(--accent)" text-anchor="middle" font-weight="600">10th</text>
+      <text x="225" y="168" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="rgba(255,94,107,0.7)" text-anchor="middle" font-weight="600">11th</text>
+      <text x="300" y="168" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="var(--gold)" text-anchor="middle" font-weight="600">12th</text>
+    </svg>
+  </div>
+</div>
+
+<!-- ══ CURRENT SEASON RANKINGS ══ -->
+<div class="section">
+  <div class="sec-title">2026 Season Rankings</div>
+  <div class="rank-grid">
+    <div class="rank-card">
+      <div class="rank-event">110mH — 16.47</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val top">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">SoCal</span><span class="rank-val good">169th</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val good">362nd</span></div>
+      <div class="rank-row"><span class="rank-scope">National</span><span class="rank-val ok">3,210th</span></div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-event">300mH — 39.77</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val top">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">SoCal</span><span class="rank-val top">30th</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val top">56th</span></div>
+      <div class="rank-row"><span class="rank-scope">National</span><span class="rank-val good">335th</span></div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-event">High Jump — 6'0"</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val top">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">SoCal</span><span class="rank-val good">49th</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val good">134th</span></div>
+      <div class="rank-row"><span class="rank-scope">National</span><span class="rank-val ok">2,633rd</span></div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-event">200m — 24.34</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top">#1</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val good">15th</span></div>
+      <div class="rank-row"><span class="rank-scope">SoCal</span><span class="rank-val ok">1,565th</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val ok">3,440th</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ COACHING NOTES ══ -->
+<div class="section">
+  <div class="sec-title">Coaching Notes &amp; Trajectory</div>
+  <div class="notes-stack">
+    <div class="note-item gold">
+      <div class="note-label">110m Hurdles</div>
+      Year-to-year peaks: 18.33 → 17.09 → (injury) → 16.47. Senior season shows 4 consecutive sub-17 performances including 4 wins. All 4 senior races ended 1st place. The 39.77 in 300mH puts him at <strong>Top 56 in California</strong> — his most nationally competitive event.
+    </div>
+    <div class="note-item green">
+      <div class="note-label">High Jump</div>
+      Went from 5'4" SB as a freshman to 6'0" School Record as a senior. NH results mixed in suggest technical inconsistency still being refined. 6'0" is River Valley League #1 and Top 135 in California. Ceiling appears higher with more focused training.
+    </div>
+    <div class="note-item blue">
+      <div class="note-label">Sprint Development</div>
+      100m PR improved from 12.96 (9th) → 12.57 (10th) → 11.77 (12th) — a full 1.2 second drop over career. Added 200m and 400m as senior events, PRing in both. The sprint base is clearly elevating the hurdles pop-off.
+    </div>
+    <div class="note-item orange">
+      <div class="note-label">Resilience Profile</div>
+      Broken wrist (10th), hamstring (11th), broken elbow (11th) — three significant injuries across two seasons. Posted PRs even during the broken wrist season. Returned senior year completely injury-free with PRs in every event entered. <strong>Mental toughness is a defining characteristic.</strong>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Nathaniel Oliver · Jurupa Valley HS Jaguars · 2023–2026 · Compiled by Coaching Staff
+</footer>
+
+</body>
+</html>
