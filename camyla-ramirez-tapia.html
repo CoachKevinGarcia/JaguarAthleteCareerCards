@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,12 +8,12 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
-  --navy:#080f1e;--navy-mid:#0e1b30;--navy-card:#111e34;--navy-border:#1a2d4a;
-  --silver:#b8c8e0;--silver-light:#dce8f5;--white:#f0f5ff;
-  --gold:#e8b84b;--gold-dim:rgba(232,184,75,0.15);
-  --accent:#38beff;--accent-dim:rgba(56,190,255,0.12);
-  --green:#3de8a0;--green-dim:rgba(61,232,160,0.12);
-  --red:#ff5e6b;--pr-col:#ff5e6b;--muted:#5a7299;--injury:#ff8c42;
+  --navy: #f0f4f9;--navy-mid: #e8eef6;--navy-card: #ffffff;--navy-border: #c8d6e8;
+  --silver: #4a6380;--silver-light: #1e3352;--white: #0d1f3c;
+  --gold: #b8860b;--gold-dim: rgba(184,134,11,0.1);
+  --accent: #1668c2;--accent-dim: rgba(22,104,194,0.1);
+  --green: #0f8a56;--green-dim: rgba(15,138,86,0.1);
+  --red: #cc2233;--pr-col: #cc2233;--muted: #6b84a8;--injury: #cc6600;
 }
 body{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;
   max-width:540px;margin:0 auto;padding-bottom:env(safe-area-inset-bottom);
@@ -24,26 +24,26 @@ body{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sa
   backdrop-filter:blur(10px);border-bottom:1px solid var(--navy-border);
   display:flex;align-items:center;justify-content:space-between;
   padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top))}
-.nav-back{color:var(--accent);font-family:'Barlow Condensed',sans-serif;
+.nav-back{color: #38beff;font-family:'Barlow Condensed',sans-serif;
   font-weight:600;font-size:14px;text-decoration:none;letter-spacing:.5px}
 .nav-logo{height:32px;opacity:.9}
 
 /* HERO */
-.hero{background:linear-gradient(160deg,var(--navy-mid) 0%,var(--navy) 100%);
+.hero{background: linear-gradient(160deg,#0e1b30 0%,#080f1e 100%);
   padding:28px 20px 24px;border-bottom:2px solid var(--navy-border);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-40px;right:-30px;width:180px;height:180px;
   background:radial-gradient(circle,rgba(61,232,160,0.06) 0%,transparent 70%);pointer-events:none}
 .hero-school{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);
   letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
 .hero-name{font-family:'Bebas Neue',sans-serif;font-size:46px;line-height:.95;
-  color:var(--white);letter-spacing:1px}
-.hero-name em{color:var(--green);font-style:normal}
+  color:#f0f5ff;letter-spacing:1px}
+.hero-name em{color: #3de8a0;font-style:normal}
 .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .pill{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;
   padding:4px 10px;border-radius:2px;border:1px solid var(--navy-border);
   color:var(--silver);background:rgba(255,255,255,0.04);text-transform:uppercase}
-.pill.green{border-color:var(--green);color:var(--green);background:var(--green-dim)}
-.pill.gold{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+.pill.green{border-color: #3de8a0;color:var(--green);background:var(--green-dim)}
+.pill.gold{border-color: #e8b84b;color:var(--gold);background:var(--gold-dim)}
 
 /* PEAK BAR */
 .peak-bar{display:grid;grid-template-columns:repeat(3,1fr);

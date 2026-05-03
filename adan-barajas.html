@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,23 +7,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy:        #080f1e;
-    --navy-mid:    #0e1b30;
-    --navy-card:   #111e34;
-    --navy-border: #1a2d4a;
-    --silver:      #b8c8e0;
-    --silver-light:#dce8f5;
-    --white:       #f0f5ff;
-    --gold:        #e8b84b;
-    --gold-dim:    rgba(232,184,75,0.15);
-    --accent:      #38beff;
-    --accent-dim:  rgba(56,190,255,0.12);
-    --green:       #3de8a0;
-    --green-dim:   rgba(61,232,160,0.12);
-    --red:         #ff5e6b;
-    --pr-col:      #ff5e6b;
-    --muted:       #5a7299;
-    --injury:      #ff8c42;
+    --navy: #f0f4f9;
+    --navy-mid: #e8eef6;
+    --navy-card: #ffffff;
+    --navy-border: #c8d6e8;
+    --silver: #4a6380;
+    --silver-light: #1e3352;
+    --white: #0d1f3c;
+    --gold: #b8860b;
+    --gold-dim: rgba(184,134,11,0.1);
+    --accent: #1668c2;
+    --accent-dim: rgba(22,104,194,0.1);
+    --green: #0f8a56;
+    --green-dim: rgba(15,138,86,0.1);
+    --red: #cc2233;
+    --pr-col: #cc2233;
+    --muted: #6b84a8;
+    --injury: #cc6600;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -54,7 +54,7 @@
   .nav-back {
     font-family: 'DM Mono', monospace;
     font-size: 10px; letter-spacing: 1.5px;
-    color: var(--accent); text-decoration: none; text-transform: uppercase;
+    color: #38beff; text-decoration: none; text-transform: uppercase;
   }
   .nav-back:hover { color: var(--white); }
   .nav-logo { height: 28px; opacity: 0.85; }
@@ -76,24 +76,24 @@
   .hero-school {
     font-family: 'DM Mono', monospace;
     font-size: 9px; letter-spacing: 3px;
-    color: var(--accent); text-transform: uppercase; margin-bottom: 6px;
+    color: #38beff; text-transform: uppercase; margin-bottom: 6px;
   }
   .hero-name {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 52px; letter-spacing: 1.5px;
-    color: var(--white); line-height: 0.9;
+    color: #f0f5ff; line-height: 0.9;
   }
-  .hero-name em { color: var(--gold); font-style: normal; }
+  .hero-name em { color: #e8b84b; font-style: normal; }
   .hero-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
   .pill {
     background: rgba(255,255,255,0.06);
-    border: 1px solid var(--navy-border);
+    border: 1px solid #1a2d4a;
     border-radius: 3px; padding: 3px 10px;
     font-size: 10px; font-weight: 600; letter-spacing: 1px;
-    color: var(--silver); text-transform: uppercase;
+    color: #b8c8e0; text-transform: uppercase;
   }
-  .pill.gold { border-color: rgba(232,184,75,0.4); color: var(--gold); background: var(--gold-dim); }
-  .pill.blue { border-color: rgba(56,190,255,0.3); color: var(--accent); background: var(--accent-dim); }
+  .pill.gold { border-color: rgba(232,184,75,0.4); color: #e8b84b; background: var(--gold-dim); }
+  .pill.blue { border-color: rgba(56,190,255,0.3); color: #38beff; background: var(--accent-dim); }
 
   /* ── PEAK BAR ── */
   .peak-bar {
@@ -164,9 +164,9 @@
     color: var(--muted); text-transform: uppercase;
     padding: 5px 6px; text-align: left; border-bottom: 1px solid var(--navy-border);
   }
-  .log-table td { padding: 7px 6px; border-bottom: 1px solid rgba(255,255,255,0.03); vertical-align: middle; }
+  .log-table td { padding: 7px 6px; border-bottom: 1px solid rgba(200,214,232,0.7); vertical-align: middle; }
   .log-table tr:last-child td { border-bottom: none; }
-  .log-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .log-table tr:hover td { background: rgba(0,0,0,0.02); }
   .mark-mono { font-family: 'DM Mono', monospace; font-weight: 500; color: var(--white); font-size: 13px; }
   .mark-mono.pr  { color: var(--pr-col); }
   .mark-mono.win { color: var(--green); }
@@ -178,7 +178,7 @@
   .p1 { background: var(--green);  color: #042814; }
   .p2 { background: var(--silver); color: var(--navy); }
   .p3 { background: var(--gold);   color: #2a1800; }
-  .pn { background: rgba(255,255,255,0.06); color: var(--muted); padding: 0 6px; font-size: 9px; }
+  .pn { background: rgba(0,0,0,0.06); color: var(--muted); padding: 0 6px; font-size: 9px; }
   .yr-chip {
     display: inline-flex; align-items: center; justify-content: center;
     width: 18px; height: 18px; border-radius: 9px;
@@ -187,7 +187,7 @@
   .y9  { background: var(--green-dim);  color: var(--green);  border: 1px solid var(--green); }
   .y10 { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent); }
   .y11 { background: var(--gold-dim);   color: var(--gold);   border: 1px solid var(--gold); }
-  .y12 { background: rgba(255,94,107,0.12); color: var(--red); border: 1px solid var(--red); }
+  .y12 { background: rgba(204,34,51,0.1); color: var(--red); border: 1px solid var(--red); }
   .meet-txt { color: var(--silver); font-size: 11px; }
   .event-sub-label {
     font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px;
@@ -216,7 +216,7 @@
   }
   .peak-season-marks { display: flex; flex-wrap: wrap; gap: 8px; }
   .pk-mark {
-    background: rgba(255,255,255,0.04); border: 1px solid var(--navy-border);
+    background: rgba(0,0,0,0.03); border: 1px solid var(--navy-border);
     border-radius: 4px; padding: 6px 10px;
   }
   .pk-evt { font-size: 8px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; }
