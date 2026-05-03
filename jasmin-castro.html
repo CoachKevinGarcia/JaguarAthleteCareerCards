@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Jasmin Castro — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --navy:#080f1e;--navy-mid:#0e1b30;--navy-card:#111e34;--navy-border:#1a2d4a;
+  --silver:#b8c8e0;--silver-light:#dce8f5;--white:#f0f5ff;
+  --gold:#e8b84b;--gold-dim:rgba(232,184,75,0.15);
+  --accent:#38beff;--accent-dim:rgba(56,190,255,0.12);
+  --green:#3de8a0;--green-dim:rgba(61,232,160,0.12);
+  --red:#ff5e6b;--pr-col:#ff5e6b;--muted:#5a7299;--injury:#ff8c42;
+}
+body{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;
+  max-width:540px;margin:0 auto;padding-bottom:env(safe-area-inset-bottom);
+  -webkit-font-smoothing:antialiased}
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(8,15,30,0.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--navy-border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top))}
+.nav-back{color:var(--accent);font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:14px;text-decoration:none;letter-spacing:.5px}
+.nav-logo{height:32px;opacity:.9}
+.hero{background:linear-gradient(160deg,var(--navy-mid) 0%,var(--navy) 100%);
+  padding:28px 20px 24px;border-bottom:2px solid var(--navy-border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40px;right:-30px;width:180px;height:180px;
+  background:radial-gradient(circle,rgba(61,232,160,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-school{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.95;
+  color:var(--white);letter-spacing:1px}
+.hero-name em{color:var(--green);font-style:normal}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pill{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;
+  padding:4px 10px;border-radius:2px;border:1px solid var(--navy-border);
+  color:var(--silver);background:rgba(255,255,255,0.04);text-transform:uppercase}
+.pill.green{border-color:var(--green);color:var(--green);background:var(--green-dim)}
+.pill.gold{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+.peak-bar{display:grid;grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid var(--navy-border);background:var(--navy-mid)}
+.peak-cell{padding:14px 10px;text-align:center;border-right:1px solid var(--navy-border)}
+.peak-cell:last-child{border-right:none}
+.peak-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.peak-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.section{padding:20px 16px;border-bottom:1px solid var(--navy-border)}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:20px;
+  color:var(--accent);letter-spacing:1.5px;margin-bottom:14px}
+.bests-grid{display:flex;flex-direction:column;gap:8px}
+.best-card{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-left:3px solid var(--gold);border-radius:4px;padding:11px 13px;
+  display:flex;align-items:center;justify-content:space-between}
+.best-card.green{border-left-color:var(--green)}
+.best-card.blue{border-left-color:var(--accent)}
+.best-ev{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--white)}
+.best-sub{font-size:11px;color:var(--muted);margin-top:1px}
+.best-mark{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);text-align:right}
+.best-card.green .best-mark{color:var(--green)}
+.best-card.blue .best-mark{color:var(--accent)}
+.ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ms-box{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:11px 12px;text-align:center}
+.ms-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.ms-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.log-table{width:100%;border-collapse:collapse;font-size:12px}
+.log-table th{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;
+  color:var(--muted);text-transform:uppercase;padding:0 6px 8px;text-align:left;
+  border-bottom:1px solid var(--navy-border)}
+.log-table td{padding:7px 6px;border-bottom:1px solid rgba(26,45,74,0.5);vertical-align:middle}
+.log-table tr:last-child td{border-bottom:none}
+.yr-chip{display:inline-flex;align-items:center;justify-content:center;
+  width:20px;height:20px;border-radius:2px;font-family:'DM Mono',monospace;
+  font-size:10px;font-weight:500}
+.y10{background:rgba(56,190,255,0.12);color:var(--accent);border:1px solid rgba(56,190,255,0.3)}
+.y11{background:rgba(232,184,75,0.12);color:var(--gold);border:1px solid rgba(232,184,75,0.3)}
+.y12{background:rgba(255,94,107,0.15);color:var(--red);border:1px solid rgba(255,94,107,0.3)}
+.mark-mono{font-family:'DM Mono',monospace;font-size:12px;color:var(--silver-light)}
+.mark-mono.pr{color:var(--pr-col)}
+.place-dot{display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;border-radius:50%;font-family:'DM Mono',monospace;
+  font-size:10px;font-weight:500}
+.p1{background:var(--green);color:#002a1a}
+.p2{background:var(--silver);color:#0d1f3c}
+.p3{background:var(--gold);color:#2a1800}
+.pn{background:rgba(255,255,255,0.06);color:var(--muted)}
+.meet-txt{color:var(--silver);font-size:12px}
+.event-sub-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;
+  color:var(--accent);text-transform:uppercase;padding:10px 0 6px;
+  border-bottom:1px solid var(--navy-border);margin-bottom:4px}
+.peaks-stack{display:flex;flex-direction:column;gap:10px}
+.peak-season{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:13px 14px}
+.ps-yr{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold);
+  letter-spacing:1px;margin-bottom:8px}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ps-cell{text-align:center;padding:6px;background:rgba(255,255,255,0.03);border-radius:3px}
+.ps-val{font-family:'DM Mono',monospace;font-size:13px;color:var(--white);line-height:1}
+.ps-ev{font-size:10px;color:var(--muted);margin-top:2px}
+.prog-bar{height:4px;background:var(--navy-border);border-radius:2px;margin-top:8px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:2px}
+.rank-grid{display:flex;flex-direction:column;gap:8px}
+.rank-row{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:4px;
+  padding:10px 13px;display:flex;align-items:center;justify-content:space-between}
+.rank-ev{font-size:13px;font-weight:600;color:var(--white)}
+.rank-val{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold)}
+.rank-ctx{font-size:10px;color:var(--muted);margin-top:1px}
+.notes-stack{display:flex;flex-direction:column;gap:8px}
+.note-item{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-left:3px solid var(--gold);border-radius:4px;padding:12px 14px}
+.note-item.blue{border-left-color:var(--accent)}
+.note-item.green{border-left-color:var(--green)}
+.note-item.orange{border-left-color:var(--injury)}
+.note-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;
+  color:var(--muted);text-transform:uppercase;margin-bottom:5px}
+.note-text{font-size:13px;color:var(--silver);line-height:1.55;font-weight:300}
+footer{padding:24px 16px;text-align:center;border-top:1px solid var(--navy-border)}
+.footer-logo{width:48px;opacity:.4;margin-bottom:8px}
+.footer-txt{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  letter-spacing:1.5px;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">← All Athletes</a>
+  <img src="logo.png" alt="Jaguars" class="nav-logo">
+</nav>
+
+<div class="hero">
+  <div class="hero-school">Jurupa Valley Jaguars · Girls · Throws</div>
+  <div class="hero-name">Jasmin<br><em>Castro</em></div>
+  <div class="pills">
+    <span class="pill green">Discus</span>
+    <span class="pill gold">Long Jump</span>
+  </div>
+</div>
+
+<div class="peak-bar">
+  <div class="peak-cell">
+    <div class="peak-val">73'6"</div>
+    <div class="peak-lbl">Discus Career PR</div>
+  </div>
+  <div class="peak-cell">
+    <div class="peak-val">RV #7</div>
+    <div class="peak-lbl">Discus 2026</div>
+  </div>
+  <div class="peak-cell">
+    <div class="peak-val">3</div>
+    <div class="peak-lbl">Seasons Throwing</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Career Personal Bests</div>
+  <div class="bests-grid">
+    <div class="best-card green">
+      <div>
+        <div class="best-ev">Discus (1kg)</div>
+        <div class="best-sub">Apr 29, 2026 · RVL Championships · 6th Place · RV #7</div>
+      </div>
+      <div class="best-mark">73'6"</div>
+    </div>
+    <div class="best-card blue">
+      <div>
+        <div class="best-ev">Long Jump</div>
+        <div class="best-sub">Mar 19, 2025 · vs La Sierra · 11th Grade</div>
+      </div>
+      <div class="best-mark">6'2.5"</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box">
+      <div class="ms-val">18'2"</div>
+      <div class="ms-lbl">Disc 3-Yr Improvement</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">RV #7</div>
+      <div class="ms-lbl">Discus — 2026</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">10'4"</div>
+      <div class="ms-lbl">Disc Jump 11th→12th</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">3</div>
+      <div class="ms-lbl">Seasons</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Event Log — Discus</div>
+
+  <div class="event-sub-label">Discus (1kg) — 2026 (12th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">53'4"</td><td><span class="place-dot pn">15</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">62'10"</td><td><span class="place-dot pn">15</span></td><td class="meet-txt">Corona Relays</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">60'5"</td><td><span class="place-dot pn">27</span></td><td class="meet-txt">Roosevelt Invitational</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">63'2"</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">vs Rubidoux</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">62'3"</td><td><span class="place-dot pn">4</span></td><td class="meet-txt">vs La Sierra</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">65'7"</td><td><span class="place-dot pn">14</span></td><td class="meet-txt">Raincross Invitational</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">60'4"</td><td><span class="place-dot pn">7</span></td><td class="meet-txt">vs Ramona</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">67'6"</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">vs Patriot</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">62'7"</td><td><span class="place-dot pn">4</span></td><td class="meet-txt">vs Norte Vista (Senior Night)</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">73'6" ★</td><td><span class="place-dot pn">6</span></td><td class="meet-txt">RVL Championships</td></tr>
+    </tbody>
+  </table>
+
+  <div class="event-sub-label" style="margin-top:16px">Discus (1kg) — 2025 (11th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono">49'2"</td><td><span class="place-dot pn">18</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono">53'0"</td><td><span class="place-dot pn">34</span></td><td class="meet-txt">Roosevelt Invitational</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono">57'2"</td><td><span class="place-dot pn">—</span></td><td class="meet-txt">RCK Classic</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono">57'10"</td><td><span class="place-dot pn">4</span></td><td class="meet-txt">vs Rubidoux</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono">53'0"</td><td><span class="place-dot pn">5</span></td><td class="meet-txt">vs La Sierra</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono">54'6"</td><td><span class="place-dot pn">28</span></td><td class="meet-txt">Raincross Invitational</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono">62'4"</td><td><span class="place-dot pn">7</span></td><td class="meet-txt">vs Ramona</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono">63'2"</td><td><span class="place-dot pn">5</span></td><td class="meet-txt">vs Norte Vista (SB)</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono" style="color:var(--muted)">FOUL</td><td>—</td><td class="meet-txt">RVL Championships</td></tr>
+    </tbody>
+  </table>
+
+  <div class="event-sub-label" style="margin-top:16px">Discus (1kg) — 2024 (10th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono">47'7"</td><td><span class="place-dot pn">11</span></td><td class="meet-txt">Ontario Relays</td></tr>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono">52'8"</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">vs La Sierra (JV)</td></tr>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono">52'10"</td><td><span class="place-dot pn">20</span></td><td class="meet-txt">ML King Frosh-Soph Classic</td></tr>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono">49'3"</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">vs Patriot (JV)</td></tr>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono">45'3"</td><td><span class="place-dot pn">4</span></td><td class="meet-txt">Indian Springs vs JV</td></tr>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono">47'7"</td><td><span class="place-dot pn">6</span></td><td class="meet-txt">vs Pacific (JV)</td></tr>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono">55'4"</td><td><span class="place-dot p2">2</span></td><td class="meet-txt">vs Rubidoux — Senior Night (SB)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">Season Peaks</div>
+  <div class="peaks-stack">
+    <div class="peak-season">
+      <div class="ps-yr">2026 — 12th Grade</div>
+      <div class="ps-grid">
+        <div class="ps-cell"><div class="ps-val">73'6"</div><div class="ps-ev">Discus PR · RV #7</div></div>
+        <div class="ps-cell"><div class="ps-val">67'6"</div><div class="ps-ev">Pre-Championships Best</div></div>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div>
+    </div>
+    <div class="peak-season">
+      <div class="ps-yr">2025 — 11th Grade</div>
+      <div class="ps-grid">
+        <div class="ps-cell"><div class="ps-val">63'2"</div><div class="ps-ev">Discus SB</div></div>
+        <div class="ps-cell"><div class="ps-val">6'2.5"</div><div class="ps-ev">Long Jump PR</div></div>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" style="width:86%"></div></div>
+    </div>
+    <div class="peak-season">
+      <div class="ps-yr">2024 — 10th Grade</div>
+      <div class="ps-grid">
+        <div class="ps-cell"><div class="ps-val">55'4"</div><div class="ps-ev">Discus SB</div></div>
+        <div class="ps-cell"><div class="ps-val">5'11.5"</div><div class="ps-ev">Long Jump SB</div></div>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" style="width:75%"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Rankings</div>
+  <div class="rank-grid">
+    <div class="rank-row">
+      <div>
+        <div class="rank-ev">Discus — 2026</div>
+        <div class="rank-ctx">River Valley League · 73'6" at RVL Championships</div>
+      </div>
+      <div class="rank-val">RV #7</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Coaching Notes</div>
+  <div class="notes-stack">
+    <div class="note-item green">
+      <div class="note-label">Three-Year Progression</div>
+      <div class="note-text">Castro improved her discus season best every year: 55'4" → 63'2" → 73'6". That's 18'2" of total growth over three seasons, with the biggest single-year jump coming in her senior year — 10'4" from her 2025 SB to her 2026 PR. Late-bloomer pattern: she fouled at the 2025 RVL Championships, then came back and posted a massive PR at the 2026 RVL Championships. Peaked at exactly the right time.</div>
+    </div>
+    <div class="note-item green">
+      <div class="note-label">Championships Performance</div>
+      <div class="note-text">The 73'6" at RVL Championships was 5'10" farther than her previous best of 67'6". Championship-day PRs of that magnitude indicate she had more in the tank all season. Her competition-day ceiling appears higher than her practice ceiling — that's a mental and physical strength worth noting.</div>
+    </div>
+    <div class="note-item blue">
+      <div class="note-label">Long Jump — Secondary Event</div>
+      <div class="note-text">Competed in the long jump in 10th and 11th grade, posting a 6'2.5" PR in 2025. Did not compete in LJ as a senior — focus shifted entirely to discus. Given the big throw numbers, the right call. If she picks up any field event in college, the runway and explosiveness that drives discus is transferable.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <img src="logo.png" alt="Jaguars" class="footer-logo">
+  <div class="footer-txt">Jurupa Valley Jaguars T&amp;F · 2026 · Coach Kevin Garcia</div>
+</footer>
+
+</body>
+</html>

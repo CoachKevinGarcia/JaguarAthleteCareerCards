@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Brianna Rodriguez — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --navy:#080f1e;--navy-mid:#0e1b30;--navy-card:#111e34;--navy-border:#1a2d4a;
+  --silver:#b8c8e0;--silver-light:#dce8f5;--white:#f0f5ff;
+  --gold:#e8b84b;--gold-dim:rgba(232,184,75,0.15);
+  --accent:#38beff;--accent-dim:rgba(56,190,255,0.12);
+  --green:#3de8a0;--green-dim:rgba(61,232,160,0.12);
+  --red:#ff5e6b;--pr-col:#ff5e6b;--muted:#5a7299;--injury:#ff8c42;
+}
+body{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;
+  max-width:540px;margin:0 auto;padding-bottom:env(safe-area-inset-bottom);
+  -webkit-font-smoothing:antialiased}
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(8,15,30,0.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--navy-border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top))}
+.nav-back{color:var(--accent);font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:14px;text-decoration:none;letter-spacing:.5px}
+.nav-logo{height:32px;opacity:.9}
+.hero{background:linear-gradient(160deg,var(--navy-mid) 0%,var(--navy) 100%);
+  padding:28px 20px 24px;border-bottom:2px solid var(--navy-border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40px;right:-30px;width:180px;height:180px;
+  background:radial-gradient(circle,rgba(56,190,255,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-school{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.95;
+  color:var(--white);letter-spacing:1px}
+.hero-name em{color:var(--accent);font-style:normal}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pill{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;
+  padding:4px 10px;border-radius:2px;border:1px solid var(--navy-border);
+  color:var(--silver);background:rgba(255,255,255,0.04);text-transform:uppercase}
+.pill.blue{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.peak-bar{display:grid;grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid var(--navy-border);background:var(--navy-mid)}
+.peak-cell{padding:14px 10px;text-align:center;border-right:1px solid var(--navy-border)}
+.peak-cell:last-child{border-right:none}
+.peak-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.peak-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.section{padding:20px 16px;border-bottom:1px solid var(--navy-border)}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:20px;
+  color:var(--accent);letter-spacing:1.5px;margin-bottom:14px}
+.bests-grid{display:flex;flex-direction:column;gap:8px}
+.best-card{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-left:3px solid var(--gold);border-radius:4px;padding:11px 13px;
+  display:flex;align-items:center;justify-content:space-between}
+.best-card.blue{border-left-color:var(--accent)}
+.best-ev{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--white)}
+.best-sub{font-size:11px;color:var(--muted);margin-top:1px}
+.best-mark{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);text-align:right}
+.best-card.blue .best-mark{color:var(--accent)}
+.ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ms-box{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:11px 12px;text-align:center}
+.ms-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.ms-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.log-table{width:100%;border-collapse:collapse;font-size:12px}
+.log-table th{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;
+  color:var(--muted);text-transform:uppercase;padding:0 6px 8px;text-align:left;
+  border-bottom:1px solid var(--navy-border)}
+.log-table td{padding:7px 6px;border-bottom:1px solid rgba(26,45,74,0.5);vertical-align:middle}
+.log-table tr:last-child td{border-bottom:none}
+.yr-chip{display:inline-flex;align-items:center;justify-content:center;
+  width:20px;height:20px;border-radius:2px;font-family:'DM Mono',monospace;
+  font-size:10px;font-weight:500}
+.y12{background:rgba(255,94,107,0.15);color:var(--red);border:1px solid rgba(255,94,107,0.3)}
+.mark-mono{font-family:'DM Mono',monospace;font-size:12px;color:var(--silver-light)}
+.mark-mono.pr{color:var(--pr-col)}
+.place-dot{display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;border-radius:50%;font-family:'DM Mono',monospace;
+  font-size:10px;font-weight:500}
+.pn{background:rgba(255,255,255,0.06);color:var(--muted)}
+.meet-txt{color:var(--silver);font-size:12px}
+.event-sub-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;
+  color:var(--accent);text-transform:uppercase;padding:10px 0 6px;
+  border-bottom:1px solid var(--navy-border);margin-bottom:4px}
+.peaks-stack{display:flex;flex-direction:column;gap:10px}
+.peak-season{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:13px 14px}
+.ps-yr{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold);
+  letter-spacing:1px;margin-bottom:8px}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ps-cell{text-align:center;padding:6px;background:rgba(255,255,255,0.03);border-radius:3px}
+.ps-val{font-family:'DM Mono',monospace;font-size:13px;color:var(--white);line-height:1}
+.ps-ev{font-size:10px;color:var(--muted);margin-top:2px}
+.notes-stack{display:flex;flex-direction:column;gap:8px}
+.note-item{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-left:3px solid var(--gold);border-radius:4px;padding:12px 14px}
+.note-item.blue{border-left-color:var(--accent)}
+.note-item.orange{border-left-color:var(--injury)}
+.note-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;
+  color:var(--muted);text-transform:uppercase;margin-bottom:5px}
+.note-text{font-size:13px;color:var(--silver);line-height:1.55;font-weight:300}
+footer{padding:24px 16px;text-align:center;border-top:1px solid var(--navy-border)}
+.footer-logo{width:48px;opacity:.4;margin-bottom:8px}
+.footer-txt{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  letter-spacing:1.5px;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">← All Athletes</a>
+  <img src="logo.png" alt="Jaguars" class="nav-logo">
+</nav>
+
+<div class="hero">
+  <div class="hero-school">Jurupa Valley Jaguars · Girls · Sprints</div>
+  <div class="hero-name">Brianna<br><em>Rodriguez</em></div>
+  <div class="pills">
+    <span class="pill blue">100 Meters</span>
+    <span class="pill">200 Meters</span>
+  </div>
+</div>
+
+<div class="peak-bar">
+  <div class="peak-cell">
+    <div class="peak-val">17.64</div>
+    <div class="peak-lbl">100m Career PR</div>
+  </div>
+  <div class="peak-cell">
+    <div class="peak-val">38.76</div>
+    <div class="peak-lbl">200m Career PR</div>
+  </div>
+  <div class="peak-cell">
+    <div class="peak-val">2026</div>
+    <div class="peak-lbl">Senior Season</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Career Personal Bests</div>
+  <div class="bests-grid">
+    <div class="best-card blue">
+      <div>
+        <div class="best-ev">100 Meters</div>
+        <div class="best-sub">Apr 16, 2026 · vs Patriot · 12th Grade · JV, 35th</div>
+      </div>
+      <div class="best-mark" style="color:var(--accent)">17.64</div>
+    </div>
+    <div class="best-card">
+      <div>
+        <div class="best-ev">200 Meters</div>
+        <div class="best-sub">Apr 16, 2026 · vs Patriot · 12th Grade · JV, 31st</div>
+      </div>
+      <div class="best-mark">38.76</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box">
+      <div class="ms-val">17.64</div>
+      <div class="ms-lbl">100m Career PR</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">38.76</div>
+      <div class="ms-lbl">200m Career PR</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">1</div>
+      <div class="ms-lbl">Season Competed</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">2</div>
+      <div class="ms-lbl">Events Scored</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Event Log</div>
+
+  <div class="event-sub-label">100 Meters — 2026 (12th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono pr">17.64 ★</td>
+        <td><span class="place-dot pn">35</span></td>
+        <td class="meet-txt">vs Patriot (JV)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td>—</td>
+        <td class="meet-txt">vs Norte Vista (Senior Night)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="event-sub-label" style="margin-top:16px">200 Meters — 2026 (12th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono pr">38.76 ★</td>
+        <td><span class="place-dot pn">31</span></td>
+        <td class="meet-txt">vs Patriot (JV)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td>—</td>
+        <td class="meet-txt">vs Norte Vista (Senior Night)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">Season Peaks</div>
+  <div class="peaks-stack">
+    <div class="peak-season">
+      <div class="ps-yr">2026 — 12th Grade</div>
+      <div class="ps-grid">
+        <div class="ps-cell"><div class="ps-val">17.64</div><div class="ps-ev">100m PR</div></div>
+        <div class="ps-cell"><div class="ps-val">38.76</div><div class="ps-ev">200m PR</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Coaching Notes</div>
+  <div class="notes-stack">
+    <div class="note-item">
+      <div class="note-label">Season Summary</div>
+      <div class="note-text">Brianna's entire athletic.net record comes from a single meet — vs Patriot on April 16, 2026. She ran both the 100m (17.64) and 200m (38.76) at that dual meet in JV competition. Both marks were recorded at the same session, so they represent her first and only documented times as a Jaguar.</div>
+    </div>
+    <div class="note-item blue">
+      <div class="note-label">Context</div>
+      <div class="note-text">Limited data makes full assessment impossible. What's on record shows a late-season competitor who got out and ran. The DNS entries at Senior Night suggest she suited up for the program even when conditions or circumstances prevented her from competing. Being in the program and showing up matters.</div>
+    </div>
+    <div class="note-item orange">
+      <div class="note-label">Data Note</div>
+      <div class="note-text">Only one meet with scored results on record (2026 season). PRs shown reflect that single appearance and should be understood as a baseline, not a ceiling. Without multi-season data it is not possible to project trajectory or identify patterns.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <img src="logo.png" alt="Jaguars" class="footer-logo">
+  <div class="footer-txt">Jurupa Valley Jaguars Track &amp; Field</div>
+  <div class="footer-txt" style="margin-top:4px">Career Data Sheet · Brianna Rodriguez · Class of 2026</div>
+</footer>
+
+</body>
+</html>
