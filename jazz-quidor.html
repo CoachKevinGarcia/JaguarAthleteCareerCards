@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jazz Quidor — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--navy:#080f1e;--navy-mid:#0e1b30;--navy-card:#111e34;--navy-border:#1a2d4a;--silver:#b8c8e0;--silver-light:#dce8f5;--white:#f0f5ff;--gold:#e8b84b;--gold-dim:rgba(232,184,75,0.15);--accent:#38beff;--accent-dim:rgba(56,190,255,0.12);--green:#3de8a0;--green-dim:rgba(61,232,160,0.12);--red:#ff5e6b;--pr-col:#ff5e6b;--muted:#5a7299;--injury:#ff8c42}
+body{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;max-width:540px;margin:0 auto;padding-bottom:env(safe-area-inset-bottom);-webkit-font-smoothing:antialiased}
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(8,15,30,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--navy-border);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top))}
+.nav-back{color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;text-decoration:none;letter-spacing:.5px}
+.nav-logo{height:32px;opacity:.9}
+.hero{background:linear-gradient(160deg,var(--navy-mid) 0%,var(--navy) 100%);padding:28px 20px 24px;border-bottom:2px solid var(--navy-border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40px;right:-30px;width:180px;height:180px;background:radial-gradient(circle,rgba(232,184,75,0.07) 0%,transparent 70%);pointer-events:none}
+.hero-school{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.95;color:var(--white);letter-spacing:1px}
+.hero-name em{color:var(--gold);font-style:normal}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pill{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;padding:4px 10px;border-radius:2px;border:1px solid var(--navy-border);color:var(--silver);background:rgba(255,255,255,0.04);text-transform:uppercase}
+.pill.gold{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+.pill.green{border-color:var(--green);color:var(--green);background:var(--green-dim)}
+.peak-bar{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--navy-border);background:var(--navy-mid)}
+.peak-cell{padding:14px 10px;text-align:center;border-right:1px solid var(--navy-border)}
+.peak-cell:last-child{border-right:none}
+.peak-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.peak-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.section{padding:20px 16px;border-bottom:1px solid var(--navy-border)}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--accent);letter-spacing:1.5px;margin-bottom:14px}
+.bests-grid{display:flex;flex-direction:column;gap:8px}
+.best-card{background:var(--navy-card);border:1px solid var(--navy-border);border-left:3px solid var(--gold);border-radius:4px;padding:11px 13px;display:flex;align-items:center;justify-content:space-between}
+.best-card.blue{border-left-color:var(--accent)}.best-card.green{border-left-color:var(--green)}.best-card.orange{border-left-color:var(--injury)}
+.best-ev{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--white)}
+.best-sub{font-size:11px;color:var(--muted);margin-top:1px}
+.best-mark{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);text-align:right}
+.best-card.blue .best-mark{color:var(--accent)}.best-card.green .best-mark{color:var(--green)}.best-card.orange .best-mark{color:var(--injury)}
+.ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ms-box{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:4px;padding:11px 12px;text-align:center}
+.ms-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.ms-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.event-sub-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:14px 0 6px;padding-left:2px;border-left:2px solid var(--navy-border)}
+.log-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:4px}
+.log-table thead th{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;padding:4px 6px;border-bottom:1px solid var(--navy-border);text-align:left;font-weight:400}
+.log-table tbody tr{border-bottom:1px solid rgba(26,45,74,0.5)}
+.log-table tbody tr:hover{background:rgba(56,190,255,0.04)}
+.log-table td{padding:6px 6px;vertical-align:middle}
+.yr-chip{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:2px;font-family:'DM Mono',monospace;font-size:9px;font-weight:500}
+.y9{background:var(--green-dim);color:var(--green)}.y10{background:var(--accent-dim);color:var(--accent)}.y11{background:var(--gold-dim);color:var(--gold)}.y12{background:rgba(255,94,107,0.15);color:var(--red)}
+.mark-mono{font-family:'DM Mono',monospace;font-size:12px;color:var(--silver-light)}
+.mark-mono.pr{color:var(--pr-col)}
+.place-dot{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;font-family:'DM Mono',monospace;font-size:9px;font-weight:500}
+.p1{background:var(--green);color:#003322}.p2{background:var(--silver);color:var(--navy)}.p3{background:var(--gold);color:#3a2800}.pn{background:rgba(255,255,255,0.07);color:var(--muted)}
+.meet-txt{color:var(--silver);font-size:11px}
+.peaks-stack{display:flex;flex-direction:column;gap:10px}
+.peak-season{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:4px;padding:13px 14px}
+.ps-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.ps-yr{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--white)}
+.ps-grade{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.ps-marks{display:flex;flex-direction:column;gap:4px}
+.ps-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;border-top:1px solid rgba(26,45,74,0.5);padding-top:4px}
+.ps-event{color:var(--muted);font-family:'DM Mono',monospace;font-size:10px}
+.ps-mark{font-family:'DM Mono',monospace;font-size:12px;color:var(--silver-light)}
+.ps-mark.sb{color:var(--gold)}
+.rank-grid{display:flex;flex-direction:column;gap:8px}
+.rank-row{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:4px;padding:10px 13px}
+.rank-event{font-weight:700;font-size:13px;color:var(--white);margin-bottom:6px}
+.rank-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.rank-cell{text-align:center}
+.rank-num{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--accent)}
+.rank-scope{font-family:'DM Mono',monospace;font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.notes-stack{display:flex;flex-direction:column;gap:10px}
+.note-item{background:var(--navy-card);border:1px solid var(--navy-border);border-left:3px solid var(--gold);border-radius:4px;padding:12px 14px}
+.note-item.blue{border-left-color:var(--accent)}.note-item.green{border-left-color:var(--green)}.note-item.orange{border-left-color:var(--injury)}
+.note-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.note-text{font-size:13px;line-height:1.5;color:var(--silver-light)}
+footer{text-align:center;padding:24px 16px;background:var(--navy-mid);font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;border-top:1px solid var(--navy-border)}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">← All Athletes</a>
+  <img src="logo.png" alt="Jaguars T&F" class="nav-logo">
+</nav>
+<div class="hero">
+  <div class="hero-school">Jurupa Valley Jaguars · Girls · Hurdles / High Jump</div>
+  <div class="hero-name">Jazz<br><em>Quidor</em></div>
+  <div class="pills">
+    <span class="pill gold">100mH</span>
+    <span class="pill gold">300mH</span>
+    <span class="pill green">High Jump</span>
+    <span class="pill">Sprints (11th)</span>
+  </div>
+</div>
+<div class="peak-bar">
+  <div class="peak-cell"><div class="peak-val">19.44c</div><div class="peak-lbl">100mH Career PR</div></div>
+  <div class="peak-cell"><div class="peak-val">58.34c</div><div class="peak-lbl">300mH Career PR</div></div>
+  <div class="peak-cell"><div class="peak-val">4'0"</div><div class="peak-lbl">HJ Career PR</div></div>
+</div>
+<div class="section">
+  <div class="section-title">Career Personal Bests</div>
+  <div class="bests-grid">
+    <div class="best-card">
+      <div><div class="best-ev">100m Hurdles (33")</div><div class="best-sub">2026 Season · 12th Grade · RV #15</div></div>
+      <div class="best-mark">19.44c</div>
+    </div>
+    <div class="best-card">
+      <div><div class="best-ev">300m Hurdles (30")</div><div class="best-sub">2026 Season · 12th Grade · RV #17</div></div>
+      <div class="best-mark">58.34c</div>
+    </div>
+    <div class="best-card green">
+      <div><div class="best-ev">High Jump</div><div class="best-sub">2026 Season · 12th Grade · RV #10</div></div>
+      <div class="best-mark">4'0"</div>
+    </div>
+    <div class="best-card blue">
+      <div><div class="best-ev">100 Meters (11th Grade)</div><div class="best-sub">2025 Season · Sprints Career</div></div>
+      <div class="best-mark">15.44c</div>
+    </div>
+    <div class="best-card blue">
+      <div><div class="best-ev">400 Meters (11th Grade)</div><div class="best-sub">2025 Season · Sprints Career</div></div>
+      <div class="best-mark">1:15.86</div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box"><div class="ms-val">2</div><div class="ms-lbl">Seasons Competed</div></div>
+    <div class="ms-box"><div class="ms-val">RV #10</div><div class="ms-lbl">High Jump</div></div>
+    <div class="ms-box"><div class="ms-val">3</div><div class="ms-lbl">Hurdle Events</div></div>
+    <div class="ms-box"><div class="ms-val">Sprint→HH</div><div class="ms-lbl">Event Transition</div></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">Event Logs</div>
+  <div class="event-sub-label">100m Hurdles — 2026 (12th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">23.03</td><td><span class="place-dot pn">17</span></td><td class="meet-txt">Ontario Relays (+0.7)</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">20.35</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">Corona Relays (+1.0)</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">23.16</td><td><span class="place-dot p3">4</span></td><td class="meet-txt">vs Rubidoux (−2.1)</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">23.02</td><td><span class="place-dot pn">5</span></td><td class="meet-txt">vs La Sierra</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">22.35</td><td><span class="place-dot p3">4</span></td><td class="meet-txt">vs Patriot</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">19.44c ★</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">vs Norte Vista (Senior Night)</td></tr>
+    </tbody>
+  </table>
+  <div class="event-sub-label">300m Hurdles — 2026 (12th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">58.34c ★</td><td><span class="place-dot pn">—</span></td><td class="meet-txt">2026 Season Best</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">59.77</td><td><span class="place-dot pn">—</span></td><td class="meet-txt">Season Best (FAT)</td></tr>
+    </tbody>
+  </table>
+  <div class="event-sub-label">High Jump — 2026 (12th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">4'0" ★</td><td><span class="place-dot p3">3</span></td><td class="meet-txt">2026 Season Best · RV #10</td></tr>
+    </tbody>
+  </table>
+  <div class="event-sub-label">Sprints — 2025 (11th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono pr">15.44c ★</td><td><span class="place-dot pn">—</span></td><td class="meet-txt">100m Season Best</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono pr">32.04c ★</td><td><span class="place-dot pn">—</span></td><td class="meet-txt">200m Season Best</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono pr">1:15.86 ★</td><td><span class="place-dot pn">—</span></td><td class="meet-txt">400m Season Best</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="section">
+  <div class="section-title">Season Peaks</div>
+  <div class="peaks-stack">
+    <div class="peak-season">
+      <div class="ps-header"><div class="ps-yr">2025 — 11th Grade</div><div class="ps-grade">Sprints</div></div>
+      <div class="ps-marks">
+        <div class="ps-row"><span class="ps-event">100m</span><span class="ps-mark sb">15.44c</span></div>
+        <div class="ps-row"><span class="ps-event">200m</span><span class="ps-mark sb">32.04c</span></div>
+        <div class="ps-row"><span class="ps-event">400m</span><span class="ps-mark sb">1:15.86</span></div>
+      </div>
+    </div>
+    <div class="peak-season">
+      <div class="ps-header"><div class="ps-yr">2026 — 12th Grade</div><div class="ps-grade">Hurdles + HJ Debut</div></div>
+      <div class="ps-marks">
+        <div class="ps-row"><span class="ps-event">100mH</span><span class="ps-mark sb">19.44c (FAT: 20.32)</span></div>
+        <div class="ps-row"><span class="ps-event">300mH</span><span class="ps-mark sb">58.34c (FAT: 59.77)</span></div>
+        <div class="ps-row"><span class="ps-event">High Jump</span><span class="ps-mark sb">4'0"</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">2026 Rankings</div>
+  <div class="rank-grid">
+    <div class="rank-row">
+      <div class="rank-event">High Jump — 4'0"</div>
+      <div class="rank-cols">
+        <div class="rank-cell"><div class="rank-num">3rd</div><div class="rank-scope">Team</div></div>
+        <div class="rank-cell"><div class="rank-num">10th</div><div class="rank-scope">River Valley</div></div>
+        <div class="rank-cell"><div class="rank-num">886th</div><div class="rank-scope">Southern</div></div>
+        <div class="rank-cell"><div class="rank-num">2227th</div><div class="rank-scope">California</div></div>
+      </div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-event">100m Hurdles — 20.32</div>
+      <div class="rank-cols">
+        <div class="rank-cell"><div class="rank-num">4th</div><div class="rank-scope">Team</div></div>
+        <div class="rank-cell"><div class="rank-num">15th</div><div class="rank-scope">River Valley</div></div>
+        <div class="rank-cell"><div class="rank-num">854th</div><div class="rank-scope">Southern</div></div>
+        <div class="rank-cell"><div class="rank-num">2209th</div><div class="rank-scope">California</div></div>
+      </div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-event">300m Hurdles — 59.77</div>
+      <div class="rank-cols">
+        <div class="rank-cell"><div class="rank-num">5th</div><div class="rank-scope">Team</div></div>
+        <div class="rank-cell"><div class="rank-num">17th</div><div class="rank-scope">River Valley</div></div>
+        <div class="rank-cell"><div class="rank-num">1077th</div><div class="rank-scope">Southern</div></div>
+        <div class="rank-cell"><div class="rank-num">2709th</div><div class="rank-scope">California</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-title">Coaching Notes</div>
+  <div class="notes-stack">
+    <div class="note-item">
+      <div class="note-label">Sprints to Hurdles</div>
+      <div class="note-text">Ran sprints in 11th grade (100m 15.44c, 400m 1:15.86) then fully transitioned to hurdles and high jump in her senior year. That kind of event pivot in the final season takes confidence and coaching buy-in. Her sprints background — especially 400m speed — translates directly to 300mH fitness.</div>
+    </div>
+    <div class="note-item green">
+      <div class="note-label">High Jump</div>
+      <div class="note-text">Cleared 4'0" in her first recorded season of high jump, ranking RV #10. That's a strong debut for a first-year HJ athlete. With continued technical work and approach training, 4'4"–4'6" is a realistic target in a second season of dedicated jumping.</div>
+    </div>
+    <div class="note-item blue">
+      <div class="note-label">Hurdle Development</div>
+      <div class="note-text">100mH times ranged widely (19.44c to 23.03) across the season — consistent with a first year learning hurdle mechanics under meet conditions. The trajectory is right: her PR came at Senior Night near the end of the season. Her sprint base means the ceiling here is considerably higher than her current marks.</div>
+    </div>
+  </div>
+</div>
+<footer>Jurupa Valley Jaguars Track &amp; Field · Class of 2026 · Career Data Sheet</footer>
+</body>
+</html>

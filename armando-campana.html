@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Armando Campana — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:        #080f1e;
+    --navy-mid:    #0e1b30;
+    --navy-card:   #111e34;
+    --navy-border: #1a2d4a;
+    --silver:      #b8c8e0;
+    --silver-light:#dce8f5;
+    --white:       #f0f5ff;
+    --gold:        #e8b84b;
+    --gold-dim:    rgba(232,184,75,0.15);
+    --accent:      #38beff;
+    --accent-dim:  rgba(56,190,255,0.12);
+    --green:       #3de8a0;
+    --green-dim:   rgba(61,232,160,0.12);
+    --red:         #ff5e6b;
+    --pr-col:      #ff5e6b;
+    --muted:       #5a7299;
+    --injury:      #ff8c42;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--silver-light);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    max-width: 540px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .site-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(8,15,30,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--navy-border);
+    padding: env(safe-area-inset-top, 0px) 16px 0;
+    display: flex; align-items: center; justify-content: space-between;
+    height: calc(44px + env(safe-area-inset-top, 0px));
+  }
+  .nav-back { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; color: var(--accent); text-decoration: none; text-transform: uppercase; }
+  .nav-back:hover { color: var(--white); }
+  .nav-logo { height: 28px; opacity: 0.85; }
+
+  .hero {
+    background: linear-gradient(160deg, #050c18 0%, #0c1929 60%, #0a1830 100%);
+    padding: 24px 20px 28px;
+    position: relative; overflow: hidden;
+    border-bottom: 1px solid var(--navy-border);
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -40px; right: -40px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,184,75,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-school { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 6px; }
+  .hero-name { font-family: 'Bebas Neue', sans-serif; font-size: 52px; letter-spacing: 1.5px; color: var(--white); line-height: 0.9; }
+  .hero-name em { color: var(--gold); font-style: normal; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .pill { background: rgba(255,255,255,0.06); border: 1px solid var(--navy-border); border-radius: 3px; padding: 3px 10px; font-size: 10px; font-weight: 600; letter-spacing: 1px; color: var(--silver); text-transform: uppercase; }
+  .pill.gold { border-color: rgba(232,184,75,0.4); color: var(--gold); background: var(--gold-dim); }
+  .pill.blue { border-color: rgba(56,190,255,0.3); color: var(--accent); background: var(--accent-dim); }
+
+  .peak-bar { display: grid; grid-template-columns: repeat(3,1fr); border-bottom: 1px solid var(--navy-border); }
+  .peak-item { padding: 14px 12px; text-align: center; border-right: 1px solid var(--navy-border); }
+  .peak-item:last-child { border-right: none; }
+  .peak-val { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--gold); line-height: 1; }
+  .peak-lbl { font-size: 9px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+
+  .section { padding: 20px 16px; border-bottom: 1px solid var(--navy-border); }
+  .sec-title { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .sec-title::after { content: ''; flex: 1; height: 1px; background: var(--navy-border); }
+
+  .bests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .best-card { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 8px; padding: 12px; position: relative; overflow: hidden; }
+  .best-card::before { content: ''; position: absolute; top:0; left:0; width: 3px; height: 100%; }
+  .best-card.gold::before  { background: var(--gold); }
+  .best-card.blue::before  { background: var(--accent); }
+  .best-card.green::before { background: var(--green); }
+  .best-event { font-size: 9px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+  .best-mark { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--white); line-height: 1; }
+  .best-note { font-size: 9px; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+  .pr-tag { display: inline-block; background: var(--pr-col); color: #fff; font-size: 7px; font-weight: 700; letter-spacing: 1px; padding: 1px 4px; border-radius: 2px; vertical-align: middle; margin-left: 3px; }
+
+  .ms-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; }
+  .ms-box { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 8px; padding: 10px 6px; text-align: center; }
+  .ms-num { font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1; }
+  .ms-num.gold  { color: var(--gold); }
+  .ms-num.green { color: var(--green); }
+  .ms-num.blue  { color: var(--accent); }
+  .ms-lbl { font-size: 8px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+
+  .log-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .log-table th { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; padding: 5px 6px; text-align: left; border-bottom: 1px solid var(--navy-border); }
+  .log-table td { padding: 7px 6px; border-bottom: 1px solid rgba(255,255,255,0.03); vertical-align: middle; }
+  .log-table tr:last-child td { border-bottom: none; }
+  .log-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .mark-mono { font-family: 'DM Mono', monospace; font-weight: 500; color: var(--white); font-size: 13px; }
+  .mark-mono.pr  { color: var(--pr-col); }
+  .place-dot { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; border-radius: 11px; font-size: 10px; font-weight: 700; }
+  .p1 { background: var(--green);  color: #042814; }
+  .p2 { background: var(--silver); color: var(--navy); }
+  .p3 { background: var(--gold);   color: #2a1800; }
+  .pn { background: rgba(255,255,255,0.06); color: var(--muted); padding: 0 6px; font-size: 9px; }
+  .yr-chip { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 9px; font-size: 9px; font-weight: 700; }
+  .y10 { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent); }
+  .y11 { background: var(--gold-dim);   color: var(--gold);   border: 1px solid var(--gold); }
+  .y12 { background: rgba(255,94,107,0.12); color: var(--red); border: 1px solid var(--red); }
+  .meet-txt { color: var(--silver); font-size: 11px; }
+  .event-sub-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; padding: 8px 6px 4px; margin-top: 4px; }
+  .table-spacer { height: 14px; }
+
+  .peaks-stack { display: flex; flex-direction: column; gap: 10px; }
+  .peak-season { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 8px; padding: 14px 14px 12px; }
+  .peak-season-hd { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+  .peak-season-yr { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white); line-height: 1; }
+  .peak-season-grade { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+  .peak-season-marks { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pk-mark { background: rgba(255,255,255,0.04); border: 1px solid var(--navy-border); border-radius: 4px; padding: 6px 10px; }
+  .pk-evt { font-size: 8px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; }
+  .pk-val { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--white); margin-top: 2px; }
+  .pk-val.pr-val { color: var(--pr-col); }
+
+  .rank-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .rank-card { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 8px; padding: 12px; }
+  .rank-event { font-size: 10px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  .rank-row { display: flex; justify-content: space-between; align-items: center; font-size: 11px; padding: 2px 0; }
+  .rank-scope { color: var(--silver); }
+  .rank-val { font-family: 'DM Mono', monospace; font-size: 11px; }
+  .rank-val.top  { color: var(--gold); }
+  .rank-val.good { color: var(--green); }
+  .rank-val.ok   { color: var(--silver); }
+
+  /* SVG chart */
+  .chart-wrap { width: 100%; overflow: hidden; border-radius: 8px; background: var(--navy-card); border: 1px solid var(--navy-border); padding: 12px 8px 8px; }
+  .chart-title { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; text-align: center; margin-bottom: 8px; }
+  .chart-svg { width: 100%; }
+
+  .notes-stack { display: flex; flex-direction: column; gap: 10px; }
+  .note-item { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 8px; padding: 12px 14px; border-left: 3px solid var(--navy-border); }
+  .note-item.gold   { border-left-color: var(--gold); }
+  .note-item.blue   { border-left-color: var(--accent); }
+  .note-item.green  { border-left-color: var(--green); }
+  .note-item.orange { border-left-color: var(--injury); }
+  .note-title { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 5px; }
+  .note-body { font-size: 13px; font-weight: 300; color: var(--silver-light); line-height: 1.5; }
+
+  footer { padding: 24px 16px env(safe-area-inset-bottom, 16px); text-align: center; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; border-top: 1px solid var(--navy-border); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">← All Athletes</a>
+  <img src="logo.png" alt="Jaguars T&F" class="nav-logo">
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-school">Jurupa Valley Jaguars · Boys · Throws</div>
+  <div class="hero-name">Armando<br><em>Campana</em></div>
+  <div class="hero-pills">
+    <span class="pill gold">Shot Put</span>
+    <span class="pill gold">Discus</span>
+    <span class="pill">Throwers Relay</span>
+  </div>
+</div>
+
+<!-- PEAK BAR -->
+<div class="peak-bar">
+  <div class="peak-item">
+    <div class="peak-val">40'5"</div>
+    <div class="peak-lbl">Shot Put PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">113'5"</div>
+    <div class="peak-lbl">Discus PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">3</div>
+    <div class="peak-lbl">Seasons Competed</div>
+  </div>
+</div>
+
+<!-- CAREER PERSONAL BESTS -->
+<div class="section">
+  <div class="sec-title">Career Personal Bests</div>
+  <div class="bests-grid">
+
+    <div class="best-card gold">
+      <div class="best-event">Shot Put — 12lb</div>
+      <div class="best-mark">40'5" <span class="pr-tag">PR</span></div>
+      <div class="best-note">JV vs Patriot · Apr 16, 2026<br>12th grade · +5'4" from 10th grade</div>
+    </div>
+
+    <div class="best-card blue">
+      <div class="best-event">Discus — 1.6kg</div>
+      <div class="best-mark">113'5" <span class="pr-tag">PR</span></div>
+      <div class="best-note">RV League Championships · Apr 29, 2026<br>12th grade · +18'11" from 10th grade</div>
+    </div>
+
+    <div class="best-card green">
+      <div class="best-event">Shot Put — 10lb</div>
+      <div class="best-mark">35'10"</div>
+      <div class="best-note">ML King Frosh-Soph Classic<br>Mar 16, 2024 · 10th grade</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CAREER MILESTONES -->
+<div class="section">
+  <div class="sec-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box">
+      <div class="ms-num blue">3</div>
+      <div class="ms-lbl">Seasons</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-num gold">2</div>
+      <div class="ms-lbl">Event PRs</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-num green">8</div>
+      <div class="ms-lbl">RV League Rank</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-num gold">3</div>
+      <div class="ms-lbl">Straight PR Yrs</div>
+    </div>
+  </div>
+</div>
+
+<!-- EVENT LOGS -->
+<div class="section">
+  <div class="sec-title">Event Logs</div>
+
+  <!-- SHOT PUT -->
+  <div class="event-sub-label">Shot Put — 12 lb</div>
+  <table class="log-table">
+    <thead>
+      <tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr>
+    </thead>
+    <tbody>
+      <!-- 10th Grade 2024 -->
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">29'4"</td>
+        <td><span class="place-dot pn">4</span></td>
+        <td class="meet-txt">JV at AB Miller</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">31'10"</td>
+        <td>—</td>
+        <td class="meet-txt">Rancho Cucamonga Kickoff</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">32'8.5"</td>
+        <td><span class="place-dot p1">1</span></td>
+        <td class="meet-txt">JV vs Indian Springs</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">35'1.5"</td>
+        <td><span class="place-dot pn">5</span></td>
+        <td class="meet-txt">JV vs Rubidoux (Senior Night)</td>
+      </tr>
+      <!-- 11th Grade 2025 -->
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">35'5.5"</td>
+        <td><span class="place-dot pn">10</span></td>
+        <td class="meet-txt">Ontario Relays</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td>—</td>
+        <td class="meet-txt">Roosevelt Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">35'7"</td>
+        <td><span class="place-dot pn">15</span></td>
+        <td class="meet-txt">Rancho Cucamonga Kickoff</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">35'5.5"</td>
+        <td><span class="place-dot p3">3</span></td>
+        <td class="meet-txt">JV vs Rubidoux</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">33'10.5"</td>
+        <td><span class="place-dot pn">32</span></td>
+        <td class="meet-txt">Yorba Linda Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">35'3"</td>
+        <td><span class="place-dot pn">22</span></td>
+        <td class="meet-txt">Raincross Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">36'6.5"</td>
+        <td><span class="place-dot p3">3</span></td>
+        <td class="meet-txt">JV vs Ramona (Senior Night)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">35'10"</td>
+        <td><span class="place-dot p2">2</span></td>
+        <td class="meet-txt">Norte Vista vs JV</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">35'2"</td>
+        <td><span class="place-dot pn">16</span></td>
+        <td class="meet-txt">River Valley League Championships</td>
+      </tr>
+      <!-- 12th Grade 2026 -->
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">33'10"</td>
+        <td><span class="place-dot pn">16</span></td>
+        <td class="meet-txt">Corona Relays</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">35'6"</td>
+        <td><span class="place-dot pn">24</span></td>
+        <td class="meet-txt">Roosevelt Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">37'8"</td>
+        <td><span class="place-dot p3">3</span></td>
+        <td class="meet-txt">Rubidoux vs JV</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">40'0.5"</td>
+        <td><span class="place-dot p1">1</span></td>
+        <td class="meet-txt">JV vs La Sierra</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">39'8"</td>
+        <td><span class="place-dot pn">8</span></td>
+        <td class="meet-txt">Raincross Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">38'5.5"</td>
+        <td><span class="place-dot p3">3</span></td>
+        <td class="meet-txt">Ramona vs JV</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono pr">40'5" ★</td>
+        <td><span class="place-dot p2">2</span></td>
+        <td class="meet-txt">JV vs Patriot</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">40'2"</td>
+        <td><span class="place-dot p1">1</span></td>
+        <td class="meet-txt">JV vs Norte Vista (Senior Night)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">38'3"</td>
+        <td><span class="place-dot pn">9</span></td>
+        <td class="meet-txt">River Valley League Championships</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="table-spacer"></div>
+
+  <!-- DISCUS -->
+  <div class="event-sub-label">Discus — 1.6 kg</div>
+  <table class="log-table">
+    <thead>
+      <tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr>
+    </thead>
+    <tbody>
+      <!-- 10th Grade 2024 -->
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">86'1"</td>
+        <td>—</td>
+        <td class="meet-txt">JV at AB Miller</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">94'6"</td>
+        <td>—</td>
+        <td class="meet-txt">2024 season best</td>
+      </tr>
+      <!-- 11th Grade 2025 -->
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">85'1"</td>
+        <td><span class="place-dot pn">15</span></td>
+        <td class="meet-txt">Ontario Relays</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td>—</td>
+        <td class="meet-txt">Roosevelt Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">84'3"</td>
+        <td><span class="place-dot pn">22</span></td>
+        <td class="meet-txt">Rancho Cucamonga Kickoff</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">86'2"</td>
+        <td><span class="place-dot pn">4</span></td>
+        <td class="meet-txt">JV vs Rubidoux</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">88'1"</td>
+        <td><span class="place-dot pn">31</span></td>
+        <td class="meet-txt">Yorba Linda Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">100'3"</td>
+        <td><span class="place-dot pn">15</span></td>
+        <td class="meet-txt">Raincross Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">101'4"</td>
+        <td><span class="place-dot pn">5</span></td>
+        <td class="meet-txt">JV vs Ramona (Senior Night)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">106'1"</td>
+        <td><span class="place-dot p2">2</span></td>
+        <td class="meet-txt">Norte Vista vs JV</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono">95'11"</td>
+        <td><span class="place-dot pn">14</span></td>
+        <td class="meet-txt">River Valley League Championships</td>
+      </tr>
+      <!-- 12th Grade 2026 -->
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">80'10"</td>
+        <td><span class="place-dot pn">21</span></td>
+        <td class="meet-txt">Corona Relays</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">88'3"</td>
+        <td><span class="place-dot pn">27</span></td>
+        <td class="meet-txt">Roosevelt Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">92'10"</td>
+        <td><span class="place-dot pn">7</span></td>
+        <td class="meet-txt">Rubidoux vs JV</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">100'6"</td>
+        <td><span class="place-dot p3">3</span></td>
+        <td class="meet-txt">JV vs La Sierra</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">95'9"</td>
+        <td><span class="place-dot pn">18</span></td>
+        <td class="meet-txt">Raincross Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">110'1"</td>
+        <td><span class="place-dot pn">5</span></td>
+        <td class="meet-txt">Ramona vs JV</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">101'8"</td>
+        <td><span class="place-dot pn">5</span></td>
+        <td class="meet-txt">JV vs Patriot</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">111'1"</td>
+        <td><span class="place-dot p3">3</span></td>
+        <td class="meet-txt">JV vs Norte Vista (Senior Night)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono pr">113'5" ★</td>
+        <td><span class="place-dot pn">7</span></td>
+        <td class="meet-txt">River Valley League Championships</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!-- SEASON PEAKS -->
+<div class="section">
+  <div class="sec-title">Season Peaks</div>
+  <div class="peaks-stack">
+
+    <div class="peak-season">
+      <div class="peak-season-hd">
+        <div>
+          <div class="peak-season-yr">2024</div>
+          <div class="peak-season-grade">10th Grade · JV / Frosh-Soph</div>
+        </div>
+        <span class="pill">JV</span>
+      </div>
+      <div class="peak-season-marks">
+        <div class="pk-mark">
+          <div class="pk-evt">Shot Put SB</div>
+          <div class="pk-val">35'1.5"</div>
+        </div>
+        <div class="pk-mark">
+          <div class="pk-evt">Discus SB</div>
+          <div class="pk-val">94'6"</div>
+        </div>
+        <div class="pk-mark">
+          <div class="pk-evt">SP 10lb</div>
+          <div class="pk-val">35'10"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="peak-season">
+      <div class="peak-season-hd">
+        <div>
+          <div class="peak-season-yr">2025</div>
+          <div class="peak-season-grade">11th Grade · Varsity</div>
+        </div>
+        <span class="pill blue">+1'5" SP</span>
+      </div>
+      <div class="peak-season-marks">
+        <div class="pk-mark">
+          <div class="pk-evt">Shot Put SB</div>
+          <div class="pk-val">36'6.5"</div>
+        </div>
+        <div class="pk-mark">
+          <div class="pk-evt">Discus SB</div>
+          <div class="pk-val">106'1"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="peak-season">
+      <div class="peak-season-hd">
+        <div>
+          <div class="peak-season-yr">2026</div>
+          <div class="peak-season-grade">12th Grade · Varsity · Senior Season</div>
+        </div>
+        <span class="pill gold">PRs</span>
+      </div>
+      <div class="peak-season-marks">
+        <div class="pk-mark">
+          <div class="pk-evt">Shot Put PR</div>
+          <div class="pk-val pr-val">40'5"</div>
+        </div>
+        <div class="pk-mark">
+          <div class="pk-evt">Discus PR</div>
+          <div class="pk-val pr-val">113'5"</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROGRESSION CHART -->
+<div class="section">
+  <div class="sec-title">Progression Chart</div>
+
+  <div class="chart-wrap" style="margin-bottom:10px;">
+    <div class="chart-title">Shot Put Season Best (feet)</div>
+    <svg class="chart-svg" viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- Grid lines -->
+      <line x1="40" y1="10" x2="460" y2="10" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="40" x2="460" y2="40" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="70" x2="460" y2="70" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="100" x2="460" y2="100" stroke="#1a2d4a" stroke-width="1"/>
+      <!-- Labels -->
+      <text x="35" y="13" font-family="DM Mono" font-size="8" fill="#5a7299" text-anchor="end">41'</text>
+      <text x="35" y="43" font-family="DM Mono" font-size="8" fill="#5a7299" text-anchor="end">38'</text>
+      <text x="35" y="73" font-family="DM Mono" font-size="8" fill="#5a7299" text-anchor="end">35'</text>
+      <text x="35" y="103" font-family="DM Mono" font-size="8" fill="#5a7299" text-anchor="end">32'</text>
+      <!-- Year labels -->
+      <text x="160" y="115" font-family="DM Mono" font-size="9" fill="#5a7299" text-anchor="middle">2024</text>
+      <text x="300" y="115" font-family="DM Mono" font-size="9" fill="#5a7299" text-anchor="middle">2025</text>
+      <text x="440" y="115" font-family="DM Mono" font-size="9" fill="#5a7299" text-anchor="middle">2026</text>
+      <!-- Area fill: SP 35'1.5"(75), 36'6.5"(65), 40'5"(17) -->
+      <polygon points="160,75 300,65 440,17 440,100 160,100" fill="rgba(232,184,75,0.08)"/>
+      <!-- Line -->
+      <polyline points="160,75 300,65 440,17" fill="none" stroke="#e8b84b" stroke-width="2.5" stroke-linejoin="round"/>
+      <!-- Dots -->
+      <circle cx="160" cy="75" r="5" fill="#e8b84b"/>
+      <circle cx="300" cy="65" r="5" fill="#e8b84b"/>
+      <circle cx="440" cy="17" r="6" fill="#ff5e6b" stroke="#080f1e" stroke-width="2"/>
+      <!-- Value labels -->
+      <text x="160" y="70" font-family="DM Mono" font-size="8" fill="#e8b84b" text-anchor="middle">35'1.5"</text>
+      <text x="300" y="60" font-family="DM Mono" font-size="8" fill="#e8b84b" text-anchor="middle">36'6.5"</text>
+      <text x="440" y="12" font-family="DM Mono" font-size="8" fill="#ff5e6b" text-anchor="middle">40'5"</text>
+    </svg>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Discus Season Best (feet)</div>
+    <svg class="chart-svg" viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- Grid lines -->
+      <line x1="40" y1="10" x2="460" y2="10" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="40" x2="460" y2="40" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="70" x2="460" y2="70" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="100" x2="460" y2="100" stroke="#1a2d4a" stroke-width="1"/>
+      <!-- Labels -->
+      <text x="35" y="13" font-family="DM Mono" font-size="8" fill="#5a7299" text-anchor="end">115'</text>
+      <text x="35" y="43" font-family="DM Mono" font-size="8" fill="#5a7299" text-anchor="end">105'</text>
+      <text x="35" y="73" font-family="DM Mono" font-size="8" fill="#5a7299" text-anchor="end">95'</text>
+      <text x="35" y="103" font-family="DM Mono" font-size="8" fill="#5a7299" text-anchor="end">85'</text>
+      <!-- Year labels -->
+      <text x="160" y="115" font-family="DM Mono" font-size="9" fill="#5a7299" text-anchor="middle">2024</text>
+      <text x="300" y="115" font-family="DM Mono" font-size="9" fill="#5a7299" text-anchor="middle">2025</text>
+      <text x="440" y="115" font-family="DM Mono" font-size="9" fill="#5a7299" text-anchor="middle">2026</text>
+      <!-- Area fill: 94'6"(82), 106'1"(47), 113'5"(18) -->
+      <polygon points="160,82 300,47 440,18 440,100 160,100" fill="rgba(56,190,255,0.08)"/>
+      <!-- Line -->
+      <polyline points="160,82 300,47 440,18" fill="none" stroke="#38beff" stroke-width="2.5" stroke-linejoin="round"/>
+      <!-- Dots -->
+      <circle cx="160" cy="82" r="5" fill="#38beff"/>
+      <circle cx="300" cy="47" r="5" fill="#38beff"/>
+      <circle cx="440" cy="18" r="6" fill="#ff5e6b" stroke="#080f1e" stroke-width="2"/>
+      <!-- Value labels -->
+      <text x="160" y="77" font-family="DM Mono" font-size="8" fill="#38beff" text-anchor="middle">94'6"</text>
+      <text x="300" y="42" font-family="DM Mono" font-size="8" fill="#38beff" text-anchor="middle">106'1"</text>
+      <text x="440" y="13" font-family="DM Mono" font-size="8" fill="#ff5e6b" text-anchor="middle">113'5"</text>
+    </svg>
+  </div>
+</div>
+
+<!-- RANKINGS -->
+<div class="section">
+  <div class="sec-title">2026 Season Rankings</div>
+  <div class="rank-grid">
+
+    <div class="rank-card">
+      <div class="rank-event">Shot Put — 40'5"</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top">2nd</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val good">8th</span></div>
+      <div class="rank-row"><span class="rank-scope">Southern CA</span><span class="rank-val ok">433rd</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val ok">1044th</span></div>
+      <div class="rank-row"><span class="rank-scope">National</span><span class="rank-val ok">13604th</span></div>
+    </div>
+
+    <div class="rank-card">
+      <div class="rank-event">Discus — 113'5"</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top">3rd</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val good">8th</span></div>
+      <div class="rank-row"><span class="rank-scope">Southern CA</span><span class="rank-val ok">483rd</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val ok">1322nd</span></div>
+      <div class="rank-row"><span class="rank-scope">National</span><span class="rank-val ok">16164th</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- COACHING NOTES -->
+<div class="section">
+  <div class="sec-title">Coaching Notes</div>
+  <div class="notes-stack">
+
+    <div class="note-item gold">
+      <div class="note-title">Three-Year Progression</div>
+      <div class="note-body">Improved his shot put every single year — 35'1" to 36'6" to 40'5". The discus curve is even steeper: 94'6" to 106'1" to 113'5". That's a 19-foot gain in the disc across three seasons, which is substantial development for a throws athlete. He peaked at the right time, setting career PRs deep into his senior season.</div>
+    </div>
+
+    <div class="note-item blue">
+      <div class="note-title">Senior Season Breakout</div>
+      <div class="note-body">The jump from junior to senior year was his biggest: +3'10" in shot put and +7'4" in discus. He cleared 40 feet in the shot put for the first time during a dual meet versus Patriot and then backed it up with 40'2" two meets later. Hit 110'+ in discus multiple times down the stretch, finishing with a career-best 113'5" at League Championships.</div>
+    </div>
+
+    <div class="note-item green">
+      <div class="note-title">Top 10 in River Valley</div>
+      <div class="note-body">Finished 8th in the River Valley League in both shot put and discus as a senior — top 10 in both disciplines simultaneously. For a program that doesn't have a throws specialist coach on staff, that's a strong result. With dedicated throws coaching his senior year, his ceiling was likely higher than these marks show.</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  Jurupa Valley Jaguars Track &amp; Field · Armando Campana · Class of 2026<br>
+  Data sourced from athletic.net official meet results
+</footer>
+
+</body>
+</html>

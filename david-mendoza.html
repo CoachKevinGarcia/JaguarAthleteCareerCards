@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Mendoza — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --navy:#080f1e;--navy-mid:#0e1b30;--navy-card:#111e34;--navy-border:#1a2d4a;
+  --silver:#b8c8e0;--silver-light:#dce8f5;--white:#f0f5ff;
+  --gold:#e8b84b;--gold-dim:rgba(232,184,75,0.15);
+  --accent:#38beff;--accent-dim:rgba(56,190,255,0.12);
+  --green:#3de8a0;--green-dim:rgba(61,232,160,0.12);
+  --red:#ff5e6b;--pr-col:#ff5e6b;--muted:#5a7299;--injury:#ff8c42;
+}
+body{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;
+  max-width:540px;margin:0 auto;padding-bottom:env(safe-area-inset-bottom);
+  -webkit-font-smoothing:antialiased}
+
+/* NAV */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(8,15,30,0.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--navy-border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top))}
+.nav-back{color:var(--accent);font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:14px;text-decoration:none;letter-spacing:.5px}
+.nav-logo{height:32px;opacity:.9}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy-mid) 0%,var(--navy) 100%);
+  padding:28px 20px 24px;border-bottom:2px solid var(--navy-border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40px;right:-30px;width:180px;height:180px;
+  background:radial-gradient(circle,rgba(232,184,75,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-school{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.95;
+  color:var(--white);letter-spacing:1px}
+.hero-name em{color:var(--gold);font-style:normal}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pill{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;
+  padding:4px 10px;border-radius:2px;border:1px solid var(--navy-border);
+  color:var(--silver);background:rgba(255,255,255,0.04);text-transform:uppercase}
+.pill.gold{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+
+/* PEAK BAR */
+.peak-bar{display:grid;grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid var(--navy-border);background:var(--navy-mid)}
+.peak-cell{padding:14px 10px;text-align:center;border-right:1px solid var(--navy-border)}
+.peak-cell:last-child{border-right:none}
+.peak-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.peak-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+
+/* SECTIONS */
+.section{padding:20px 16px;border-bottom:1px solid var(--navy-border)}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:20px;
+  color:var(--accent);letter-spacing:1.5px;margin-bottom:14px}
+
+/* BESTS GRID */
+.bests-grid{display:flex;flex-direction:column;gap:8px}
+.best-card{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-left:3px solid var(--gold);border-radius:4px;padding:11px 13px;
+  display:flex;align-items:center;justify-content:space-between}
+.best-card.blue{border-left-color:var(--accent)}
+.best-card.green{border-left-color:var(--green)}
+.best-ev{font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:14px;color:var(--white)}
+.best-sub{font-size:11px;color:var(--muted);margin-top:1px}
+.best-mark{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);text-align:right}
+.best-card.blue .best-mark{color:var(--accent)}
+.best-card.green .best-mark{color:var(--green)}
+
+/* MILESTONES */
+.ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ms-box{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:11px 12px;text-align:center}
+.ms-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.ms-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+
+/* LOG TABLES */
+.event-sub-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;margin:14px 0 6px;
+  padding-left:2px;border-left:2px solid var(--navy-border)}
+.log-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:4px}
+.log-table thead th{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;padding:4px 6px;
+  border-bottom:1px solid var(--navy-border);text-align:left;font-weight:400}
+.log-table tbody tr{border-bottom:1px solid rgba(26,45,74,0.5)}
+.log-table tbody tr:hover{background:rgba(56,190,255,0.04)}
+.log-table td{padding:6px 6px;vertical-align:middle}
+.yr-chip{display:inline-flex;align-items:center;justify-content:center;
+  width:18px;height:18px;border-radius:2px;font-family:'DM Mono',monospace;
+  font-size:9px;font-weight:500}
+.y9{background:var(--green-dim);color:var(--green)}
+.y10{background:var(--accent-dim);color:var(--accent)}
+.y11{background:var(--gold-dim);color:var(--gold)}
+.y12{background:rgba(255,94,107,0.15);color:var(--red)}
+.mark-mono{font-family:'DM Mono',monospace;font-size:12px;color:var(--silver-light)}
+.mark-mono.pr{color:var(--pr-col)}
+.place-dot{display:inline-flex;align-items:center;justify-content:center;
+  width:20px;height:20px;border-radius:50%;font-family:'DM Mono',monospace;
+  font-size:9px;font-weight:500}
+.p1{background:var(--green);color:#003322}
+.p2{background:var(--silver);color:var(--navy)}
+.p3{background:var(--gold);color:#3a2800}
+.pn{background:rgba(255,255,255,0.07);color:var(--muted)}
+.meet-txt{color:var(--silver);font-size:11px}
+
+/* SEASON PEAKS */
+.peaks-stack{display:flex;flex-direction:column;gap:10px}
+.peak-season{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:13px 14px}
+.ps-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.ps-yr{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--white)}
+.ps-grade{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px}
+.ps-marks{display:flex;flex-direction:column;gap:4px}
+.ps-row{display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;border-top:1px solid rgba(26,45,74,0.5);padding-top:4px}
+.ps-event{color:var(--muted);font-family:'DM Mono',monospace;font-size:10px}
+.ps-mark{font-family:'DM Mono',monospace;font-size:12px;color:var(--silver-light)}
+.ps-mark.sb{color:var(--gold)}
+
+/* SVG CHART */
+.chart-wrap{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:12px;margin-bottom:12px}
+.chart-title{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+svg.prog-chart{width:100%;height:auto;display:block}
+
+/* RANKINGS */
+.rank-grid{display:flex;flex-direction:column;gap:8px}
+.rank-row{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:10px 13px}
+.rank-event{font-weight:700;font-size:13px;color:var(--white);margin-bottom:6px}
+.rank-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.rank-cell{text-align:center}
+.rank-num{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--accent)}
+.rank-scope{font-family:'DM Mono',monospace;font-size:8px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.6px}
+
+/* NOTES */
+.notes-stack{display:flex;flex-direction:column;gap:10px}
+.note-item{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-left:3px solid var(--gold);border-radius:4px;padding:12px 14px}
+.note-item.blue{border-left-color:var(--accent)}
+.note-item.green{border-left-color:var(--green)}
+.note-item.orange{border-left-color:var(--injury)}
+.note-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.note-text{font-size:13px;line-height:1.5;color:var(--silver-light)}
+
+/* FOOTER */
+footer{text-align:center;padding:24px 16px;background:var(--navy-mid);
+  font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);
+  letter-spacing:.8px;text-transform:uppercase;border-top:1px solid var(--navy-border)}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">← All Athletes</a>
+  <img src="logo.png" alt="Jaguars T&F" class="nav-logo">
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-school">Jurupa Valley Jaguars · Boys · Throws</div>
+  <div class="hero-name">David<br><em>Mendoza</em></div>
+  <div class="pills">
+    <span class="pill gold">Shot Put</span>
+    <span class="pill gold">Discus</span>
+  </div>
+</div>
+
+<!-- PEAK BAR -->
+<div class="peak-bar">
+  <div class="peak-cell">
+    <div class="peak-val">37'9"</div>
+    <div class="peak-lbl">SP Career PR</div>
+  </div>
+  <div class="peak-cell">
+    <div class="peak-val">110'5"</div>
+    <div class="peak-lbl">Disc Career PR</div>
+  </div>
+  <div class="peak-cell">
+    <div class="peak-val">3</div>
+    <div class="peak-lbl">Seasons Throwing</div>
+  </div>
+</div>
+
+<!-- CAREER BESTS -->
+<div class="section">
+  <div class="section-title">Career Personal Bests</div>
+  <div class="bests-grid">
+    <div class="best-card">
+      <div>
+        <div class="best-ev">Shot Put (12 lb)</div>
+        <div class="best-sub">Mar 12, 2026 · vs Rubidoux · 2nd Place</div>
+      </div>
+      <div class="best-mark">37'9"</div>
+    </div>
+    <div class="best-card blue">
+      <div>
+        <div class="best-ev">Discus (1.6 kg)</div>
+        <div class="best-sub">Apr 9, 2026 · Ramona vs JV · 4th Place</div>
+      </div>
+      <div class="best-mark">110'5"</div>
+    </div>
+  </div>
+</div>
+
+<!-- MILESTONES -->
+<div class="section">
+  <div class="section-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box">
+      <div class="ms-val">3</div>
+      <div class="ms-lbl">Seasons Competed</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">PR'd</div>
+      <div class="ms-lbl">Every Season</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">+6'1"</div>
+      <div class="ms-lbl">SP 3-Year Gain</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">+36'9"</div>
+      <div class="ms-lbl">Disc 3-Year Gain</div>
+    </div>
+  </div>
+</div>
+
+<!-- EVENT LOGS -->
+<div class="section">
+  <div class="section-title">Event Logs</div>
+
+  <!-- Shot Put -->
+  <div class="event-sub-label">Shot Put — 2026 (12th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td><span class="place-dot pn">—</span></td>
+        <td class="meet-txt">Roosevelt Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono pr">37'9" ★</td>
+        <td><span class="place-dot p2">2</span></td>
+        <td class="meet-txt">vs Rubidoux</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">36'7"</td>
+        <td><span class="place-dot p3">4</span></td>
+        <td class="meet-txt">vs La Sierra</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">37'2"</td>
+        <td><span class="place-dot pn">14</span></td>
+        <td class="meet-txt">Raincross Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td><span class="place-dot pn">—</span></td>
+        <td class="meet-txt">vs Ramona</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">37'0"</td>
+        <td><span class="place-dot pn">6</span></td>
+        <td class="meet-txt">vs Patriot</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">37'3"</td>
+        <td><span class="place-dot pn">5</span></td>
+        <td class="meet-txt">vs Norte Vista (Senior Night)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">36'3"</td>
+        <td><span class="place-dot pn">13</span></td>
+        <td class="meet-txt">RVL Championships</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="event-sub-label">Shot Put — 2025 (11th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td><span class="place-dot pn">—</span></td>
+        <td class="meet-txt">RC Kickoff Classic</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono pr">33'5.5" ★</td>
+        <td><span class="place-dot p1">1</span></td>
+        <td class="meet-txt">vs Norte Vista</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="event-sub-label">Shot Put — 2024 (10th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">29'5"</td>
+        <td><span class="place-dot p3">4</span></td>
+        <td class="meet-txt">vs Patriot</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">27'8"</td>
+        <td><span class="place-dot pn">6</span></td>
+        <td class="meet-txt">vs Indian Springs</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">27'9"</td>
+        <td><span class="place-dot pn">37</span></td>
+        <td class="meet-txt">Raincross Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono pr">31'8.25" ★</td>
+        <td><span class="place-dot p1">1</span></td>
+        <td class="meet-txt">vs Pacific</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">31'6.5"</td>
+        <td><span class="place-dot p1">1</span></td>
+        <td class="meet-txt">vs Rubidoux (Senior Night)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Discus -->
+  <div class="event-sub-label">Discus — 2026 (12th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td><span class="place-dot pn">—</span></td>
+        <td class="meet-txt">Roosevelt Invitational</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">97'10"</td>
+        <td><span class="place-dot pn">6</span></td>
+        <td class="meet-txt">vs Rubidoux</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">100'5"</td>
+        <td><span class="place-dot p3">4</span></td>
+        <td class="meet-txt">vs La Sierra</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono pr">110'5" ★</td>
+        <td><span class="place-dot p3">4</span></td>
+        <td class="meet-txt">Ramona vs JV</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">65'1"</td>
+        <td><span class="place-dot pn">8</span></td>
+        <td class="meet-txt">vs Patriot</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y12">12</span></td>
+        <td class="mark-mono">104'7"</td>
+        <td><span class="place-dot pn">5</span></td>
+        <td class="meet-txt">vs Norte Vista (Senior Night)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="event-sub-label">Discus — 2025 (11th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td><span class="place-dot pn">—</span></td>
+        <td class="meet-txt">RC Kickoff Classic</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y11">11</span></td>
+        <td class="mark-mono pr">89'10" ★</td>
+        <td><span class="place-dot p1">1</span></td>
+        <td class="meet-txt">vs Norte Vista</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="event-sub-label">Discus — 2024 (10th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono pr">73'8" ★</td>
+        <td><span class="place-dot pn">—</span></td>
+        <td class="meet-txt">2024 Season Best</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SEASON PEAKS -->
+<div class="section">
+  <div class="section-title">Season Peaks</div>
+  <div class="peaks-stack">
+
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr">2024 — 10th Grade</div>
+        <div class="ps-grade">Throws Debut</div>
+      </div>
+      <div class="ps-marks">
+        <div class="ps-row">
+          <span class="ps-event">Shot Put</span>
+          <span class="ps-mark sb">31'8.25"</span>
+        </div>
+        <div class="ps-row">
+          <span class="ps-event">Discus</span>
+          <span class="ps-mark sb">73'8"</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr">2025 — 11th Grade</div>
+        <div class="ps-grade">Steady Growth</div>
+      </div>
+      <div class="ps-marks">
+        <div class="ps-row">
+          <span class="ps-event">Shot Put</span>
+          <span class="ps-mark sb">33'5.5" <span style="color:var(--green);font-size:9px">▲ +1'9"</span></span>
+        </div>
+        <div class="ps-row">
+          <span class="ps-event">Discus</span>
+          <span class="ps-mark sb">89'10" <span style="color:var(--green);font-size:9px">▲ +16'2"</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr">2026 — 12th Grade</div>
+        <div class="ps-grade">Career Bests</div>
+      </div>
+      <div class="ps-marks">
+        <div class="ps-row">
+          <span class="ps-event">Shot Put</span>
+          <span class="ps-mark sb">37'9" <span style="color:var(--green);font-size:9px">▲ +4'3.5"</span></span>
+        </div>
+        <div class="ps-row">
+          <span class="ps-event">Discus</span>
+          <span class="ps-mark sb">110'5" <span style="color:var(--green);font-size:9px">▲ +20'7"</span></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROGRESSION CHARTS -->
+<div class="section">
+  <div class="section-title">Progression Charts</div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Shot Put — Season Bests (ft)</div>
+    <svg class="prog-chart" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- grid -->
+      <line x1="40" y1="10" x2="40" y2="95" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="95" x2="290" y2="95" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="40" x2="290" y2="40" stroke="#1a2d4a" stroke-width=".5" stroke-dasharray="3,3"/>
+      <line x1="40" y1="67" x2="290" y2="67" stroke="#1a2d4a" stroke-width=".5" stroke-dasharray="3,3"/>
+      <!-- y labels: 30, 34, 38 -->
+      <text x="35" y="95" fill="#5a7299" font-size="8" text-anchor="end" font-family="DM Mono,monospace">30'</text>
+      <text x="35" y="67" fill="#5a7299" font-size="8" text-anchor="end" font-family="DM Mono,monospace">34'</text>
+      <text x="35" y="40" fill="#5a7299" font-size="8" text-anchor="end" font-family="DM Mono,monospace">38'</text>
+      <!-- x labels -->
+      <text x="100" y="108" fill="#5a7299" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">2024</text>
+      <text x="190" y="108" fill="#5a7299" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">2025</text>
+      <text x="280" y="108" fill="#5a7299" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">2026</text>
+      <!-- scale: 30'=95, 38'=15 → 10px per foot; 31.69'→78.1, 33.46'→60.4, 37.75'→22.5 -->
+      <polygon points="100,78 190,60 280,22 280,95 190,95 100,95" fill="rgba(232,184,75,0.08)"/>
+      <polyline points="100,78 190,60 280,22" stroke="#e8b84b" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="100" cy="78" r="4" fill="#e8b84b"/>
+      <circle cx="190" cy="60" r="4" fill="#e8b84b"/>
+      <circle cx="280" cy="22" r="5" fill="#e8b84b" stroke="#080f1e" stroke-width="1.5"/>
+      <text x="100" y="72" fill="#e8b84b" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">31'8"</text>
+      <text x="190" y="54" fill="#e8b84b" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">33'5"</text>
+      <text x="280" y="16" fill="#e8b84b" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">37'9"</text>
+    </svg>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Discus — Season Bests (ft)</div>
+    <svg class="prog-chart" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- grid -->
+      <line x1="40" y1="10" x2="40" y2="95" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="95" x2="290" y2="95" stroke="#1a2d4a" stroke-width="1"/>
+      <line x1="40" y1="40" x2="290" y2="40" stroke="#1a2d4a" stroke-width=".5" stroke-dasharray="3,3"/>
+      <line x1="40" y1="67" x2="290" y2="67" stroke="#1a2d4a" stroke-width=".5" stroke-dasharray="3,3"/>
+      <!-- y labels: 70, 90, 110 -->
+      <text x="35" y="95" fill="#5a7299" font-size="8" text-anchor="end" font-family="DM Mono,monospace">70'</text>
+      <text x="35" y="67" fill="#5a7299" font-size="8" text-anchor="end" font-family="DM Mono,monospace">90'</text>
+      <text x="35" y="40" fill="#5a7299" font-size="8" text-anchor="end" font-family="DM Mono,monospace">110'</text>
+      <!-- x labels -->
+      <text x="100" y="108" fill="#5a7299" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">2024</text>
+      <text x="190" y="108" fill="#5a7299" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">2025</text>
+      <text x="280" y="108" fill="#5a7299" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">2026</text>
+      <!-- scale: 70'=95, 110'=15 → 2px per foot; 73.67'→88.7, 89.83'→56.3, 110.42'→15.2 -->
+      <polygon points="100,89 190,56 280,16 280,95 190,95 100,95" fill="rgba(56,190,255,0.07)"/>
+      <polyline points="100,89 190,56 280,16" stroke="#38beff" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="100" cy="89" r="4" fill="#38beff"/>
+      <circle cx="190" cy="56" r="4" fill="#38beff"/>
+      <circle cx="280" cy="16" r="5" fill="#38beff" stroke="#080f1e" stroke-width="1.5"/>
+      <text x="100" y="83" fill="#38beff" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">73'8"</text>
+      <text x="190" y="50" fill="#38beff" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">89'10"</text>
+      <text x="280" y="11" fill="#38beff" font-size="8" text-anchor="middle" font-family="DM Mono,monospace">110'5"</text>
+    </svg>
+  </div>
+</div>
+
+<!-- RANKINGS -->
+<div class="section">
+  <div class="section-title">2026 Rankings</div>
+  <div class="rank-grid">
+    <div class="rank-row">
+      <div class="rank-event">Shot Put — 37'9"</div>
+      <div class="rank-cols">
+        <div class="rank-cell"><div class="rank-num">5th</div><div class="rank-scope">Team</div></div>
+        <div class="rank-cell"><div class="rank-num">16th</div><div class="rank-scope">River Valley</div></div>
+        <div class="rank-cell"><div class="rank-num">757th</div><div class="rank-scope">Southern</div></div>
+        <div class="rank-cell"><div class="rank-num">1842nd</div><div class="rank-scope">California</div></div>
+      </div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-event">Discus — 110'5"</div>
+      <div class="rank-cols">
+        <div class="rank-cell"><div class="rank-num">5th</div><div class="rank-scope">Team</div></div>
+        <div class="rank-cell"><div class="rank-num">12th</div><div class="rank-scope">River Valley</div></div>
+        <div class="rank-cell"><div class="rank-num">568th</div><div class="rank-scope">Southern</div></div>
+        <div class="rank-cell"><div class="rank-num">1582nd</div><div class="rank-scope">California</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COACHING NOTES -->
+<div class="section">
+  <div class="section-title">Coaching Notes</div>
+  <div class="notes-stack">
+    <div class="note-item">
+      <div class="note-label">Consistency of Growth</div>
+      <div class="note-text">Improved in both events every single season. Shot put went from 31'8" to 37'9" over three years — a 6'1" gain. Discus went from 73'8" to 110'5" — a 36'9" gain. That kind of consistent trajectory across three seasons is rare and reflects both coachability and physical development.</div>
+    </div>
+    <div class="note-item blue">
+      <div class="note-label">Discus Development</div>
+      <div class="note-text">His discus has outpaced his shot put development on a percentage basis. Breaking 100' this season is a significant threshold. The RV 12th ranking in discus suggests real competitiveness at the regional level. The outlier 65'1" at Patriot was a bad-series meet, not his ceiling — the 110'5" at Ramona and 104'7" at Norte Vista bookend it correctly.</div>
+    </div>
+    <div class="note-item">
+      <div class="note-label">Shot Put Plateau</div>
+      <div class="note-text">He threw within a narrow 36'3"–37'9" band for most of the senior season, with his PR coming in early March. He didn't extend past 37'9" at Raincross or the RVL Championships. The PR held but he wasn't building on it — worth examining technically whether the shot mechanics were consistent with the discus growth.</div>
+    </div>
+    <div class="note-item green">
+      <div class="note-label">Outlook</div>
+      <div class="note-text">A throws athlete who improved every year through 12th grade, with no regression. The discus trajectory especially — if he competes at the collegiate club or JUCO level — suggests continued growth is achievable. College-level coaching, weight room access, and full-time throws focus would give him the best chance to extend his ceiling.</div>
+    </div>
+  </div>
+</div>
+
+<footer>Jurupa Valley Jaguars Track &amp; Field · Class of 2026 · Career Data Sheet</footer>
+</body>
+</html>

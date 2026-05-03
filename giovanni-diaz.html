@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Giovanni Diaz — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#080f1e;--navy-mid:#0e1b30;--navy-card:#111e34;--navy-border:#1a2d4a;
+    --silver:#b8c8e0;--silver-light:#dce8f5;--white:#f0f5ff;
+    --gold:#e8b84b;--gold-dim:rgba(232,184,75,0.15);
+    --accent:#38beff;--accent-dim:rgba(56,190,255,0.12);
+    --green:#3de8a0;--green-dim:rgba(61,232,160,0.12);
+    --red:#ff5e6b;--pr-col:#ff5e6b;--muted:#5a7299;--injury:#ff8c42;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy);color:var(--silver-light);font-family:'Barlow Condensed',sans-serif;font-size:15px;line-height:1.4;-webkit-font-smoothing:antialiased;max-width:540px;margin:0 auto;overflow-x:hidden;}
+  .site-nav{position:sticky;top:0;z-index:100;background:rgba(8,15,30,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--navy-border);padding:env(safe-area-inset-top,0px) 16px 0;display:flex;align-items:center;justify-content:space-between;height:calc(44px + env(safe-area-inset-top,0px));}
+  .nav-back{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--accent);text-decoration:none;text-transform:uppercase;}
+  .nav-back:hover{color:var(--white);}
+  .nav-logo{height:28px;opacity:0.85;}
+  .hero{background:linear-gradient(160deg,#050c18 0%,#0c1929 60%,#0a1830 100%);padding:24px 20px 28px;position:relative;overflow:hidden;border-bottom:1px solid var(--navy-border);}
+  .hero::after{content:'';position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(232,184,75,0.06) 0%,transparent 70%);pointer-events:none;}
+  .hero-school{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:6px;}
+  .hero-name{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:1.5px;color:var(--white);line-height:0.9;}
+  .hero-name em{color:var(--gold);font-style:normal;}
+  .hero-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+  .pill{background:rgba(255,255,255,0.06);border:1px solid var(--navy-border);border-radius:3px;padding:3px 10px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--silver);text-transform:uppercase;}
+  .pill.gold{border-color:rgba(232,184,75,0.4);color:var(--gold);background:var(--gold-dim);}
+  .pill.blue{border-color:rgba(56,190,255,0.3);color:var(--accent);background:var(--accent-dim);}
+  .peak-bar{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--navy-border);}
+  .peak-item{padding:14px 12px;text-align:center;border-right:1px solid var(--navy-border);}
+  .peak-item:last-child{border-right:none;}
+  .peak-val{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gold);line-height:1;}
+  .peak-lbl{font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+  .section{padding:20px 16px;border-bottom:1px solid var(--navy-border);}
+  .sec-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .sec-title::after{content:'';flex:1;height:1px;background:var(--navy-border);}
+  .bests-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .best-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:12px;position:relative;overflow:hidden;}
+  .best-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+  .best-card.gold::before{background:var(--gold);} .best-card.blue::before{background:var(--accent);} .best-card.green::before{background:var(--green);}
+  .best-event{font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;}
+  .best-mark{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);line-height:1;}
+  .best-note{font-size:9px;color:var(--muted);margin-top:3px;line-height:1.3;}
+  .pr-tag{display:inline-block;background:var(--pr-col);color:#fff;font-size:7px;font-weight:700;letter-spacing:1px;padding:1px 4px;border-radius:2px;vertical-align:middle;margin-left:3px;}
+  .ms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+  .ms-box{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:10px 6px;text-align:center;}
+  .ms-num{font-family:'Bebas Neue',sans-serif;font-size:32px;line-height:1;}
+  .ms-num.gold{color:var(--gold);} .ms-num.green{color:var(--green);} .ms-num.blue{color:var(--accent);}
+  .ms-lbl{font-size:8px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+  .log-table{width:100%;border-collapse:collapse;font-size:12px;}
+  .log-table th{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;padding:5px 6px;text-align:left;border-bottom:1px solid var(--navy-border);}
+  .log-table td{padding:7px 6px;border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:middle;}
+  .log-table tr:last-child td{border-bottom:none;}
+  .log-table tr:hover td{background:rgba(255,255,255,0.02);}
+  .mark-mono{font-family:'DM Mono',monospace;font-weight:500;color:var(--white);font-size:13px;}
+  .mark-mono.pr{color:var(--pr-col);}
+  .place-dot{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:11px;font-size:10px;font-weight:700;}
+  .p1{background:var(--green);color:#042814;} .p2{background:var(--silver);color:var(--navy);} .p3{background:var(--gold);color:#2a1800;} .pn{background:rgba(255,255,255,0.06);color:var(--muted);padding:0 6px;font-size:9px;}
+  .yr-chip{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:9px;font-size:9px;font-weight:700;}
+  .y12{background:rgba(255,94,107,0.12);color:var(--red);border:1px solid var(--red);}
+  .meet-txt{color:var(--silver);font-size:11px;}
+  .event-sub-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;padding:8px 6px 4px;margin-top:4px;}
+  .table-spacer{height:14px;}
+  .rank-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .rank-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:12px;}
+  .rank-event{font-size:10px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;}
+  .rank-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;padding:2px 0;}
+  .rank-scope{color:var(--silver);}
+  .rank-val{font-family:'DM Mono',monospace;font-size:11px;}
+  .rank-val.top{color:var(--gold);} .rank-val.good{color:var(--green);} .rank-val.ok{color:var(--silver);}
+  .notes-stack{display:flex;flex-direction:column;gap:10px;}
+  .note-item{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:12px 14px;border-left:3px solid var(--navy-border);}
+  .note-item.gold{border-left-color:var(--gold);} .note-item.blue{border-left-color:var(--accent);} .note-item.green{border-left-color:var(--green);}
+  .note-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:5px;}
+  .note-body{font-size:13px;font-weight:300;color:var(--silver-light);line-height:1.5;}
+  footer{padding:24px 16px env(safe-area-inset-bottom,16px);text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;border-top:1px solid var(--navy-border);}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">← All Athletes</a>
+  <img src="logo.png" alt="Jaguars T&F" class="nav-logo">
+</nav>
+
+<div class="hero">
+  <div class="hero-school">Jurupa Valley Jaguars · Boys · Multi-Event</div>
+  <div class="hero-name">Giovanni<br><em>Diaz</em></div>
+  <div class="hero-pills">
+    <span class="pill gold">Shot Put</span>
+    <span class="pill gold">Discus</span>
+    <span class="pill blue">200 Meters</span>
+    <span class="pill">110m Hurdles</span>
+  </div>
+</div>
+
+<div class="peak-bar">
+  <div class="peak-item">
+    <div class="peak-val">33'8.5"</div>
+    <div class="peak-lbl">Shot Put PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">82'4"</div>
+    <div class="peak-lbl">Discus PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">26.85</div>
+    <div class="peak-lbl">200m PR</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-title">Career Personal Bests</div>
+  <div class="bests-grid">
+
+    <div class="best-card gold">
+      <div class="best-event">Shot Put — 12lb</div>
+      <div class="best-mark">33'8.5" <span class="pr-tag">PR</span></div>
+      <div class="best-note">JV vs Patriot · Apr 16, 2026<br>12th grade · 1st place</div>
+    </div>
+
+    <div class="best-card blue">
+      <div class="best-event">Discus — 1.6kg</div>
+      <div class="best-mark">82'4" <span class="pr-tag">PR</span></div>
+      <div class="best-note">2026 season best<br>12th grade</div>
+    </div>
+
+    <div class="best-card green">
+      <div class="best-event">200 Meters</div>
+      <div class="best-mark">26.85 <span class="pr-tag">PR</span></div>
+      <div class="best-note">JV vs La Sierra · Mar 19, 2026<br>12th grade · 6th place</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box"><div class="ms-num blue">1</div><div class="ms-lbl">Season</div></div>
+    <div class="ms-box"><div class="ms-num gold">4</div><div class="ms-lbl">Events</div></div>
+    <div class="ms-box"><div class="ms-num green">29</div><div class="ms-lbl">RV Rank SP</div></div>
+    <div class="ms-box"><div class="ms-num gold">40</div><div class="ms-lbl">RV Rank Disc</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-title">Event Logs — 2026 Senior Season</div>
+
+  <div class="event-sub-label">Shot Put — 12 lb</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">30'5"</td><td><span class="place-dot pn">24</span></td><td class="meet-txt">Corona Relays</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">32'5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">31'0.5"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs La Sierra</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">29'5.5"</td><td><span class="place-dot pn">6</span></td><td class="meet-txt">Ramona vs JV</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">33'8.5" ★</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs Patriot</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">30'7"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs Norte Vista (Senior Night)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="table-spacer"></div>
+
+  <div class="event-sub-label">Discus — 1.6 kg</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">73'6"</td><td><span class="place-dot pn">25</span></td><td class="meet-txt">Corona Relays</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">77'8"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">74'9"</td><td><span class="place-dot p1">1</span></td><td class="meet-txt">JV vs La Sierra</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">78'10"</td><td><span class="place-dot pn">6</span></td><td class="meet-txt">Ramona vs JV</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">82'4" ★</td><td>—</td><td class="meet-txt">2026 season best</td></tr>
+    </tbody>
+  </table>
+
+  <div class="table-spacer"></div>
+
+  <div class="event-sub-label">200 Meters</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono" style="color:var(--muted)">DNS</td><td>—</td><td class="meet-txt">Rubidoux vs JV</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono pr">26.85 ★</td><td><span class="place-dot pn">6</span></td><td class="meet-txt">JV vs La Sierra</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="section">
+  <div class="sec-title">2026 Season Rankings</div>
+  <div class="rank-grid">
+
+    <div class="rank-card">
+      <div class="rank-event">Shot Put — 33'8.5"</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top">8th</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val good">29th</span></div>
+      <div class="rank-row"><span class="rank-scope">Southern CA</span><span class="rank-val ok">1450th</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val ok">3637th</span></div>
+    </div>
+
+    <div class="rank-card">
+      <div class="rank-event">Discus — 82'4"</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val top">8th</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val good">40th</span></div>
+      <div class="rank-row"><span class="rank-scope">Southern CA</span><span class="rank-val ok">1818th</span></div>
+      <div class="rank-row"><span class="rank-scope">California</span><span class="rank-val ok">4925th</span></div>
+    </div>
+
+    <div class="rank-card">
+      <div class="rank-event">200 Meters — 26.85</div>
+      <div class="rank-row"><span class="rank-scope">Team</span><span class="rank-val ok">10th</span></div>
+      <div class="rank-row"><span class="rank-scope">River Valley</span><span class="rank-val ok">77th</span></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-title">Coaching Notes</div>
+  <div class="notes-stack">
+
+    <div class="note-item gold">
+      <div class="note-title">Multi-Event Presence</div>
+      <div class="note-body">Giovanni entered the throwing circle for the first time (on record) as a senior and went 33'8.5" in shot put and 82'4" in discus — enough to rank in the top 30 and top 40 in the River Valley League respectively. That's not a trivial result for an athlete with no prior posted marks in these events.</div>
+    </div>
+
+    <div class="note-item blue">
+      <div class="note-title">Consistent Dual-Meet Performer</div>
+      <div class="note-body">Won or placed first in the throwing events in multiple dual meets. JV-flight competition exposes inconsistencies quickly — he held up well across the season, staying competitive in throws from March through April. The 200m was a one-meet sample but his 26.85 shows real sprint ability alongside the throws.</div>
+    </div>
+
+    <div class="note-item green">
+      <div class="note-title">Late Start, Real Upside</div>
+      <div class="note-body">With only one documented season, there's no pre-senior baseline to compare. Arriving with both throwing and sprinting ability as a senior suggests natural athleticism. If he had started in the throwing events in 9th or 10th grade, the development arc would likely have taken him further. Finishes as a multi-event contributor in his only Jaguar season.</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  Jurupa Valley Jaguars Track &amp; Field · Giovanni Diaz · Class of 2026<br>
+  Data sourced from athletic.net official meet results
+</footer>
+
+</body>
+</html>

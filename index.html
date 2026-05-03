@@ -7,18 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #070e1c;
-    --navy2: #0b1628;
-    --navy3: #101f38;
-    --border: #182c48;
-    --silver: #b0c2dc;
-    --silver-light: #d8e8f8;
-    --white: #eef4ff;
-    --gold: #e8b84b;
-    --gold2: #f5d07a;
-    --accent: #38beff;
-    --green: #3de8a0;
-    --muted: #4a6690;
+    --navy: #f0f4f9;
+    --navy2: #ffffff;
+    --navy3: #e8eef6;
+    --border: #c8d6e8;
+    --silver: #3a5272;
+    --silver-light: #1e3352;
+    --white: #0d1f3c;
+    --gold: #b8860b;
+    --gold2: #d4a020;
+    --accent: #1668c2;
+    --green: #0f8a56;
+    --muted: #6b84a8;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -33,9 +33,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
+
   /* ── HERO HEADER ── */
   .site-header {
-    background: linear-gradient(160deg, #040a14 0%, #080f1e 40%, #0a1628 100%);
+    background: linear-gradient(160deg, #0d1f3c 0%, #102848 40%, #0e2244 100%);
     border-bottom: 1px solid var(--border);
     padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 80px) clamp(28px, 5vw, 56px);
     position: relative;
@@ -81,7 +82,7 @@
     font-family: 'DM Mono', monospace;
     font-size: clamp(9px, 1.5vw, 11px);
     letter-spacing: 4px;
-    color: var(--accent);
+    color: #38beff;
     text-transform: uppercase;
     margin-bottom: 8px;
   }
@@ -89,14 +90,14 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(36px, 8vw, 80px);
     letter-spacing: 2px;
-    color: var(--white);
+    color: #eef4ff;
     line-height: 0.88;
   }
-  .header-title span { color: var(--gold); }
+  .header-title span { color: #e8b84b; }
   .header-sub {
     margin-top: 14px;
     font-size: clamp(12px, 2vw, 15px);
-    color: var(--muted);
+    color: #8aaac8;
     letter-spacing: 1px;
     font-weight: 300;
   }
@@ -105,7 +106,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--gold);
+    background: #e8b84b;
     color: #1a0e00;
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -199,8 +200,8 @@
   }
   .athlete-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(232,184,75,0.4);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(232,184,75,0.1);
+    border-color: rgba(184,134,11,0.4);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(184,134,11,0.15);
   }
   .athlete-card:active { transform: translateY(0); }
 
@@ -208,9 +209,9 @@
     height: 4px;
     width: 100%;
   }
-  .bar-gold { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
-  .bar-blue { background: linear-gradient(90deg, var(--accent), #7ad4ff); }
-  .bar-green { background: linear-gradient(90deg, var(--green), #7effd0); }
+  .bar-gold { background: linear-gradient(90deg, #b8860b, #d4a020); }
+  .bar-blue { background: linear-gradient(90deg, #1668c2, #38beff); }
+  .bar-green { background: linear-gradient(90deg, #0f8a56, #3de8a0); }
 
   .card-body { padding: 20px; }
 
@@ -240,7 +241,7 @@
     margin: 12px 0;
   }
   .event-tag {
-    background: rgba(255,255,255,0.05);
+    background: rgba(0,0,0,0.04);
     border: 1px solid var(--border);
     border-radius: 3px;
     padding: 3px 8px;
@@ -248,7 +249,7 @@
     letter-spacing: 0.5px;
     color: var(--silver);
   }
-  .event-tag.hl { border-color: rgba(232,184,75,0.35); color: var(--gold); background: rgba(232,184,75,0.07); }
+  .event-tag.hl { border-color: rgba(184,134,11,0.4); color: var(--gold); background: rgba(184,134,11,0.08); }
 
   .card-divider {
     height: 1px;
@@ -283,7 +284,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 20px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.04);
     border-top: 1px solid var(--border);
   }
   .card-rankings { font-size: 11px; color: var(--muted); }
@@ -299,6 +300,41 @@
     gap: 5px;
   }
   .card-cta::after { content: '→'; }
+
+  /* transfer note strip */
+  .card-transfer {
+    padding: 10px 20px;
+    background: rgba(15,138,86,0.06);
+    border-top: 1px solid rgba(15,138,86,0.2);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .transfer-icon {
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .transfer-text {
+    font-size: 11px;
+    line-height: 1.45;
+    color: var(--silver);
+    font-weight: 300;
+  }
+  .transfer-text strong { color: var(--green); font-weight: 600; }
+  .transfer-tag {
+    display: inline-block;
+    background: rgba(15,138,86,0.1);
+    border: 1px solid rgba(15,138,86,0.3);
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
 
   /* national badge on card */
   .nat-badge {
@@ -378,10 +414,7 @@
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  .athlete-card { animation: fadeUp 0.5s ease both; }
-  .athlete-card:nth-child(1) { animation-delay: 0.1s; }
-  .athlete-card:nth-child(2) { animation-delay: 0.2s; }
-  .athlete-card:nth-child(3) { animation-delay: 0.3s; }
+  .athlete-card { animation: fadeUp 0.4s ease both; animation-delay: 0.05s; }
 </style>
 </head>
 <body>
@@ -403,8 +436,8 @@
 <div class="stats-strip">
   <div class="stats-strip-inner">
     <div class="stat-cell">
-      <div class="stat-val">3</div>
-      <div class="stat-lbl">Featured Athletes</div>
+      <div class="stat-val">19</div>
+      <div class="stat-lbl">Athletes Profiled</div>
     </div>
     <div class="stat-cell">
       <div class="stat-val">8</div>
@@ -432,6 +465,7 @@
 <!-- ── MAIN ── -->
 <main class="main">
 
+  <!-- ── ELITE / FEATURED ── -->
   <div class="section-label">Class of 2026 — Featured Athletes</div>
 
   <div class="athlete-grid">
@@ -538,6 +572,556 @@
         <div class="card-rankings">Multi-event · <strong>RVL Top Performer</strong></div>
         <div class="card-cta">Full Profile</div>
       </div>
+      <div class="card-transfer">
+        <div class="transfer-icon">🦅</div>
+        <div class="transfer-text">
+          <div class="transfer-tag">New Chapter</div>
+          Transferred to <strong>Maywood Academy (LAUSD)</strong> for her senior year. Now a <strong>multi-event school record holder</strong> midway through her senior season.
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ── GIRLS ROSTER ── -->
+  <div class="section-label">2026 Girls Roster</div>
+
+  <div class="athlete-grid">
+
+    <!-- CAMYLA RAMIREZ-TAPIA -->
+    <a href="camyla-ramirez-tapia.html" class="athlete-card">
+      <div class="card-accent-bar bar-gold"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Girls · Jumps</div>
+        <div class="card-name">Camyla <span class="card-name-last">Ramirez-Tapia</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">Long Jump</span>
+          <span class="event-tag hl">Triple Jump</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">9'10"</div>
+            <div class="peak-event">Long Jump PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">19'5"</div>
+            <div class="peak-event">Triple Jump PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">3</div>
+            <div class="peak-event">Seasons</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Jumps · <strong>3-Season Career</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- DENISSE MUNOZ -->
+    <a href="denisse-munoz.html" class="athlete-card">
+      <div class="card-accent-bar bar-blue"></div>
+      <div class="card-body">
+        <div class="card-yr">11th Grade · Girls · Distance</div>
+        <div class="card-name">Denisse <span class="card-name-last">Munoz</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">1600 Meters</span>
+          <span class="event-tag hl">3200 Meters</span>
+          <span class="event-tag">800 Meters</span>
+          <span class="event-tag">Mile</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">5:40.53</div>
+            <div class="peak-event">1600m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">5:58.03</div>
+            <div class="peak-event">Mile PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">RV #4</div>
+            <div class="peak-event">1600m Rank</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">1600m: <strong>RV #4</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- HADEEL HAZAMEH -->
+    <a href="hadeel-hazameh.html" class="athlete-card">
+      <div class="card-accent-bar bar-gold"></div>
+      <div class="card-body">
+        <div class="card-yr">11th Grade · Girls · Jumps</div>
+        <div class="card-name">Hadeel <span class="card-name-last">Hazameh</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">Triple Jump</span>
+          <span class="event-tag hl">Long Jump</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">29'1.5"</div>
+            <div class="peak-event">Triple Jump PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">12'8"</div>
+            <div class="peak-event">Long Jump PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">RV #11</div>
+            <div class="peak-event">TJ Rank</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">TJ: <strong>RV #11</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- JAZZ QUIDOR -->
+    <a href="jazz-quidor.html" class="athlete-card">
+      <div class="card-accent-bar bar-blue"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Girls · Hurdles / High Jump</div>
+        <div class="card-name">Jazz <span class="card-name-last">Quidor</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">100m Hurdles</span>
+          <span class="event-tag hl">300m Hurdles</span>
+          <span class="event-tag hl">High Jump</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">19.44c</div>
+            <div class="peak-event">100mH PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">58.34c</div>
+            <div class="peak-event">300mH PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">4'0"</div>
+            <div class="peak-event">High Jump PR</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">HJ: <strong>RV #10</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- YARETZI GODINEZ -->
+    <a href="yaretzi-godinez.html" class="athlete-card">
+      <div class="card-accent-bar bar-green"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Girls · Throws</div>
+        <div class="card-name">Yaretzi <span class="card-name-last">Godinez</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">Shot Put</span>
+          <span class="event-tag hl">Discus</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">24'11"</div>
+            <div class="peak-event">Shot Put PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">72'7"</div>
+            <div class="peak-event">Discus PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">RV #8</div>
+            <div class="peak-event">Discus 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Disc: <strong>RV #8</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ── BOYS ROSTER ── -->
+  <div class="section-label">2026 Boys Roster</div>
+
+  <div class="athlete-grid">
+
+    <!-- ADAN BARAJAS -->
+    <a href="adan-barajas.html" class="athlete-card">
+      <div class="card-accent-bar bar-blue"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Sprints &amp; Relays</div>
+        <div class="card-name">Adan <span class="card-name-last">Barajas</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">100 Meters</span>
+          <span class="event-tag hl">200 Meters</span>
+          <span class="event-tag">400 Meters</span>
+          <span class="event-tag">Relays</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">12.38</div>
+            <div class="peak-event">100m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">26.74</div>
+            <div class="peak-event">200m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">1:14.51</div>
+            <div class="peak-event">400m PR</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Sprints · <strong>12th Grade</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- ARMANDO CAMPANA -->
+    <a href="armando-campana.html" class="athlete-card">
+      <div class="card-accent-bar bar-green"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Throws</div>
+        <div class="card-name">Armando <span class="card-name-last">Campana</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">Shot Put</span>
+          <span class="event-tag hl">Discus</span>
+          <span class="event-tag">Relay</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">40'5"</div>
+            <div class="peak-event">Shot Put PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">113'5"</div>
+            <div class="peak-event">Discus PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">3</div>
+            <div class="peak-event">Seasons</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Throws · <strong>3-Year Letter</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- AYDEN MADRID -->
+    <a href="ayden-madrid.html" class="athlete-card">
+      <div class="card-accent-bar bar-blue"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Sprints &amp; Relays</div>
+        <div class="card-name">Ayden <span class="card-name-last">Madrid</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">400 Meters</span>
+          <span class="event-tag hl">200 Meters</span>
+          <span class="event-tag">100 Meters</span>
+          <span class="event-tag">Relays</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">59.71</div>
+            <div class="peak-event">400m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">25.84c</div>
+            <div class="peak-event">200m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">12.44c</div>
+            <div class="peak-event">100m PR</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Sprints · <strong>12th Grade</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- CARLOS SANCHEZ -->
+    <a href="carlos-sanchez.html" class="athlete-card">
+      <div class="card-accent-bar bar-blue"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Sprints &amp; Relays</div>
+        <div class="card-name">Carlos <span class="card-name-last">Sanchez</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">400 Meters</span>
+          <span class="event-tag hl">200 Meters</span>
+          <span class="event-tag">100 Meters</span>
+          <span class="event-tag">Relays</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">59.94</div>
+            <div class="peak-event">400m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">26.16</div>
+            <div class="peak-event">200m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">13.14c</div>
+            <div class="peak-event">100m PR</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Sprints · <strong>12th Grade</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- ESTEBAN JARA -->
+    <a href="esteban-jara.html" class="athlete-card">
+      <div class="card-accent-bar bar-blue"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Distance / Sprints</div>
+        <div class="card-name">Esteban <span class="card-name-last">Jara</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">800 Meters</span>
+          <span class="event-tag hl">100 Meters</span>
+          <span class="event-tag">1600 Meters</span>
+          <span class="event-tag">200 Meters</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">2:29.4h</div>
+            <div class="peak-event">800m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">12.65</div>
+            <div class="peak-event">100m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">4</div>
+            <div class="peak-event">Seasons</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Distance / Sprints · <strong>4-Season Career</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- GIOVANNI DIAZ -->
+    <a href="giovanni-diaz.html" class="athlete-card">
+      <div class="card-accent-bar bar-green"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Multi-Event</div>
+        <div class="card-name">Giovanni <span class="card-name-last">Diaz</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">Shot Put</span>
+          <span class="event-tag hl">Discus</span>
+          <span class="event-tag">200 Meters</span>
+          <span class="event-tag">110m Hurdles</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">33'8.5"</div>
+            <div class="peak-event">Shot Put PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">82'4"</div>
+            <div class="peak-event">Discus PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">26.85</div>
+            <div class="peak-event">200m PR</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Multi-Event · <strong>12th Grade</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- KHRIZ FUERTE -->
+    <a href="khriz-fuerte.html" class="athlete-card">
+      <div class="card-accent-bar bar-blue"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Middle Distance</div>
+        <div class="card-name">Khriz <span class="card-name-last">Fuerte</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">800 Meters</span>
+          <span class="event-tag hl">1600 Meters</span>
+          <span class="event-tag">100 / 200m</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">3:14.16</div>
+            <div class="peak-event">800m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">15.61</div>
+            <div class="peak-event">100m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">4</div>
+            <div class="peak-event">Seasons</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Transfer · <strong>Shafter HS → JVHS</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- MARIO LOPEZ -->
+    <a href="mario-lopez.html" class="athlete-card">
+      <div class="card-accent-bar bar-green"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Throws</div>
+        <div class="card-name">Mario <span class="card-name-last">Lopez</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">Discus</span>
+          <span class="event-tag hl">Shot Put</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">121'11"</div>
+            <div class="peak-event">Discus PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">38'9"</div>
+            <div class="peak-event">Shot Put PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">RV #5</div>
+            <div class="peak-event">Discus 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Disc: <strong>RV #5</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- MATTHEW BENAVIDEZ -->
+    <a href="matthew-benavidez.html" class="athlete-card">
+      <div class="card-accent-bar bar-blue"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Sprints</div>
+        <div class="card-name">Matthew <span class="card-name-last">Benavidez</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">100 Meters</span>
+          <span class="event-tag hl">200 Meters</span>
+          <span class="event-tag">400 Meters</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">13.91</div>
+            <div class="peak-event">100m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">30.65</div>
+            <div class="peak-event">200m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">1:13.89</div>
+            <div class="peak-event">400m PR</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Sprints · <strong>12th Grade</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- DAVID MENDOZA -->
+    <a href="david-mendoza.html" class="athlete-card">
+      <div class="card-accent-bar bar-green"></div>
+      <div class="card-body">
+        <div class="card-yr">12th Grade · Boys · Throws</div>
+        <div class="card-name">David <span class="card-name-last">Mendoza</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">Shot Put</span>
+          <span class="event-tag hl">Discus</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">37'9"</div>
+            <div class="peak-event">Shot Put PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">110'5"</div>
+            <div class="peak-event">Discus PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">3</div>
+            <div class="peak-event">Seasons</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Throws · <strong>3-Season Career</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
+    </a>
+
+    <!-- GURSHAN SANGHA -->
+    <a href="gurshan-sangha.html" class="athlete-card">
+      <div class="card-accent-bar bar-blue"></div>
+      <div class="card-body">
+        <div class="card-yr">10th Grade · Boys · Sprints</div>
+        <div class="card-name">Gurshan <span class="card-name-last">Sangha</span></div>
+        <div class="card-events">
+          <span class="event-tag hl">100 Meters</span>
+          <span class="event-tag hl">200 Meters</span>
+          <span class="event-tag">Relay</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-peaks">
+          <div class="peak-cell">
+            <div class="peak-mark">16.48</div>
+            <div class="peak-event">100m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">37.03</div>
+            <div class="peak-event">200m PR</div>
+          </div>
+          <div class="peak-cell">
+            <div class="peak-mark">2</div>
+            <div class="peak-event">Seasons</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-rankings">Sprints · <strong>Sophomore</strong></div>
+        <div class="card-cta">Full Profile</div>
+      </div>
     </a>
 
   </div>
@@ -554,7 +1138,7 @@
     <div class="about-col">
       <div class="about-head">This Season</div>
       <div class="about-text">
-        The 2026 outdoor season features elite jump talent with <strong>multiple California top-10 rankings</strong> and a national top-100 performer in the Triple Jump.
+        The 2026 outdoor season features <strong>19 profiled athletes</strong> across sprints, distance, hurdles, jumps, and throws — with multiple RVL rankings and a national top-100 performer in the Triple Jump.
       </div>
     </div>
     <div class="about-col">

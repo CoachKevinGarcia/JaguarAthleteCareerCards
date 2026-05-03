@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gurshan Sangha — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --navy:#080f1e;--navy-mid:#0e1b30;--navy-card:#111e34;--navy-border:#1a2d4a;
+  --silver:#b8c8e0;--silver-light:#dce8f5;--white:#f0f5ff;
+  --gold:#e8b84b;--gold-dim:rgba(232,184,75,0.15);
+  --accent:#38beff;--accent-dim:rgba(56,190,255,0.12);
+  --green:#3de8a0;--green-dim:rgba(61,232,160,0.12);
+  --red:#ff5e6b;--pr-col:#ff5e6b;--muted:#5a7299;--injury:#ff8c42;
+}
+body{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;
+  max-width:540px;margin:0 auto;padding-bottom:env(safe-area-inset-bottom);
+  -webkit-font-smoothing:antialiased}
+
+/* NAV */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(8,15,30,0.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--navy-border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top))}
+.nav-back{color:var(--accent);font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:14px;text-decoration:none;letter-spacing:.5px}
+.nav-logo{height:32px;opacity:.9}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy-mid) 0%,var(--navy) 100%);
+  padding:28px 20px 24px;border-bottom:2px solid var(--navy-border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40px;right:-30px;width:180px;height:180px;
+  background:radial-gradient(circle,rgba(56,190,255,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-school{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.95;
+  color:var(--white);letter-spacing:1px}
+.hero-name em{color:var(--accent);font-style:normal}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pill{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;
+  padding:4px 10px;border-radius:2px;border:1px solid var(--navy-border);
+  color:var(--silver);background:rgba(255,255,255,0.04);text-transform:uppercase}
+.pill.blue{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+
+/* PEAK BAR */
+.peak-bar{display:grid;grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid var(--navy-border);background:var(--navy-mid)}
+.peak-cell{padding:14px 10px;text-align:center;border-right:1px solid var(--navy-border)}
+.peak-cell:last-child{border-right:none}
+.peak-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.peak-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+
+/* SECTIONS */
+.section{padding:20px 16px;border-bottom:1px solid var(--navy-border)}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:20px;
+  color:var(--accent);letter-spacing:1.5px;margin-bottom:14px}
+
+/* BESTS GRID */
+.bests-grid{display:flex;flex-direction:column;gap:8px}
+.best-card{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-left:3px solid var(--gold);border-radius:4px;padding:11px 13px;
+  display:flex;align-items:center;justify-content:space-between}
+.best-card.blue{border-left-color:var(--accent)}
+.best-ev{font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:14px;color:var(--white)}
+.best-sub{font-size:11px;color:var(--muted);margin-top:1px}
+.best-mark{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);text-align:right}
+.best-card.blue .best-mark{color:var(--accent)}
+
+/* MILESTONES */
+.ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ms-box{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:11px 12px;text-align:center}
+.ms-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);line-height:1}
+.ms-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+
+/* LOG TABLES */
+.event-sub-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;margin:14px 0 6px;
+  padding-left:2px;border-left:2px solid var(--navy-border)}
+.log-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:4px}
+.log-table thead th{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px;padding:4px 6px;
+  border-bottom:1px solid var(--navy-border);text-align:left;font-weight:400}
+.log-table tbody tr{border-bottom:1px solid rgba(26,45,74,0.5)}
+.log-table tbody tr:hover{background:rgba(56,190,255,0.04)}
+.log-table td{padding:6px 6px;vertical-align:middle}
+.yr-chip{display:inline-flex;align-items:center;justify-content:center;
+  width:18px;height:18px;border-radius:2px;font-family:'DM Mono',monospace;
+  font-size:9px;font-weight:500}
+.y9{background:var(--green-dim);color:var(--green)}
+.y10{background:var(--accent-dim);color:var(--accent)}
+.y11{background:var(--gold-dim);color:var(--gold)}
+.y12{background:rgba(255,94,107,0.15);color:var(--red)}
+.mark-mono{font-family:'DM Mono',monospace;font-size:12px;color:var(--silver-light)}
+.mark-mono.pr{color:var(--pr-col)}
+.place-dot{display:inline-flex;align-items:center;justify-content:center;
+  width:20px;height:20px;border-radius:50%;font-family:'DM Mono',monospace;
+  font-size:9px;font-weight:500}
+.p1{background:var(--green);color:#003322}
+.p2{background:var(--silver);color:var(--navy)}
+.p3{background:var(--gold);color:#3a2800}
+.pn{background:rgba(255,255,255,0.07);color:var(--muted)}
+.meet-txt{color:var(--silver);font-size:11px}
+
+/* SEASON PEAKS */
+.peaks-stack{display:flex;flex-direction:column;gap:10px}
+.peak-season{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:13px 14px}
+.ps-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.ps-yr{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--white)}
+.ps-grade{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.8px}
+.ps-marks{display:flex;flex-direction:column;gap:4px}
+.ps-row{display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;border-top:1px solid rgba(26,45,74,0.5);padding-top:4px}
+.ps-event{color:var(--muted);font-family:'DM Mono',monospace;font-size:10px}
+.ps-mark{font-family:'DM Mono',monospace;font-size:12px;color:var(--silver-light)}
+.ps-mark.sb{color:var(--gold)}
+
+/* RANKINGS */
+.rank-grid{display:flex;flex-direction:column;gap:8px}
+.rank-row{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-radius:4px;padding:10px 13px}
+.rank-event{font-weight:700;font-size:13px;color:var(--white);margin-bottom:6px}
+.rank-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.rank-cell{text-align:center}
+.rank-num{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--accent)}
+.rank-scope{font-family:'DM Mono',monospace;font-size:8px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.6px}
+
+/* NOTES */
+.notes-stack{display:flex;flex-direction:column;gap:10px}
+.note-item{background:var(--navy-card);border:1px solid var(--navy-border);
+  border-left:3px solid var(--gold);border-radius:4px;padding:12px 14px}
+.note-item.blue{border-left-color:var(--accent)}
+.note-item.green{border-left-color:var(--green)}
+.note-item.orange{border-left-color:var(--injury)}
+.note-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.note-text{font-size:13px;line-height:1.5;color:var(--silver-light)}
+
+/* FOOTER */
+footer{text-align:center;padding:24px 16px;background:var(--navy-mid);
+  font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);
+  letter-spacing:.8px;text-transform:uppercase;border-top:1px solid var(--navy-border)}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">← All Athletes</a>
+  <img src="logo.png" alt="Jaguars T&F" class="nav-logo">
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-school">Jurupa Valley Jaguars · Boys · Sprints</div>
+  <div class="hero-name">Gurshan<br><em>Sangha</em></div>
+  <div class="pills">
+    <span class="pill blue">100m</span>
+    <span class="pill blue">200m</span>
+    <span class="pill">Relay</span>
+  </div>
+</div>
+
+<!-- PEAK BAR -->
+<div class="peak-bar">
+  <div class="peak-cell">
+    <div class="peak-val">16.48</div>
+    <div class="peak-lbl">100m Career PR</div>
+  </div>
+  <div class="peak-cell">
+    <div class="peak-val">37.03</div>
+    <div class="peak-lbl">200m Career PR</div>
+  </div>
+  <div class="peak-cell">
+    <div class="peak-val">2</div>
+    <div class="peak-lbl">Seasons Competed</div>
+  </div>
+</div>
+
+<!-- CAREER BESTS -->
+<div class="section">
+  <div class="section-title">Career Personal Bests</div>
+  <div class="bests-grid">
+    <div class="best-card blue">
+      <div>
+        <div class="best-ev">100 Meters</div>
+        <div class="best-sub">Apr 16, 2026 · vs Patriot · 19th Place</div>
+      </div>
+      <div class="best-mark">16.48</div>
+    </div>
+    <div class="best-card blue">
+      <div>
+        <div class="best-ev">200 Meters</div>
+        <div class="best-sub">Apr 16, 2026 · vs Patriot · 23rd Place</div>
+      </div>
+      <div class="best-mark">37.03</div>
+    </div>
+  </div>
+</div>
+
+<!-- MILESTONES -->
+<div class="section">
+  <div class="section-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box">
+      <div class="ms-val">2</div>
+      <div class="ms-lbl">Seasons Competed</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">−0.16</div>
+      <div class="ms-lbl">100m Improvement</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">9th</div>
+      <div class="ms-lbl">First Season</div>
+    </div>
+    <div class="ms-box">
+      <div class="ms-val">JV</div>
+      <div class="ms-lbl">Primary Level</div>
+    </div>
+  </div>
+</div>
+
+<!-- EVENT LOGS -->
+<div class="section">
+  <div class="section-title">Event Logs</div>
+
+  <!-- 100m 2026 -->
+  <div class="event-sub-label">100 Meters — 2026 (10th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">17.50</td>
+        <td><span class="place-dot pn">178</span></td>
+        <td class="meet-txt">Roosevelt Invitational (−3.3)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">17.97</td>
+        <td><span class="place-dot pn">13</span></td>
+        <td class="meet-txt">vs Rubidoux (−3.1)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">17.03</td>
+        <td><span class="place-dot pn">17</span></td>
+        <td class="meet-txt">vs La Sierra</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">17.32</td>
+        <td><span class="place-dot pn">36</span></td>
+        <td class="meet-txt">Raincross Invitational (−1.3)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">17.76</td>
+        <td><span class="place-dot pn">22</span></td>
+        <td class="meet-txt">vs Ramona (−1.4)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono pr">16.48 ★</td>
+        <td><span class="place-dot pn">19</span></td>
+        <td class="meet-txt">vs Patriot</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">16.54c</td>
+        <td><span class="place-dot pn">13</span></td>
+        <td class="meet-txt">vs Norte Vista</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 100m 2025 -->
+  <div class="event-sub-label">100 Meters — 2025 (9th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y9">9</span></td>
+        <td class="mark-mono">18.34</td>
+        <td><span class="place-dot pn">81</span></td>
+        <td class="meet-txt">RC Kickoff Classic (+0.7)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y9">9</span></td>
+        <td class="mark-mono pr">16.64c ★</td>
+        <td><span class="place-dot pn">12</span></td>
+        <td class="meet-txt">vs Rubidoux</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y9">9</span></td>
+        <td class="mark-mono">17.54c</td>
+        <td><span class="place-dot pn">16</span></td>
+        <td class="meet-txt">vs La Sierra</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y9">9</span></td>
+        <td class="mark-mono">17.64c</td>
+        <td><span class="place-dot pn">25</span></td>
+        <td class="meet-txt">vs Ramona</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y9">9</span></td>
+        <td class="mark-mono">17.42</td>
+        <td><span class="place-dot pn">20</span></td>
+        <td class="meet-txt">vs Norte Vista</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 200m 2026 -->
+  <div class="event-sub-label">200 Meters — 2026 (10th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DNS</td>
+        <td><span class="place-dot pn">—</span></td>
+        <td class="meet-txt">vs Rubidoux (−4.0)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">38.06</td>
+        <td><span class="place-dot pn">10</span></td>
+        <td class="meet-txt">vs La Sierra</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">38.37</td>
+        <td><span class="place-dot pn">21</span></td>
+        <td class="meet-txt">vs Ramona (−1.5)</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono pr">37.03 ★</td>
+        <td><span class="place-dot pn">23</span></td>
+        <td class="meet-txt">vs Patriot</td>
+      </tr>
+      <tr>
+        <td><span class="yr-chip y10">10</span></td>
+        <td class="mark-mono">39.04c</td>
+        <td><span class="place-dot pn">10</span></td>
+        <td class="meet-txt">vs Norte Vista</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Relay -->
+  <div class="event-sub-label">4×400 Relay — 2025 (9th Grade)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="yr-chip y9">9</span></td>
+        <td class="mark-mono" style="color:var(--muted)">DQ</td>
+        <td><span class="place-dot pn">—</span></td>
+        <td class="meet-txt">vs Rubidoux</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SEASON PEAKS -->
+<div class="section">
+  <div class="section-title">Season Peaks</div>
+  <div class="peaks-stack">
+
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr">2025 — 9th Grade</div>
+        <div class="ps-grade">Freshman Season</div>
+      </div>
+      <div class="ps-marks">
+        <div class="ps-row">
+          <span class="ps-event">100m</span>
+          <span class="ps-mark sb">16.64c</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="peak-season">
+      <div class="ps-header">
+        <div class="ps-yr">2026 — 10th Grade</div>
+        <div class="ps-grade">PRs in Both Events</div>
+      </div>
+      <div class="ps-marks">
+        <div class="ps-row">
+          <span class="ps-event">100m</span>
+          <span class="ps-mark sb">16.48 <span style="color:var(--green);font-size:9px">▲ −0.16</span></span>
+        </div>
+        <div class="ps-row">
+          <span class="ps-event">200m</span>
+          <span class="ps-mark sb">37.03</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- RANKINGS -->
+<div class="section">
+  <div class="section-title">2026 Rankings</div>
+  <div class="rank-grid">
+    <div class="rank-row">
+      <div class="rank-event">100 Meters — 16.48</div>
+      <div class="rank-cols">
+        <div class="rank-cell"><div class="rank-num">24th</div><div class="rank-scope">Team</div></div>
+        <div class="rank-cell"><div class="rank-num">142nd</div><div class="rank-scope">River Valley</div></div>
+        <div class="rank-cell"><div class="rank-num">9336th</div><div class="rank-scope">Southern</div></div>
+        <div class="rank-cell"><div class="rank-num">24537th</div><div class="rank-scope">California</div></div>
+      </div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-event">200 Meters — 37.03</div>
+      <div class="rank-cols">
+        <div class="rank-cell"><div class="rank-num">20th</div><div class="rank-scope">Team</div></div>
+        <div class="rank-cell"><div class="rank-num">141st</div><div class="rank-scope">River Valley</div></div>
+        <div class="rank-cell"><div class="rank-num">8825th</div><div class="rank-scope">Southern</div></div>
+        <div class="rank-cell"><div class="rank-num">22361st</div><div class="rank-scope">California</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COACHING NOTES -->
+<div class="section">
+  <div class="section-title">Coaching Notes</div>
+  <div class="notes-stack">
+    <div class="note-item blue">
+      <div class="note-label">Early Development</div>
+      <div class="note-text">Two seasons in, still developing. His PR of 16.48 at the Patriot dual meet was his cleanest FAT result — the 16.64c in 9th grade was hand-timed and slightly faster on the clock, but the trend is in the right direction. He showed up every dual meet and competed, which matters at this stage.</div>
+    </div>
+    <div class="note-item">
+      <div class="note-label">Consistency Note</div>
+      <div class="note-text">Times varied significantly meet to meet — from 16.48 to 17.97 in the 100m in the same season. That spread indicates the mechanics aren't fully grooved yet. More consistent acceleration and drive phase development would tighten that range considerably in a 3rd season.</div>
+    </div>
+    <div class="note-item green">
+      <div class="note-label">Outlook</div>
+      <div class="note-text">With 2 full years of eligibility remaining (11th and 12th grade), Gurshan is still early in his athletic career. The foundation is there — he has competed consistently and continues to improve. Sprint mechanics work and dedicated weekly training could realistically put him into the 15-second range by junior year.</div>
+    </div>
+  </div>
+</div>
+
+<footer>Jurupa Valley Jaguars Track &amp; Field · 2026 Season · Career Data Sheet</footer>
+</body>
+</html>

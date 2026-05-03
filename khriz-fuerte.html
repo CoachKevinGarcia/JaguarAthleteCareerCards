@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Khriz Fuerte — Career Data Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#080f1e;--navy-mid:#0e1b30;--navy-card:#111e34;--navy-border:#1a2d4a;
+    --silver:#b8c8e0;--silver-light:#dce8f5;--white:#f0f5ff;
+    --gold:#e8b84b;--gold-dim:rgba(232,184,75,0.15);
+    --accent:#38beff;--accent-dim:rgba(56,190,255,0.12);
+    --green:#3de8a0;--green-dim:rgba(61,232,160,0.12);
+    --red:#ff5e6b;--pr-col:#ff5e6b;--muted:#5a7299;--injury:#ff8c42;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy);color:var(--silver-light);font-family:'Barlow Condensed',sans-serif;font-size:15px;line-height:1.4;-webkit-font-smoothing:antialiased;max-width:540px;margin:0 auto;overflow-x:hidden;}
+  .site-nav{position:sticky;top:0;z-index:100;background:rgba(8,15,30,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--navy-border);padding:env(safe-area-inset-top,0px) 16px 0;display:flex;align-items:center;justify-content:space-between;height:calc(44px + env(safe-area-inset-top,0px));}
+  .nav-back{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--accent);text-decoration:none;text-transform:uppercase;}
+  .nav-back:hover{color:var(--white);}
+  .nav-logo{height:28px;opacity:0.85;}
+  .hero{background:linear-gradient(160deg,#050c18 0%,#0c1929 60%,#0a1830 100%);padding:24px 20px 28px;position:relative;overflow:hidden;border-bottom:1px solid var(--navy-border);}
+  .hero::after{content:'';position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(56,190,255,0.06) 0%,transparent 70%);pointer-events:none;}
+  .hero-school{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:6px;}
+  .hero-name{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:1.5px;color:var(--white);line-height:0.9;}
+  .hero-name em{color:var(--gold);font-style:normal;}
+  .hero-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+  .pill{background:rgba(255,255,255,0.06);border:1px solid var(--navy-border);border-radius:3px;padding:3px 10px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--silver);text-transform:uppercase;}
+  .pill.gold{border-color:rgba(232,184,75,0.4);color:var(--gold);background:var(--gold-dim);}
+  .pill.green{border-color:rgba(61,232,160,0.3);color:var(--green);background:var(--green-dim);}
+  .pill.orange{border-color:rgba(255,140,66,0.3);color:var(--injury);background:rgba(255,140,66,0.08);}
+  .peak-bar{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--navy-border);}
+  .peak-item{padding:14px 12px;text-align:center;border-right:1px solid var(--navy-border);}
+  .peak-item:last-child{border-right:none;}
+  .peak-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold);line-height:1;}
+  .peak-lbl{font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+  .section{padding:20px 16px;border-bottom:1px solid var(--navy-border);}
+  .sec-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .sec-title::after{content:'';flex:1;height:1px;background:var(--navy-border);}
+  .bests-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .best-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:12px;position:relative;overflow:hidden;}
+  .best-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+  .best-card.gold::before{background:var(--gold);} .best-card.blue::before{background:var(--accent);} .best-card.green::before{background:var(--green);}
+  .best-event{font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;}
+  .best-mark{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);line-height:1;}
+  .best-note{font-size:9px;color:var(--muted);margin-top:3px;line-height:1.3;}
+  .ms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+  .ms-box{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:10px 6px;text-align:center;}
+  .ms-num{font-family:'Bebas Neue',sans-serif;font-size:32px;line-height:1;}
+  .ms-num.gold{color:var(--gold);} .ms-num.green{color:var(--green);} .ms-num.blue{color:var(--accent);}
+  .ms-lbl{font-size:8px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+  .log-table{width:100%;border-collapse:collapse;font-size:12px;}
+  .log-table th{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;padding:5px 6px;text-align:left;border-bottom:1px solid var(--navy-border);}
+  .log-table td{padding:7px 6px;border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:middle;}
+  .log-table tr:last-child td{border-bottom:none;}
+  .log-table tr:hover td{background:rgba(255,255,255,0.02);}
+  .mark-mono{font-family:'DM Mono',monospace;font-weight:500;color:var(--white);font-size:13px;}
+  .mark-mono.pr{color:var(--pr-col);}
+  .place-dot{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:11px;font-size:10px;font-weight:700;}
+  .p1{background:var(--green);color:#042814;} .pn{background:rgba(255,255,255,0.06);color:var(--muted);padding:0 6px;font-size:9px;}
+  .yr-chip{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:9px;font-size:9px;font-weight:700;}
+  .y9{background:var(--green-dim);color:var(--green);border:1px solid var(--green);}
+  .y10{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent);}
+  .y11{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold);}
+  .y12{background:rgba(255,94,107,0.12);color:var(--red);border:1px solid var(--red);}
+  .meet-txt{color:var(--silver);font-size:11px;}
+  .event-sub-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;padding:8px 6px 4px;margin-top:4px;}
+  .table-spacer{height:14px;}
+  .peaks-stack{display:flex;flex-direction:column;gap:10px;}
+  .peak-season{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:14px 14px 12px;}
+  .peak-season-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;}
+  .peak-season-yr{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);line-height:1;}
+  .peak-season-grade{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+  .peak-season-marks{display:flex;flex-wrap:wrap;gap:8px;}
+  .pk-mark{background:rgba(255,255,255,0.04);border:1px solid var(--navy-border);border-radius:4px;padding:6px 10px;}
+  .pk-evt{font-size:8px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;}
+  .pk-val{font-family:'DM Mono',monospace;font-size:14px;color:var(--white);margin-top:2px;}
+  .pk-val.pr-val{color:var(--pr-col);}
+  .school-tag{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:2px 6px;border-radius:3px;border:1px solid var(--navy-border);color:var(--muted);}
+  .notes-stack{display:flex;flex-direction:column;gap:10px;}
+  .note-item{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:12px 14px;border-left:3px solid var(--navy-border);}
+  .note-item.gold{border-left-color:var(--gold);} .note-item.blue{border-left-color:var(--accent);} .note-item.green{border-left-color:var(--green);} .note-item.orange{border-left-color:var(--injury);}
+  .note-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:5px;}
+  .note-body{font-size:13px;font-weight:300;color:var(--silver-light);line-height:1.5;}
+  footer{padding:24px 16px env(safe-area-inset-bottom,16px);text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;border-top:1px solid var(--navy-border);}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-back">← All Athletes</a>
+  <img src="logo.png" alt="Jaguars T&F" class="nav-logo">
+</nav>
+
+<div class="hero">
+  <div class="hero-school">Jurupa Valley Jaguars · Boys · Middle Distance &amp; Sprints</div>
+  <div class="hero-name">Khriz<br><em>Fuerte</em></div>
+  <div class="hero-pills">
+    <span class="pill green">800 Meters</span>
+    <span class="pill green">1600 Meters</span>
+    <span class="pill gold">100 / 200m</span>
+    <span class="pill orange">Transfer · Shafter HS</span>
+  </div>
+</div>
+
+<div class="peak-bar">
+  <div class="peak-item">
+    <div class="peak-val">3:14.16</div>
+    <div class="peak-lbl">800m Career PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">15.61</div>
+    <div class="peak-lbl">100m Career PR</div>
+  </div>
+  <div class="peak-item">
+    <div class="peak-val">4</div>
+    <div class="peak-lbl">Seasons Competed</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-title">Career Personal Bests</div>
+  <div class="bests-grid">
+
+    <div class="best-card green">
+      <div class="best-event">800 Meters</div>
+      <div class="best-mark">3:14.16</div>
+      <div class="best-note">Black &amp; Blue 300 TT · Feb 10, 2024<br>10th grade · Shafter HS</div>
+    </div>
+
+    <div class="best-card blue">
+      <div class="best-event">1600 Meters</div>
+      <div class="best-mark">7:44.25</div>
+      <div class="best-note">Sanger Spring Classic · Mar 2, 2024<br>10th grade · Shafter HS</div>
+    </div>
+
+    <div class="best-card gold">
+      <div class="best-event">100 Meters</div>
+      <div class="best-mark">15.61</div>
+      <div class="best-note">SSL Power Meet #2 · Mar 26, 2025<br>11th grade · Shafter HS</div>
+    </div>
+
+    <div class="best-card gold">
+      <div class="best-event">400 Meters</div>
+      <div class="best-mark">1:17.37</div>
+      <div class="best-note">SSL Power Meet #1 · Mar 11, 2025<br>11th grade · Shafter HS</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-title">Career Milestones</div>
+  <div class="ms-grid">
+    <div class="ms-box"><div class="ms-num blue">4</div><div class="ms-lbl">Seasons</div></div>
+    <div class="ms-box"><div class="ms-num gold">2</div><div class="ms-lbl">Schools</div></div>
+    <div class="ms-box"><div class="ms-num green">5</div><div class="ms-lbl">Events Run</div></div>
+    <div class="ms-box"><div class="ms-num gold">1</div><div class="ms-lbl">Relay</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-title">Event Logs</div>
+
+  <div class="event-sub-label">800 Meters</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">3:27.64</td><td>—</td><td class="meet-txt">SSL Championships (Shafter)</td></tr>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono pr">3:14.16 ★</td><td><span class="place-dot pn">13</span></td><td class="meet-txt">Black &amp; Blue 300 TT (Shafter)</td></tr>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono">3:17.10</td><td><span class="place-dot pn">31</span></td><td class="meet-txt">SSL Power Meet 1 (Shafter)</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="mark-mono">3:32.69</td><td>—</td><td class="meet-txt">2025 season best (Shafter)</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="mark-mono">3:36.81</td><td><span class="place-dot pn">7</span></td><td class="meet-txt">JV vs Patriot (Jurupa Valley)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="table-spacer"></div>
+
+  <div class="event-sub-label">1600 Meters</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Mark</th><th>Pl</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y9">9</span></td><td class="mark-mono">7:51.87</td><td>—</td><td class="meet-txt">SSL Championships (Shafter)</td></tr>
+      <tr><td><span class="yr-chip y10">10</span></td><td class="mark-mono pr">7:44.25 ★</td><td><span class="place-dot pn">57</span></td><td class="meet-txt">Sanger Spring Classic (Shafter)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="table-spacer"></div>
+
+  <div class="event-sub-label">100 / 200 / 400 Meters (sprints)</div>
+  <table class="log-table">
+    <thead><tr><th>Yr</th><th>Event</th><th>Mark</th><th>Meet</th></tr></thead>
+    <tbody>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="meet-txt">100m</td><td class="mark-mono pr">15.61 (0.5) ★</td><td class="meet-txt">SSL PM2, Mar 26, 2025 (Shafter)</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="meet-txt">200m</td><td class="mark-mono pr">33.06 (0.4) ★</td><td class="meet-txt">SSL PM2, Mar 26, 2025 (Shafter)</td></tr>
+      <tr><td><span class="yr-chip y11">11</span></td><td class="meet-txt">400m</td><td class="mark-mono pr">1:17.37 ★</td><td class="meet-txt">SSL PM1, Mar 11, 2025 (Shafter)</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="meet-txt">100m</td><td class="mark-mono">15.77</td><td class="meet-txt">JV vs Patriot (Jurupa Valley)</td></tr>
+      <tr><td><span class="yr-chip y12">12</span></td><td class="meet-txt">200m</td><td class="mark-mono">34.73</td><td class="meet-txt">JV vs Patriot (Jurupa Valley)</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="section">
+  <div class="sec-title">Season Peaks</div>
+  <div class="peaks-stack">
+
+    <div class="peak-season">
+      <div class="peak-season-hd">
+        <div><div class="peak-season-yr">2023</div><div class="peak-season-grade">9th Grade · Shafter HS</div></div>
+        <span class="school-tag">Shafter</span>
+      </div>
+      <div class="peak-season-marks">
+        <div class="pk-mark"><div class="pk-evt">800m</div><div class="pk-val">3:27.64</div></div>
+        <div class="pk-mark"><div class="pk-evt">1600m</div><div class="pk-val">7:51.87</div></div>
+      </div>
+    </div>
+
+    <div class="peak-season">
+      <div class="peak-season-hd">
+        <div><div class="peak-season-yr">2024</div><div class="peak-season-grade">10th Grade · Shafter HS</div></div>
+        <span class="school-tag">Shafter</span>
+      </div>
+      <div class="peak-season-marks">
+        <div class="pk-mark"><div class="pk-evt">800m PR</div><div class="pk-val pr-val">3:14.16</div></div>
+        <div class="pk-mark"><div class="pk-evt">1600m PR</div><div class="pk-val pr-val">7:44.25</div></div>
+      </div>
+    </div>
+
+    <div class="peak-season">
+      <div class="peak-season-hd">
+        <div><div class="peak-season-yr">2025</div><div class="peak-season-grade">11th Grade · Shafter HS · Sprint Transition</div></div>
+        <span class="school-tag">Shafter</span>
+      </div>
+      <div class="peak-season-marks">
+        <div class="pk-mark"><div class="pk-evt">100m PR</div><div class="pk-val pr-val">15.61</div></div>
+        <div class="pk-mark"><div class="pk-evt">200m PR</div><div class="pk-val pr-val">33.06</div></div>
+        <div class="pk-mark"><div class="pk-evt">400m PR</div><div class="pk-val pr-val">1:17.37</div></div>
+        <div class="pk-mark"><div class="pk-evt">4×400</div><div class="pk-val">4:22.26</div></div>
+      </div>
+    </div>
+
+    <div class="peak-season">
+      <div class="peak-season-hd">
+        <div><div class="peak-season-yr">2026</div><div class="peak-season-grade">12th Grade · Jurupa Valley HS · Transfer</div></div>
+        <span class="pill gold">JV</span>
+      </div>
+      <div class="peak-season-marks">
+        <div class="pk-mark"><div class="pk-evt">100m</div><div class="pk-val">15.77</div></div>
+        <div class="pk-mark"><div class="pk-evt">200m</div><div class="pk-val">34.73</div></div>
+        <div class="pk-mark"><div class="pk-evt">800m</div><div class="pk-val">3:36.81</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-title">Coaching Notes</div>
+  <div class="notes-stack">
+
+    <div class="note-item green">
+      <div class="note-title">Distance Background (Shafter HS, 9th–11th)</div>
+      <div class="note-body">Competed at Shafter HS for three years as a middle-distance runner. His best marks came in 10th grade — 3:14 800m and 7:44 1600m. The following year he transitioned to sprint events at Shafter, running the 100, 200, and 400. His 1:17 400m in 11th grade connects the two phases of his career.</div>
+    </div>
+
+    <div class="note-item orange">
+      <div class="note-title">Transfer Senior Year — Jurupa Valley</div>
+      <div class="note-body">Transferred to Jurupa Valley for his senior season and competed in JV-flight sprint events, the 800m, and even attempted pole vault. The transition to a new program mid-career limits the amount of data on record here. He contributed where he could in a short window at the end of his high school career.</div>
+    </div>
+
+    <div class="note-item blue">
+      <div class="note-title">Four Years of Effort</div>
+      <div class="note-body">Four years across two schools and five different events tells a story of an athlete who kept showing up. He tried distance, transitioned to sprints, attempted a technical field event, and finished his career as a Jaguar. The competitive experience accumulated from 9th through 12th grade matters even when individual marks are modest.</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  Jurupa Valley Jaguars Track &amp; Field · Khriz Fuerte · Class of 2026<br>
+  Data sourced from athletic.net official meet results · Previously competed at Shafter HS
+</footer>
+
+</body>
+</html>
